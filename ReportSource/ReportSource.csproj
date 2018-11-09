@@ -46,11 +46,5 @@
     <Compile Include="Threat.cs" />
     <Compile Include="ThreatProperty.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="LGI Threat Model_CAS.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
