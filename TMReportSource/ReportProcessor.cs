@@ -7,16 +7,16 @@ namespace TMReportSource
 {
 	public class ReportProcessor
 	{
-		public static List<Threat> GetReport()
+		public static List<Threat> GetReport(string fileName)
 		{
-			return LoadThreatInstances();
+			return LoadThreatInstances(fileName);
 		}
 
-		private static List<Threat> LoadThreatInstances()
+		private static List<Threat> LoadThreatInstances(string fileName)
 		{
 			List<Threat> list = new List<Threat>();
 
-			XDocument xdoc = XDocument.Load(@"Test Threat Model.tm7");
+			XDocument xdoc = XDocument.Load(fileName);
 
 			XNamespace nsA = "http://schemas.microsoft.com/2003/10/Serialization/Arrays";
 

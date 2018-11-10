@@ -34,7 +34,7 @@ namespace TMReportForm
 		{
 			if (openFileDialog1.ShowDialog() == DialogResult.OK)
 			{
-				threatModelFile = openFileDialog1.SafeFileName;
+				threatModelFile = openFileDialog1.FileName;
 				Text = openFileDialog1.SafeFileName;
 				InitReportMenu();
 			}
@@ -87,12 +87,12 @@ namespace TMReportForm
 		private void LoadReport(string reportName)
 		{
 
-			reportViewer1.LocalReport.ReportPath = reportName + ".rdlc";
+			reportViewer1.LocalReport.ReportPath = string.Format("Reports/{0}.rdlc", reportName);
 
 			ReportDataSource rds = new ReportDataSource
 			{
 				Name = "DataSet1",
-				Value = ReportProcessor.GetReport()
+				Value = ReportProcessor.GetReport(threatModelFile)
 			};
 
 			reportViewer1.LocalReport.DataSources.Add(rds);
