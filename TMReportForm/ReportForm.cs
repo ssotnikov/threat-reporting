@@ -26,7 +26,7 @@ namespace TMReportForm
 		private void Form1_Load(object sender, EventArgs e)
 		{
 
-
+			mnuReportName.Enabled = false;
 
 		}
 
@@ -42,6 +42,8 @@ namespace TMReportForm
 
 		private void InitReportMenu()
 		{
+			mnuReportName.DropDownItems.Clear();
+
 			ToolStripMenuItem itemActorsView = new ToolStripMenuItem(Properties.Resources.ActorsView);
 			itemActorsView.Name = "ActorsView";
 			mnuReportName.DropDownItems.Add(itemActorsView);
@@ -62,6 +64,7 @@ namespace TMReportForm
 			mnuReportName.DropDownItems.Add(itemThreatsView);
 			itemThreatsView.Click += ItemThreatsView_Click;
 
+			mnuReportName.Enabled = true;
 		}
 
 		private void ItemThreatsView_Click(object sender, EventArgs e)

@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>6.16479cm</Width>
+              <Width>4.88597cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.16479cm</Width>
+              <Width>20.39055cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -96,11 +96,11 @@
               </Group>
               <SortExpressions>
                 <SortExpression>
-                  <Value>=Fields!Id.Value</Value>
+                  <Value>=CInt(Fields!Id.Value)</Value>
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>4.18042cm</Size>
+                <Size>3.27202cm</Size>
                 <CellContents>
                   <Textbox Name="Title">
                     <CanGrow>true</CanGrow>
@@ -109,8 +109,10 @@
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Fields!Title.Value</Value>
-                            <Style />
+                            <Value>="[" &amp; Fields!Id.Value &amp; "] " &amp; Fields!Title.Value</Value>
+                            <Style>
+                              <FontWeight>Bold</FontWeight>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
@@ -128,6 +130,7 @@
                       <PaddingBottom>2pt</PaddingBottom>
                     </Style>
                   </Textbox>
+                  <rd:Selected>true</rd:Selected>
                 </CellContents>
               </TablixHeader>
               <TablixMembers>
@@ -139,8 +142,13 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
+        <SortExpressions>
+          <SortExpression>
+            <Value>=CInt(Fields!Id.Value)</Value>
+          </SortExpression>
+        </SortExpressions>
         <Height>0.6cm</Height>
-        <Width>16.51cm</Width>
+        <Width>28.54854cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -151,7 +159,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>11.23958in</Width>
   <Page>
     <PageHeader>
       <Height>2.03729cm</Height>
@@ -178,7 +186,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Height>2cm</Height>
-          <Width>16.51cm</Width>
+          <Width>28.54854cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
