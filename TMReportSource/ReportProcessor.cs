@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml;
 using System.Xml.Linq;
 
-namespace ReportSource
+namespace TMReportSource
 {
 	public class ReportProcessor
 	{
@@ -20,7 +16,7 @@ namespace ReportSource
 		{
 			List<Threat> list = new List<Threat>();
 
-			XDocument xdoc = XDocument.Load(@"LGI Threat Model_CAS.xml");
+			XDocument xdoc = XDocument.Load(@"Test Threat Model.tm7");
 
 			XNamespace nsA = "http://schemas.microsoft.com/2003/10/Serialization/Arrays";
 
