@@ -25,9 +25,7 @@ namespace TMReportForm
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-
 			mnuReportName.Enabled = false;
-
 		}
 
 		private void mnuOpenModel_Click(object sender, EventArgs e)
@@ -89,8 +87,10 @@ namespace TMReportForm
 
 		private void LoadReport(string reportName)
 		{
-
 			reportViewer1.LocalReport.ReportPath = string.Format("Reports/{0}.rdlc", reportName);
+			reportViewer1.LocalReport.DataSources.Clear();
+			ReportParameter p = new ReportParameter("ReportName", Text);
+			reportViewer1.LocalReport.SetParameters(p);
 
 			ReportDataSource rds = new ReportDataSource
 			{
