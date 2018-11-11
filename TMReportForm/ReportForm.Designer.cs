@@ -48,7 +48,7 @@
 			this.reportViewer1.Location = new System.Drawing.Point(0, 25);
 			this.reportViewer1.Name = "reportViewer1";
 			this.reportViewer1.ServerReport.BearerToken = null;
-			this.reportViewer1.Size = new System.Drawing.Size(853, 541);
+			this.reportViewer1.Size = new System.Drawing.Size(923, 541);
 			this.reportViewer1.TabIndex = 0;
 			this.reportViewer1.WaitControlDisplayAfter = 1;
 			// 
@@ -63,7 +63,7 @@
             this.mnuReportName});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
-			this.toolStrip1.Size = new System.Drawing.Size(853, 25);
+			this.toolStrip1.Size = new System.Drawing.Size(923, 25);
 			this.toolStrip1.TabIndex = 1;
 			this.toolStrip1.Text = "toolStrip1";
 			// 
@@ -90,7 +90,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(853, 566);
+			this.ClientSize = new System.Drawing.Size(923, 566);
 			this.Controls.Add(this.reportViewer1);
 			this.Controls.Add(this.toolStrip1);
 			this.Name = "ReportForm";

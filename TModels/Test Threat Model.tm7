@@ -12,7 +12,7 @@
         <a:anyType i:type="b:StringDisplayAttribute" xmlns:b="http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase">
           <b:DisplayName>Name</b:DisplayName>
           <b:Name/>
-          <b:Value i:type="c:string" xmlns:c="http://www.w3.org/2001/XMLSchema">Diagram 1</b:Value>
+          <b:Value i:type="c:string" xmlns:c="http://www.w3.org/2001/XMLSchema">TEST DIAGRAM</b:Value>
         </a:anyType>
       </Properties>
       <TypeId xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">DRAWINGSURFACE</TypeId>
@@ -160,10 +160,10 @@
             </Properties>
             <TypeId xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">SE.P.TMCore.WebSvc</TypeId>
             <Height xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">100</Height>
-            <Left xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">859</Left>
+            <Left xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">1110</Left>
             <StrokeDashArray i:nil="true" xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts"/>
             <StrokeThickness xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">1</StrokeThickness>
-            <Top xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">274</Top>
+            <Top xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">209</Top>
             <Width xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">100</Width>
           </a:Value>
         </a:KeyValueOfguidanyType>
@@ -310,10 +310,10 @@
             </Properties>
             <TypeId xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">SE.P.TMCore.WebApp</TypeId>
             <Height xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">100</Height>
-            <Left xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">551</Left>
+            <Left xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">567</Left>
             <StrokeDashArray i:nil="true" xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts"/>
             <StrokeThickness xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">1</StrokeThickness>
-            <Top xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">72</Top>
+            <Top xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">276</Top>
             <Width xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">100</Width>
           </a:Value>
         </a:KeyValueOfguidanyType>
@@ -538,15 +538,15 @@
             </Properties>
             <TypeId xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">SE.EI.TMCore.User</TypeId>
             <Height xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">100</Height>
-            <Left xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">21</Left>
+            <Left xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">67</Left>
             <StrokeDashArray i:nil="true" xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts"/>
-            <StrokeThickness xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">0</StrokeThickness>
-            <Top xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">272</Top>
+            <StrokeThickness xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">1</StrokeThickness>
+            <Top xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">331</Top>
             <Width xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">100</Width>
           </a:Value>
         </a:KeyValueOfguidanyType>
       </Borders>
-      <Header>Diagram 1</Header>
+      <Header>TEST DIAGRAM</Header>
       <Lines xmlns:a="http://schemas.microsoft.com/2003/10/Serialization/Arrays">
         <a:KeyValueOfguidanyType>
           <a:Key>8da8d5fc-7272-4c40-a04c-adf95ca5a9e3</a:Key>
@@ -700,16 +700,16 @@
               </a:anyType>
             </Properties>
             <TypeId xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">GE.DF</TypeId>
-            <HandleX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">768</HandleX>
-            <HandleY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">127</HandleY>
+            <HandleX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">929</HandleX>
+            <HandleY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">225</HandleY>
             <PortSource xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">East</PortSource>
             <PortTarget xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">NorthWest</PortTarget>
             <SourceGuid xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">b35839cd-97ce-4397-9fc0-e5519554821e</SourceGuid>
-            <SourceX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">646</SourceX>
-            <SourceY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">122</SourceY>
+            <SourceX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">662</SourceX>
+            <SourceY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">326</SourceY>
             <TargetGuid xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">1811fbf7-35b8-4cda-9d71-b9f7afa235cc</TargetGuid>
-            <TargetX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">877</TargetX>
-            <TargetY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">292</TargetY>
+            <TargetX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">1128</TargetX>
+            <TargetY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">227</TargetY>
           </a:Value>
         </a:KeyValueOfguidanyType>
         <a:KeyValueOfguidanyType>
@@ -864,16 +864,16 @@
               </a:anyType>
             </Properties>
             <TypeId xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">GE.DF</TypeId>
-            <HandleX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">760</HandleX>
-            <HandleY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">217</HandleY>
+            <HandleX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">921</HandleX>
+            <HandleY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">315</HandleY>
             <PortSource xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">NorthWest</PortSource>
             <PortTarget xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">East</PortTarget>
             <SourceGuid xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">1811fbf7-35b8-4cda-9d71-b9f7afa235cc</SourceGuid>
-            <SourceX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">877</SourceX>
-            <SourceY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">292</SourceY>
+            <SourceX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">1128</SourceX>
+            <SourceY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">227</SourceY>
             <TargetGuid xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">b35839cd-97ce-4397-9fc0-e5519554821e</TargetGuid>
-            <TargetX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">646</TargetX>
-            <TargetY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">122</TargetY>
+            <TargetX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">662</TargetX>
+            <TargetY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">326</TargetY>
           </a:Value>
         </a:KeyValueOfguidanyType>
         <a:KeyValueOfguidanyType>
@@ -1035,16 +1035,16 @@
               </a:anyType>
             </Properties>
             <TypeId xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">SE.DF.TMCore.HTTPS</TypeId>
-            <HandleX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">491</HandleX>
-            <HandleY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">139</HandleY>
+            <HandleX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">499</HandleX>
+            <HandleY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">259</HandleY>
             <PortSource xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">East</PortSource>
             <PortTarget xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">West</PortTarget>
             <SourceGuid xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">55fef3dd-0ca4-4b13-8e40-b19a4e76cc69</SourceGuid>
             <SourceX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">350</SourceX>
             <SourceY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">124</SourceY>
             <TargetGuid xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">b35839cd-97ce-4397-9fc0-e5519554821e</TargetGuid>
-            <TargetX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">556</TargetX>
-            <TargetY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">122</TargetY>
+            <TargetX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">572</TargetX>
+            <TargetY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">326</TargetY>
           </a:Value>
         </a:KeyValueOfguidanyType>
         <a:KeyValueOfguidanyType>
@@ -1206,13 +1206,13 @@
               </a:anyType>
             </Properties>
             <TypeId xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">SE.DF.TMCore.HTTPS</TypeId>
-            <HandleX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">468</HandleX>
-            <HandleY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">62</HandleY>
+            <HandleX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">476</HandleX>
+            <HandleY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">182</HandleY>
             <PortSource xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">West</PortSource>
             <PortTarget xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">East</PortTarget>
             <SourceGuid xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">b35839cd-97ce-4397-9fc0-e5519554821e</SourceGuid>
-            <SourceX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">556</SourceX>
-            <SourceY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">122</SourceY>
+            <SourceX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">572</SourceX>
+            <SourceY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">326</SourceY>
             <TargetGuid xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">55fef3dd-0ca4-4b13-8e40-b19a4e76cc69</TargetGuid>
             <TargetX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">350</TargetX>
             <TargetY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">124</TargetY>
@@ -1232,7 +1232,7 @@
               <a:anyType i:type="b:StringDisplayAttribute" xmlns:b="http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase">
                 <b:DisplayName>Name</b:DisplayName>
                 <b:Name/>
-                <b:Value i:type="c:string" xmlns:c="http://www.w3.org/2001/XMLSchema">Generic Data Flow</b:Value>
+                <b:Value i:type="c:string" xmlns:c="http://www.w3.org/2001/XMLSchema">User -&gt; Browser</b:Value>
               </a:anyType>
               <a:anyType i:type="b:BooleanDisplayAttribute" xmlns:b="http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase">
                 <b:DisplayName>Out Of Scope</b:DisplayName>
@@ -1370,13 +1370,13 @@
               </a:anyType>
             </Properties>
             <TypeId xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">GE.DF</TypeId>
-            <HandleX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">175</HandleX>
-            <HandleY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">189</HandleY>
+            <HandleX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">210</HandleX>
+            <HandleY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">230</HandleY>
             <PortSource xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">NorthEast</PortSource>
             <PortTarget xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">SouthWest</PortTarget>
             <SourceGuid xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">f9a2853d-d73f-4d43-91fc-6e9d28f77dc7</SourceGuid>
-            <SourceX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">116</SourceX>
-            <SourceY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">277</SourceY>
+            <SourceX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">162</SourceX>
+            <SourceY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">336</SourceY>
             <TargetGuid xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">55fef3dd-0ca4-4b13-8e40-b19a4e76cc69</TargetGuid>
             <TargetX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">273</TargetX>
             <TargetY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">155</TargetY>
@@ -1396,7 +1396,7 @@
               <a:anyType i:type="b:StringDisplayAttribute" xmlns:b="http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase">
                 <b:DisplayName>Name</b:DisplayName>
                 <b:Name/>
-                <b:Value i:type="c:string" xmlns:c="http://www.w3.org/2001/XMLSchema">Generic Data Flow</b:Value>
+                <b:Value i:type="c:string" xmlns:c="http://www.w3.org/2001/XMLSchema">Browser -&gt; User</b:Value>
               </a:anyType>
               <a:anyType i:type="b:BooleanDisplayAttribute" xmlns:b="http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase">
                 <b:DisplayName>Out Of Scope</b:DisplayName>
@@ -1534,16 +1534,16 @@
               </a:anyType>
             </Properties>
             <TypeId xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">GE.DF</TypeId>
-            <HandleX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">229</HandleX>
-            <HandleY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">243</HandleY>
+            <HandleX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">264</HandleX>
+            <HandleY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">285</HandleY>
             <PortSource xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">SouthWest</PortSource>
             <PortTarget xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">NorthEast</PortTarget>
             <SourceGuid xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">55fef3dd-0ca4-4b13-8e40-b19a4e76cc69</SourceGuid>
             <SourceX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">273</SourceX>
             <SourceY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">155</SourceY>
             <TargetGuid xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">f9a2853d-d73f-4d43-91fc-6e9d28f77dc7</TargetGuid>
-            <TargetX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">116</TargetX>
-            <TargetY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">277</TargetY>
+            <TargetX xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">162</TargetX>
+            <TargetY xmlns="http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts">336</TargetY>
           </a:Value>
         </a:KeyValueOfguidanyType>
       </Lines>
@@ -1564,14 +1564,14 @@
     <a:KeyValueOfstringThreatpc_P0_PhOB>
       <a:Key>T2b35839cd-97ce-4397-9fc0-e5519554821e8da8d5fc-7272-4c40-a04c-adf95ca5a9e31811fbf7-35b8-4cda-9d71-b9f7afa235cc</a:Key>
       <a:Value xmlns:b="http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase">
-        <b:ChangedBy>PETERSBURG\Igor_Egorov</b:ChangedBy>
+        <b:ChangedBy>NATU\Natasha</b:ChangedBy>
         <b:DrawingSurfaceGuid>fde7e098-ad0f-4c04-878f-583c46e118f5</b:DrawingSurfaceGuid>
         <b:FlowGuid>8da8d5fc-7272-4c40-a04c-adf95ca5a9e3</b:FlowGuid>
         <b:Id>1</b:Id>
         <b:InteractionKey>b35839cd-97ce-4397-9fc0-e5519554821e:8da8d5fc-7272-4c40-a04c-adf95ca5a9e3:1811fbf7-35b8-4cda-9d71-b9f7afa235cc</b:InteractionKey>
         <b:InteractionString i:nil="true"/>
-        <b:ModifiedAt>2018-11-09T18:07:37.4160957+03:00</b:ModifiedAt>
-        <b:Priority>High</b:Priority>
+        <b:ModifiedAt>2018-11-11T02:44:18.3112802+03:00</b:ModifiedAt>
+        <b:Priority>Low</b:Priority>
         <b:Properties>
           <a:KeyValueOfstringstring>
             <a:Key>Title</a:Key>
@@ -1590,20 +1590,32 @@
             <a:Value>If Web Application is given access to memory, such as shared memory or pointers, or is given the ability to control what Web Service executes (for example, passing back a function pointer.), then Web Application can tamper with Web Service. Consider if the function could work with less access to memory, such as passing data rather than pointers. Copy in data provided, and then validate it.</a:Value>
           </a:KeyValueOfstringstring>
           <a:KeyValueOfstringstring>
+            <a:Key>StateInformation</a:Key>
+            <a:Value>just test</a:Value>
+          </a:KeyValueOfstringstring>
+          <a:KeyValueOfstringstring>
             <a:Key>InteractionString</a:Key>
             <a:Value>Generic Data Flow</a:Value>
           </a:KeyValueOfstringstring>
           <a:KeyValueOfstringstring>
             <a:Key>Priority</a:Key>
-            <a:Value>High</a:Value>
+            <a:Value>Low</a:Value>
           </a:KeyValueOfstringstring>
           <a:KeyValueOfstringstring>
             <a:Key>f97dcc58-1d19-45d1-8535-1553bdcfae14</a:Key>
             <a:Value>User Credentials</a:Value>
           </a:KeyValueOfstringstring>
+          <a:KeyValueOfstringstring>
+            <a:Key>c02be6ba-ed0f-4a4b-bce5-6b8972756f29</a:Key>
+            <a:Value>&lt;a href="http://google.com"&gt;http://google.com&lt;/a&gt;</a:Value>
+          </a:KeyValueOfstringstring>
+          <a:KeyValueOfstringstring>
+            <a:Key>f377ec1a-c528-46e9-85f4-98883c8e5a72</a:Key>
+            <a:Value>A Strange User</a:Value>
+          </a:KeyValueOfstringstring>
         </b:Properties>
         <b:SourceGuid>b35839cd-97ce-4397-9fc0-e5519554821e</b:SourceGuid>
-        <b:State>AutoGenerated</b:State>
+        <b:State>Mitigated</b:State>
         <b:StateInformation i:nil="true"/>
         <b:TargetGuid>1811fbf7-35b8-4cda-9d71-b9f7afa235cc</b:TargetGuid>
         <b:Title i:nil="true"/>
@@ -1618,13 +1630,13 @@
     <a:KeyValueOfstringThreatpc_P0_PhOB>
       <a:Key>E5b35839cd-97ce-4397-9fc0-e5519554821e8da8d5fc-7272-4c40-a04c-adf95ca5a9e31811fbf7-35b8-4cda-9d71-b9f7afa235cc</a:Key>
       <a:Value xmlns:b="http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase">
-        <b:ChangedBy>PETERSBURG\Igor_Egorov</b:ChangedBy>
+        <b:ChangedBy>NATU\Natasha</b:ChangedBy>
         <b:DrawingSurfaceGuid>fde7e098-ad0f-4c04-878f-583c46e118f5</b:DrawingSurfaceGuid>
         <b:FlowGuid>8da8d5fc-7272-4c40-a04c-adf95ca5a9e3</b:FlowGuid>
         <b:Id>2</b:Id>
         <b:InteractionKey>b35839cd-97ce-4397-9fc0-e5519554821e:8da8d5fc-7272-4c40-a04c-adf95ca5a9e3:1811fbf7-35b8-4cda-9d71-b9f7afa235cc</b:InteractionKey>
         <b:InteractionString i:nil="true"/>
-        <b:ModifiedAt>2018-11-09T18:07:41.1747981+03:00</b:ModifiedAt>
+        <b:ModifiedAt>2018-11-11T02:18:07.6453235+03:00</b:ModifiedAt>
         <b:Priority>High</b:Priority>
         <b:Properties>
           <a:KeyValueOfstringstring>
@@ -1657,7 +1669,7 @@
           </a:KeyValueOfstringstring>
         </b:Properties>
         <b:SourceGuid>b35839cd-97ce-4397-9fc0-e5519554821e</b:SourceGuid>
-        <b:State>AutoGenerated</b:State>
+        <b:State>NeedsInvestigation</b:State>
         <b:StateInformation i:nil="true"/>
         <b:TargetGuid>1811fbf7-35b8-4cda-9d71-b9f7afa235cc</b:TargetGuid>
         <b:Title i:nil="true"/>
@@ -1672,13 +1684,13 @@
     <a:KeyValueOfstringThreatpc_P0_PhOB>
       <a:Key>T21811fbf7-35b8-4cda-9d71-b9f7afa235cc77ecf727-bcb1-4f29-aa18-d3022f02c6dbb35839cd-97ce-4397-9fc0-e5519554821e</a:Key>
       <a:Value xmlns:b="http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase">
-        <b:ChangedBy>PETERSBURG\Igor_Egorov</b:ChangedBy>
+        <b:ChangedBy>NATU\Natasha</b:ChangedBy>
         <b:DrawingSurfaceGuid>fde7e098-ad0f-4c04-878f-583c46e118f5</b:DrawingSurfaceGuid>
         <b:FlowGuid>77ecf727-bcb1-4f29-aa18-d3022f02c6db</b:FlowGuid>
         <b:Id>3</b:Id>
         <b:InteractionKey>1811fbf7-35b8-4cda-9d71-b9f7afa235cc:77ecf727-bcb1-4f29-aa18-d3022f02c6db:b35839cd-97ce-4397-9fc0-e5519554821e</b:InteractionKey>
         <b:InteractionString i:nil="true"/>
-        <b:ModifiedAt>2018-11-09T18:08:25.5757668+03:00</b:ModifiedAt>
+        <b:ModifiedAt>2018-11-11T02:18:11.1155197+03:00</b:ModifiedAt>
         <b:Priority>High</b:Priority>
         <b:Properties>
           <a:KeyValueOfstringstring>
@@ -1711,7 +1723,7 @@
           </a:KeyValueOfstringstring>
         </b:Properties>
         <b:SourceGuid>1811fbf7-35b8-4cda-9d71-b9f7afa235cc</b:SourceGuid>
-        <b:State>AutoGenerated</b:State>
+        <b:State>NotApplicable</b:State>
         <b:StateInformation i:nil="true"/>
         <b:TargetGuid>b35839cd-97ce-4397-9fc0-e5519554821e</b:TargetGuid>
         <b:Title i:nil="true"/>
@@ -1726,13 +1738,13 @@
     <a:KeyValueOfstringThreatpc_P0_PhOB>
       <a:Key>T13.11811fbf7-35b8-4cda-9d71-b9f7afa235cc77ecf727-bcb1-4f29-aa18-d3022f02c6dbb35839cd-97ce-4397-9fc0-e5519554821e</a:Key>
       <a:Value xmlns:b="http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase">
-        <b:ChangedBy>PETERSBURG\Igor_Egorov</b:ChangedBy>
+        <b:ChangedBy>NATU\Natasha</b:ChangedBy>
         <b:DrawingSurfaceGuid>fde7e098-ad0f-4c04-878f-583c46e118f5</b:DrawingSurfaceGuid>
         <b:FlowGuid>77ecf727-bcb1-4f29-aa18-d3022f02c6db</b:FlowGuid>
         <b:Id>4</b:Id>
         <b:InteractionKey>1811fbf7-35b8-4cda-9d71-b9f7afa235cc:77ecf727-bcb1-4f29-aa18-d3022f02c6db:b35839cd-97ce-4397-9fc0-e5519554821e</b:InteractionKey>
         <b:InteractionString i:nil="true"/>
-        <b:ModifiedAt>2018-11-09T18:08:29.9585+03:00</b:ModifiedAt>
+        <b:ModifiedAt>2018-11-11T02:18:14.6857225+03:00</b:ModifiedAt>
         <b:Priority>High</b:Priority>
         <b:Properties>
           <a:KeyValueOfstringstring>
@@ -1765,7 +1777,7 @@
           </a:KeyValueOfstringstring>
         </b:Properties>
         <b:SourceGuid>1811fbf7-35b8-4cda-9d71-b9f7afa235cc</b:SourceGuid>
-        <b:State>AutoGenerated</b:State>
+        <b:State>Mitigated</b:State>
         <b:StateInformation i:nil="true"/>
         <b:TargetGuid>b35839cd-97ce-4397-9fc0-e5519554821e</b:TargetGuid>
         <b:Title i:nil="true"/>
@@ -2131,7 +2143,7 @@
           </a:KeyValueOfstringstring>
           <a:KeyValueOfstringstring>
             <a:Key>InteractionString</a:Key>
-            <a:Value>Generic Data Flow</a:Value>
+            <a:Value>User -&gt; Browser</a:Value>
           </a:KeyValueOfstringstring>
           <a:KeyValueOfstringstring>
             <a:Key>Priority</a:Key>
@@ -2185,7 +2197,7 @@
           </a:KeyValueOfstringstring>
           <a:KeyValueOfstringstring>
             <a:Key>InteractionString</a:Key>
-            <a:Value>Generic Data Flow</a:Value>
+            <a:Value>User -&gt; Browser</a:Value>
           </a:KeyValueOfstringstring>
           <a:KeyValueOfstringstring>
             <a:Key>Priority</a:Key>

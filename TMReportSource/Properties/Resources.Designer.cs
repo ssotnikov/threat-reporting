@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TMReportForm.Properties {
+namespace TMReportSource.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace TMReportForm.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TMReportForm.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TMReportSource.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,51 +57,6 @@ namespace TMReportForm.Properties {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Actors View.
-        /// </summary>
-        internal static string ActorsView {
-            get {
-                return ResourceManager.GetString("ActorsView", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Data Assets View.
-        /// </summary>
-        internal static string DataAssetsView {
-            get {
-                return ResourceManager.GetString("DataAssetsView", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Interactions View.
-        /// </summary>
-        internal static string InteractionsView {
-            get {
-                return ResourceManager.GetString("InteractionsView", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to STRIDE View.
-        /// </summary>
-        internal static string StrideView {
-            get {
-                return ResourceManager.GetString("StrideView", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Threats View.
-        /// </summary>
-        internal static string ThreatsView {
-            get {
-                return ResourceManager.GetString("ThreatsView", resourceCulture);
             }
         }
     }

@@ -31,57 +31,59 @@ namespace TMReportSource
 
 				var value = xThreat.Element(nsA + "Value");
 
+				Threat threat = new Threat
+				{
+					Id = value.Element(nsB + "Id").Value,
+
+					Priority = value.Element(nsB + "Priority").Value,
+
+					ChangedBy = value.Element(nsB + "ChangedBy").Value,
+
+					ModifiedAt = value.Element(nsB + "ModifiedAt").Value,
+
+					State = value.Element(nsB + "State").Value,
+				};
+
 				var xProperties = value.Descendants(nsB + "Properties").ToList();
 
 				foreach (XElement xProperty in xProperties.Elements(nsA + "KeyValueOfstringstring"))
 				{
-					Threat threat = new Threat
+					
+					if (xProperty.Element(nsA + "Key").Value == "Title")
 					{
-						Id = value.Element(nsB + "Id").Value,
-
-						Priority = value.Element(nsB + "Priority").Value
-					};
-
-					if (TryParseGuid(xProperty.Element(nsA + "Key").Value, out Guid key1))
-					{
-						threat.Key = getPropertyName(xdoc, key1.ToString());
+						threat.Title = xProperty.Element(nsA + "Value").Value;
 					}
-					else
+					else if (xProperty.Element(nsA + "Key").Value == "UserThreatDescription")
 					{
-						threat.Key = xProperty.Element(nsA + "Key").Value;
-
+						threat.Description = xProperty.Element(nsA + "Value").Value;
+					}
+					else if (xProperty.Element(nsA + "Key").Value == "UserThreatShortDescription")
+					{
+						threat.ShortDescription = xProperty.Element(nsA + "Value").Value;
+					}
+					else if (xProperty.Element(nsA + "Key").Value == "UserThreatCategory")
+					{
+						threat.Category = xProperty.Element(nsA + "Value").Value;
+					}
+					else if (xProperty.Element(nsA + "Key").Value == "InteractionString")
+					{
+						threat.Interaction = xProperty.Element(nsA + "Value").Value;
+					}
+					else if (xProperty.Element(nsA + "Key").Value == "StateInformation")
+					{
+						threat.Justification = xProperty.Element(nsA + "Value").Value;
 					}
 
-					threat.Value = xProperty.Element(nsA + "Value").Value;
+					//if (TryParseGuid(xProperty.Element(nsA + "Key").Value, out Guid key1))
+					//{
+					//TODO: Custom field  threat.Key = getPropertyName(xdoc, key1.ToString());
+					//}
+					//else
+					//{
 
-					if (threat.Key == "Title")
-					{
-						threat.Title = threat.Value;
-					}
-
-					list.Add(threat);
+					//}
 				}
-
-				//Threat threat = new Threat
-				//{
-				//	Key = key,
-
-				//	Id = value.Element(nsB + "Id").Value,
-
-				//	ChangedBy = value.Element(nsB + "ChangedBy").Value,
-
-				//	InteractionKey = value.Element(nsB + "ChangedBy").Value,
-
-				//	ModifiedAt = value.Element(nsB + "ModifiedAt").Value,
-
-				//	Priority = value.Element(nsB + "Priority").Value,
-
-				//	SourceGuid = value.Element(nsB + "SourceGuid").Value,
-
-				//	TargetGuid = value.Element(nsB + "TargetGuid").Value,
-
-				//	Properties = new List<ThreatProperty>()
-				//};
+				list.Add(threat);
 			}
 
 			return list;

@@ -45,42 +45,33 @@ namespace TMReportForm
 			ToolStripMenuItem itemActorsView = new ToolStripMenuItem(Properties.Resources.ActorsView);
 			itemActorsView.Name = "ActorsView";
 			mnuReportName.DropDownItems.Add(itemActorsView);
-			itemActorsView.Click += ItemActorsView_Click;
+			itemActorsView.Click += ItemView_Click;
 
 			ToolStripMenuItem itemDataAssetsView = new ToolStripMenuItem(Properties.Resources.DataAssetsView);
 			itemDataAssetsView.Name = "DataAssetsView";
 			mnuReportName.DropDownItems.Add(itemDataAssetsView);
-			itemDataAssetsView.Click += ItemDataAssetsView_Click;
+			itemDataAssetsView.Click += ItemView_Click;
 
 			ToolStripMenuItem itemInteractionsView = new ToolStripMenuItem(Properties.Resources.InteractionsView);
 			itemInteractionsView.Name = "InteractionsView";
 			mnuReportName.DropDownItems.Add(itemInteractionsView);
-			itemInteractionsView.Click += ItemInteractionsView_Click;
+			itemInteractionsView.Click += ItemView_Click;
 
 			ToolStripMenuItem itemThreatsView = new ToolStripMenuItem(Properties.Resources.ThreatsView);
 			itemThreatsView.Name = "ThreatsView";
 			mnuReportName.DropDownItems.Add(itemThreatsView);
-			itemThreatsView.Click += ItemThreatsView_Click;
+			itemThreatsView.Click += ItemView_Click;
+
+			ToolStripMenuItem itemStrideView = new ToolStripMenuItem(Properties.Resources.StrideView);
+			itemStrideView.Name = "StrideView";
+			mnuReportName.DropDownItems.Add(itemStrideView);
+			itemStrideView.Click += ItemView_Click;
+
 
 			mnuReportName.Enabled = true;
 		}
 
-		private void ItemThreatsView_Click(object sender, EventArgs e)
-		{
-			LoadReport(((ToolStripMenuItem)sender).Name);
-		}
-
-		private void ItemInteractionsView_Click(object sender, EventArgs e)
-		{
-			LoadReport(((ToolStripMenuItem)sender).Name);
-		}
-
-		private void ItemDataAssetsView_Click(object sender, EventArgs e)
-		{
-			LoadReport(((ToolStripMenuItem)sender).Name);
-		}
-
-		private void ItemActorsView_Click(object sender, EventArgs e)
+		private void ItemView_Click(object sender, EventArgs e)
 		{
 			LoadReport(((ToolStripMenuItem)sender).Name);
 		}
