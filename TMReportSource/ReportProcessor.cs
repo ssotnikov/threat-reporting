@@ -9,9 +9,8 @@ namespace TMReportSource
 	{
 		private static XNamespace nsA = "http://schemas.microsoft.com/2003/10/Serialization/Arrays";
 
-		private static XNamespace nsB = "http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase";
+		private static XNamespace nsKB = "http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase";
 
-		private static XNamespace nsZ = "http://schemas.microsoft.com/2003/10/Serialization/";
 
 		public static List<Threat> GetReport(string fileName)
 		{
@@ -25,7 +24,6 @@ namespace TMReportSource
 			XDocument xdoc = XDocument.Load(fileName);
 
 			var xThreats = xdoc.Document.Descendants(nsA + "KeyValueOfstringThreatpc_P0_PhOB").ToList();
-			var xKb = xdoc.Descendants();
 
 			foreach (XElement xThreat in xThreats)
 			{
@@ -35,18 +33,18 @@ namespace TMReportSource
 
 				Threat threat = new Threat
 				{
-					Id = value.Element(nsB + "Id").Value,
+					Id = value.Element(nsKB + "Id").Value,
 
-					Priority = value.Element(nsB + "Priority").Value,
+					Priority = value.Element(nsKB + "Priority").Value,
 
-					ChangedBy = value.Element(nsB + "ChangedBy").Value,
+					ChangedBy = value.Element(nsKB + "ChangedBy").Value,
 
-					ModifiedAt = value.Element(nsB + "ModifiedAt").Value,
+					ModifiedAt = value.Element(nsKB + "ModifiedAt").Value,
 
-					State = value.Element(nsB + "State").Value,
+					State = value.Element(nsKB + "State").Value,
 				};
 
-				var xProperties = value.Descendants(nsB + "Properties").ToList();
+				var xProperties = value.Descendants(nsKB + "Properties").ToList();
 
 				foreach (XElement xProperty in xProperties.Elements(nsA + "KeyValueOfstringstring"))
 				{
@@ -75,19 +73,28 @@ namespace TMReportSource
 					{
 						threat.Justification = xProperty.Element(nsA + "Value").Value;
 					}
-					//else if (TryParseGuid(xProperty.Element(nsA + "Key").Value, out Guid key1)) {
-					//	var customPropName = getPropertyName(xdoc, key1.ToString());
+					else if (xProperty.Element(nsA + "Key").Value == "SDLPhase")
+					{
+						threat.SDLPhase = xProperty.Element(nsA + "Value").Value;
+					}
+					else if (TryParseGuid(xProperty.Element(nsA + "Key").Value, out Guid key1))
+					{
 
-					//}
+						var customPropName = getPropertyName(xdoc, key1.ToString());
 
-					//if (TryParseGuid(xProperty.Element(nsA + "Key").Value, out Guid key1))
-					//{
-					//TODO: Custom field  threat.Key = getPropertyName(xdoc, key1.ToString());
-					//}
-					//else
-					//{
+						if (customPropName == "Data Asset") {
+							threat.DataAsset = xProperty.Element(nsA + "Value").Value;
+						}
 
-					//}
+						if (customPropName == "Actors")
+						{
+							threat.Actor = xProperty.Element(nsA + "Value").Value;
+						}
+
+						if (customPropName == "Issue references") {
+							threat.IssueReferences = xProperty.Element(nsA + "Value").Value;
+						}
+					}
 				}
 				list.Add(threat);
 			}
@@ -95,17 +102,23 @@ namespace TMReportSource
 			return list;
 		}
 
-		private static string getPropertyName(XDocument xdoc, string guid) {
-			var name = xdoc.Root.Descendants("ThreatMetaDatum").Where(e=>e.Element("Id").Value == guid);
-
-			var d = name.Descendants().First(i => i.Value == guid).Value;
-
-			return d;
+		private static string getPropertyName(XDocument xdoc, string guid)
+		{
+			XNamespace nsM = "http://schemas.datacontract.org/2004/07/ThreatModeling.Model";
+			var name = xdoc.Document.Descendants(nsM + "ThreatMetaDatum")
+				.Where(e => e.Element(nsM + "Id").Value == guid)
+				.Select(e => e.Element(nsM + "Label").Value)
+				.FirstOrDefault();
+			return name;
 		}
 
 		private static bool TryParseGuid(string guidString, out Guid guid)
 		{
-			if (guidString == null) throw new ArgumentNullException("guidString");
+			if (guidString == null)
+			{
+				throw new ArgumentNullException("guidString");
+			}
+
 			try
 			{
 				guid = new Guid(guidString);

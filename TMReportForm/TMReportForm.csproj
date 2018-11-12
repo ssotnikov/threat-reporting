@@ -112,13 +112,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\share.png" />
+    <None Include="Resources\diagram.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\list.png" />
+    <None Include="Resources\reports.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\settings.png" />
+    <None Include="Resources\generate.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

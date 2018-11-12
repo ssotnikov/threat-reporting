@@ -29,6 +29,10 @@
           <DataField>ChangedBy</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="DataAsset">
+          <DataField>DataAsset</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Description">
           <DataField>Description</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -41,6 +45,10 @@
           <DataField>Interaction</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="IssueReferences">
+          <DataField>IssueReferences</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Justification">
           <DataField>Justification</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -51,6 +59,10 @@
         </Field>
         <Field Name="Priority">
           <DataField>Priority</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SDLPhase">
+          <DataField>SDLPhase</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="ShortDescription">
@@ -285,7 +297,7 @@
             <Top>0.63183cm</Top>
             <Left>0.89641cm</Left>
             <Height>1.2cm</Height>
-            <Width>17.1213cm</Width>
+            <Width>17.12129cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
