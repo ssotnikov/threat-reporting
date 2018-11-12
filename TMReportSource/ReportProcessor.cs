@@ -7,6 +7,12 @@ namespace TMReportSource
 {
 	public class ReportProcessor
 	{
+		private static XNamespace nsA = "http://schemas.microsoft.com/2003/10/Serialization/Arrays";
+
+		private static XNamespace nsB = "http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase";
+
+		private static XNamespace nsZ = "http://schemas.microsoft.com/2003/10/Serialization/";
+
 		public static List<Threat> GetReport(string fileName)
 		{
 			return LoadThreatInstances(fileName);
@@ -18,12 +24,8 @@ namespace TMReportSource
 
 			XDocument xdoc = XDocument.Load(fileName);
 
-			XNamespace nsA = "http://schemas.microsoft.com/2003/10/Serialization/Arrays";
-
-			XNamespace nsB = "http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase";
-
 			var xThreats = xdoc.Document.Descendants(nsA + "KeyValueOfstringThreatpc_P0_PhOB").ToList();
-			
+			var xKb = xdoc.Descendants();
 
 			foreach (XElement xThreat in xThreats)
 			{
@@ -48,7 +50,7 @@ namespace TMReportSource
 
 				foreach (XElement xProperty in xProperties.Elements(nsA + "KeyValueOfstringstring"))
 				{
-					
+
 					if (xProperty.Element(nsA + "Key").Value == "Title")
 					{
 						threat.Title = xProperty.Element(nsA + "Value").Value;
@@ -73,6 +75,10 @@ namespace TMReportSource
 					{
 						threat.Justification = xProperty.Element(nsA + "Value").Value;
 					}
+					//else if (TryParseGuid(xProperty.Element(nsA + "Key").Value, out Guid key1)) {
+					//	var customPropName = getPropertyName(xdoc, key1.ToString());
+
+					//}
 
 					//if (TryParseGuid(xProperty.Element(nsA + "Key").Value, out Guid key1))
 					//{
@@ -90,7 +96,7 @@ namespace TMReportSource
 		}
 
 		private static string getPropertyName(XDocument xdoc, string guid) {
-			var name = xdoc.Document.Root.Elements().ToList()[7].Elements().ToList()[4].Elements().ToList()[2].Elements().ToList();
+			var name = xdoc.Root.Descendants("ThreatMetaDatum").Where(e=>e.Element("Id").Value == guid);
 
 			var d = name.Descendants().First(i => i.Value == guid).Value;
 

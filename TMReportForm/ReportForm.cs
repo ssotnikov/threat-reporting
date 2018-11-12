@@ -14,7 +14,9 @@ namespace TMReportForm
 {
 	public partial class ReportForm : Form
 	{
-		private string threatModelFile = string.Empty;
+		private string threatModelFilePath = string.Empty;
+		private string threatModelFileName = string.Empty;
+		private string reportType = string.Empty;
 
 		public ReportForm()
 		{
@@ -26,14 +28,17 @@ namespace TMReportForm
 		private void Form1_Load(object sender, EventArgs e)
 		{
 			mnuReportName.Enabled = false;
+			mnuGenerateReport.Enabled = false;
 		}
 
 		private void mnuOpenModel_Click(object sender, EventArgs e)
 		{
 			if (openFileDialog1.ShowDialog() == DialogResult.OK)
 			{
-				threatModelFile = openFileDialog1.FileName;
-				Text = openFileDialog1.SafeFileName;
+				Text = string.Empty;
+				reportViewer1.Reset();
+				threatModelFilePath = openFileDialog1.FileName;
+				threatModelFileName = openFileDialog1.SafeFileName;
 				InitReportMenu();
 			}
 		}
@@ -67,13 +72,15 @@ namespace TMReportForm
 			mnuReportName.DropDownItems.Add(itemStrideView);
 			itemStrideView.Click += ItemView_Click;
 
-
+			mnuGenerateReport.Enabled = false;
 			mnuReportName.Enabled = true;
 		}
 
 		private void ItemView_Click(object sender, EventArgs e)
 		{
-			LoadReport(((ToolStripMenuItem)sender).Name);
+			reportType = ((ToolStripMenuItem)sender).Name;
+			mnuGenerateReport.Enabled = true;
+			Text = string.Format("{0}: {1}", threatModelFileName, reportType);
 		}
 
 		private void LoadReport(string reportName)
@@ -86,12 +93,17 @@ namespace TMReportForm
 			ReportDataSource rds = new ReportDataSource
 			{
 				Name = "DataSet1",
-				Value = ReportProcessor.GetReport(threatModelFile)
+				Value = ReportProcessor.GetReport(threatModelFilePath)
 			};
 
 			reportViewer1.LocalReport.DataSources.Add(rds);
 
 			reportViewer1.RefreshReport();
+		}
+
+		private void mnuGenerateReport_Click(object sender, EventArgs e)
+		{
+			LoadReport(reportType);
 		}
 	}
 }

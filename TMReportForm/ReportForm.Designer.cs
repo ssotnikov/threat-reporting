@@ -34,7 +34,10 @@
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.mnuOpenModel = new System.Windows.Forms.ToolStripButton();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.mnuReportName = new System.Windows.Forms.ToolStripSplitButton();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.mnuGenerateReport = new System.Windows.Forms.ToolStripButton();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -60,31 +63,53 @@
 			// 
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuOpenModel,
-            this.mnuReportName});
+            this.toolStripSeparator1,
+            this.mnuReportName,
+            this.toolStripSeparator2,
+            this.mnuGenerateReport});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
+			this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
 			this.toolStrip1.Size = new System.Drawing.Size(923, 25);
 			this.toolStrip1.TabIndex = 1;
 			this.toolStrip1.Text = "toolStrip1";
 			// 
 			// mnuOpenModel
 			// 
-			this.mnuOpenModel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+			this.mnuOpenModel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.mnuOpenModel.Image = ((System.Drawing.Image)(resources.GetObject("mnuOpenModel.Image")));
 			this.mnuOpenModel.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mnuOpenModel.Name = "mnuOpenModel";
-			this.mnuOpenModel.Size = new System.Drawing.Size(77, 22);
+			this.mnuOpenModel.Size = new System.Drawing.Size(23, 22);
 			this.mnuOpenModel.Text = "Open Model";
 			this.mnuOpenModel.Click += new System.EventHandler(this.mnuOpenModel_Click);
 			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+			// 
 			// mnuReportName
 			// 
-			this.mnuReportName.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.mnuReportName.Image = ((System.Drawing.Image)(resources.GetObject("mnuReportName.Image")));
-			this.mnuReportName.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.mnuReportName.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.mnuReportName.Image = global::TMReportForm.Properties.Resources.reports;
 			this.mnuReportName.Name = "mnuReportName";
-			this.mnuReportName.Size = new System.Drawing.Size(58, 22);
+			this.mnuReportName.Size = new System.Drawing.Size(32, 22);
 			this.mnuReportName.Text = "Report";
+			// 
+			// toolStripSeparator2
+			// 
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+			// 
+			// mnuGenerateReport
+			// 
+			this.mnuGenerateReport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.mnuGenerateReport.Image = ((System.Drawing.Image)(resources.GetObject("mnuGenerateReport.Image")));
+			this.mnuGenerateReport.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.mnuGenerateReport.Name = "mnuGenerateReport";
+			this.mnuGenerateReport.Size = new System.Drawing.Size(23, 22);
+			this.mnuGenerateReport.Click += new System.EventHandler(this.mnuGenerateReport_Click);
 			// 
 			// ReportForm
 			// 
@@ -94,7 +119,6 @@
 			this.Controls.Add(this.reportViewer1);
 			this.Controls.Add(this.toolStrip1);
 			this.Name = "ReportForm";
-			this.Text = "Form1";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
@@ -108,7 +132,10 @@
 		private System.Windows.Forms.OpenFileDialog openFileDialog1;
 		private System.Windows.Forms.ToolStrip toolStrip1;
 		private System.Windows.Forms.ToolStripButton mnuOpenModel;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+		private System.Windows.Forms.ToolStripButton mnuGenerateReport;
 		private System.Windows.Forms.ToolStripSplitButton mnuReportName;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 	}
 }
 
