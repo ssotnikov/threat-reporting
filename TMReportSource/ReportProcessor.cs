@@ -77,6 +77,10 @@ namespace TMReportSource
 					{
 						threat.SDLPhase = xProperty.Element(nsA + "Value").Value;
 					}
+					else if (xProperty.Element(nsA + "Key").Value == "PossibleMitigations")
+					{
+						threat.PossibleMitigations = xProperty.Element(nsA + "Value").Value;
+					}
 					else if (TryParseGuid(xProperty.Element(nsA + "Key").Value, out Guid key1))
 					{
 

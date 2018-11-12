@@ -64,6 +64,10 @@
           <DataField>ModifiedAt</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="PossibleMitigations">
+          <DataField>PossibleMitigations</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="Priority">
           <DataField>Priority</DataField>
           <rd:TypeName>System.String</rd:TypeName>

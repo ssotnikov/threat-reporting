@@ -17,6 +17,7 @@
 		public string DataAsset { get; set; }
 		public string SDLPhase { get; set; }
 		public string IssueReferences { get; set; }
+		public string PossibleMitigations { get; set; }
 
 	}
 }
