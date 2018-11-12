@@ -33,7 +33,7 @@ namespace TMReportSource
 
 				Threat threat = new Threat
 				{
-					Id = value.Element(nsKB + "Id").Value,
+					Id = int.Parse(value.Element(nsKB + "Id").Value),
 
 					Priority = value.Element(nsKB + "Priority").Value,
 
@@ -103,7 +103,7 @@ namespace TMReportSource
 				list.Add(threat);
 			}
 
-			return list;
+			return list.OrderBy(i=>i.Id).ToList();
 		}
 
 		private static string getPropertyName(XDocument xdoc, string guid)

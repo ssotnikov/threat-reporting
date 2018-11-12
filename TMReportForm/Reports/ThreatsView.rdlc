@@ -114,7 +114,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.88222cm</Height>
+                  <Height>0.72347cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -125,10 +125,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Id.Value</Value>
+                                  <Value>=CInt(Fields!Id.Value)</Value>
                                   <Style>
-                                    <FontSize>14pt</FontSize>
+                                    <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -161,8 +162,9 @@
                                 <TextRun>
                                   <Value>=Fields!Title.Value</Value>
                                   <Style>
-                                    <FontSize>14pt</FontSize>
+                                    <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
+                                    <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1661,10 +1663,11 @@
             <SortExpressions>
               <SortExpression>
                 <Value>=CInt(Fields!Id.Value)</Value>
+                <Direction>Descending</Direction>
               </SortExpression>
             </SortExpressions>
             <Top>0.03528cm</Top>
-            <Height>9.28222cm</Height>
+            <Height>9.12347cm</Height>
             <Width>19.30535cm</Width>
             <Style>
               <Border>
@@ -1691,7 +1694,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!ReportName.Value &amp; ": " &amp; "Threats View"</Value>
+                      <Value>=Parameters!ReportName.Value</Value>
                       <Style>
                         <FontSize>20pt</FontSize>
                       </Style>

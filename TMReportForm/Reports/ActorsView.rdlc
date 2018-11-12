@@ -109,7 +109,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!ReportName.Value &amp; ": " &amp; "Actors View"</Value>
+                      <Value>=Parameters!ReportName.Value</Value>
                       <Style>
                         <FontSize>36pt</FontSize>
                       </Style>

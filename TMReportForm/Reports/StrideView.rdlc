@@ -326,7 +326,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=Parameters!ReportName.Value &amp; ": " &amp; "STRIDE View"</Value>
+                      <Value>=Parameters!ReportName.Value</Value>
                       <Style>
                         <FontSize>24pt</FontSize>
                       </Style>
