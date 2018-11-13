@@ -122,7 +122,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=IIf(Fields!Actor.Value = "", "Not Defined", Fields!Actor.Value) &amp; ": " &amp; CountDistinct(Fields!Id.Value, "ActorGroup")</Value>
+                                  <Value>=IIf(Fields!Actor.Value = "", "Not Defined", UCase(Fields!Actor.Value)) &amp; ": " &amp; CountDistinct(Fields!Id.Value, "ActorGroup")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>Brown</Color>
@@ -144,6 +144,7 @@
                           </Style>
                         </Textbox>
                         <ColSpan>4</ColSpan>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
@@ -1389,6 +1390,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!IssueReferences.Value</Value>
+                                  <MarkupType>HTML</MarkupType>
                                   <Style>
                                     <TextDecoration>None</TextDecoration>
                                   </Style>

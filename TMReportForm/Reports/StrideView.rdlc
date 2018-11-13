@@ -122,10 +122,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Category.Value &amp; ": " &amp; CountDistinct(Fields!Id.Value, "CategoryGroup")</Value>
+                                  <Value>=UCase(Fields!Category.Value) &amp; ": " &amp; CountDistinct(Fields!Id.Value, "CategoryGroup")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>Brown</Color>
+                                    <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -220,7 +220,6 @@
                           </Style>
                         </Textbox>
                         <ColSpan>3</ColSpan>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
@@ -1390,6 +1389,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!IssueReferences.Value</Value>
+                                  <MarkupType>HTML</MarkupType>
                                   <Style>
                                     <TextDecoration>None</TextDecoration>
                                   </Style>

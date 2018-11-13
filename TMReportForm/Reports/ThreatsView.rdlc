@@ -128,7 +128,7 @@
                                   <Value>=Fields!Id.Value &amp; "."</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>Brown</Color>
+                                    <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -159,11 +159,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Title.Value &amp; " [Severity: " &amp; Fields!Priority.Value &amp; "]" &amp; " [Status: " &amp; Fields!State.Value &amp; "]"</Value>
+                                  <Value>=UCase(Fields!Title.Value) &amp; " [Severity: " &amp; Fields!Priority.Value &amp; "]" &amp; " [Status: " &amp; Fields!State.Value &amp; "]"</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
-                                    <Color>Brown</Color>
+                                    <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1506,7 +1506,7 @@
               </SortExpression>
             </SortExpressions>
             <Top>0.03528cm</Top>
-            <Height>7.84409cm</Height>
+            <Height>7.8441cm</Height>
             <Width>19cm</Width>
             <Style>
               <Border>

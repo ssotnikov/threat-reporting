@@ -122,10 +122,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!DataAsset.Value &amp; ": " &amp; CountDistinct(Fields!Id.Value, "DataAssetGroup")</Value>
+                                  <Value>=UCase(Fields!DataAsset.Value) &amp; ": " &amp; CountDistinct(Fields!Id.Value, "DataAssetGroup")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>Brown</Color>
+                                    <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1389,6 +1389,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!IssueReferences.Value</Value>
+                                  <MarkupType>HTML</MarkupType>
                                   <Style>
                                     <TextDecoration>None</TextDecoration>
                                   </Style>

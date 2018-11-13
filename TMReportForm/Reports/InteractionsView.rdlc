@@ -129,10 +129,10 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Interaction.Value &amp; ": " &amp; CountDistinct(Fields!Id.Value, "InteractionGroup")</Value>
+                                  <Value>=UCase(Fields!Interaction.Value) &amp; ": " &amp; CountDistinct(Fields!Id.Value, "InteractionGroup")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>Brown</Color>
+                                    <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -151,6 +151,7 @@
                           </Style>
                         </Textbox>
                         <ColSpan>4</ColSpan>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
@@ -1396,6 +1397,7 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!IssueReferences.Value</Value>
+                                  <MarkupType>HTML</MarkupType>
                                   <Style>
                                     <TextDecoration>None</TextDecoration>
                                   </Style>

@@ -84,7 +84,7 @@ namespace TMReportSource
 					else if (TryParseGuid(xProperty.Element(nsA + "Key").Value, out Guid key1))
 					{
 
-						var customPropName = getPropertyName(xdoc, key1.ToString());
+						var customPropName = getCustomPropertyName(xdoc, key1.ToString());
 
 						if (customPropName == "Data Asset") {
 							threat.DataAsset = xProperty.Element(nsA + "Value").Value;
@@ -106,7 +106,7 @@ namespace TMReportSource
 			return list.OrderBy(i=>i.Id).ToList();
 		}
 
-		private static string getPropertyName(XDocument xdoc, string guid)
+		private static string getCustomPropertyName(XDocument xdoc, string guid)
 		{
 			XNamespace nsM = "http://schemas.datacontract.org/2004/07/ThreatModeling.Model";
 			var name = xdoc.Document.Descendants(nsM + "ThreatMetaDatum")
