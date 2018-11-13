@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>7c0e3266-2083-46fb-8cad-77099362db5e</rd:DataSourceID>
+      <rd:DataSourceID>c5a2a724-f7da-4baf-8061-d5b17cb584d4</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -39,10 +39,14 @@
         </Field>
         <Field Name="Id">
           <DataField>Id</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Interaction">
           <DataField>Interaction</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="InteractionImage">
+          <DataField>InteractionImage</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="IssueReferences">
@@ -55,7 +59,7 @@
         </Field>
         <Field Name="ModifiedAt">
           <DataField>ModifiedAt</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
         <Field Name="PossibleMitigations">
           <DataField>PossibleMitigations</DataField>
@@ -122,7 +126,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Category.Value &amp; ": " &amp; CountDistinct(Fields!Id.Value, "CategoryGroup")</Value>
+                                  <Value>=Fields!SDLPhase.Value &amp; ": " &amp; CountDistinct(Fields!Id.Value, "SdlGroup")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>Brown</Color>
@@ -220,6 +224,7 @@
                           </Style>
                         </Textbox>
                         <ColSpan>3</ColSpan>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell />
@@ -272,7 +277,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>SDL Phase:</Value>
+                                  <Value>Category:</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
@@ -299,14 +304,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="SDLPhase">
+                        <Textbox Name="Category1">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!SDLPhase.Value</Value>
+                                  <Value>=Fields!Category.Value</Value>
                                   <Style>
                                     <TextDecoration>None</TextDecoration>
                                   </Style>
@@ -317,7 +322,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>SDLPhase</rd:DefaultName>
+                          <rd:DefaultName>Category1</rd:DefaultName>
                           <Style>
                             <Border>
                               <Style>None</Style>
@@ -1429,9 +1434,9 @@
             <TablixRowHierarchy>
               <TablixMembers>
                 <TablixMember>
-                  <Group Name="CategoryGroup">
+                  <Group Name="SdlGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!Category.Value</GroupExpression>
+                      <GroupExpression>=Fields!SDLPhase.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
@@ -1478,7 +1483,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>7.80937cm</Height>
+        <Height>3.07456in</Height>
         <Style />
       </Body>
       <Width>19cm</Width>
@@ -1571,10 +1576,10 @@
         </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
-        <LeftMargin>1cm</LeftMargin>
-        <RightMargin>1cm</RightMargin>
-        <TopMargin>1cm</TopMargin>
-        <BottomMargin>1cm</BottomMargin>
+        <LeftMargin>2cm</LeftMargin>
+        <RightMargin>2cm</RightMargin>
+        <TopMargin>2cm</TopMargin>
+        <BottomMargin>2cm</BottomMargin>
         <ColumnSpacing>0.13cm</ColumnSpacing>
         <Style />
       </Page>
@@ -1600,5 +1605,5 @@
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>b8a34e44-e57c-469d-b3d8-6408ef351b04</rd:ReportID>
+  <rd:ReportID>cdfc2105-604b-41d6-a78e-b9ec15aa92b2</rd:ReportID>
 </Report>

@@ -72,6 +72,11 @@ namespace TMReportForm
 			mnuReportName.DropDownItems.Add(itemStrideView);
 			itemStrideView.Click += ItemView_Click;
 
+			ToolStripMenuItem itemSdlView = new ToolStripMenuItem(Properties.Resources.SDLPhaseView);
+			itemSdlView.Name = "SdlPhaseView";
+			mnuReportName.DropDownItems.Add(itemSdlView);
+			itemSdlView.Click += ItemView_Click;
+
 			mnuGenerateReport.Enabled = false;
 			mnuReportName.Enabled = true;
 		}

@@ -39,7 +39,7 @@ namespace TMReportSource
 
 					ChangedBy = value.Element(nsKB + "ChangedBy").Value,
 
-					ModifiedAt = value.Element(nsKB + "ModifiedAt").Value,
+					ModifiedAt = DateTime.Parse(value.Element(nsKB + "ModifiedAt").Value),
 
 					State = value.Element(nsKB + "State").Value,
 				};

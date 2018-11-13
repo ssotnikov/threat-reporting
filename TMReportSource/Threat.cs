@@ -1,4 +1,6 @@
-﻿namespace TMReportSource
+﻿using System;
+
+namespace TMReportSource
 {
 	public class Threat
 	{
@@ -14,7 +16,7 @@
 		public string ShortDescription { get; set; }
 		public string Description { get; set; }
 		public string ChangedBy { get; set; }
-		public string ModifiedAt { get; set; }
+		public DateTime ModifiedAt { get; set; }
 		public string DataAsset { get; set; }
 		public string SDLPhase { get; set; }
 		public string IssueReferences { get; set; }

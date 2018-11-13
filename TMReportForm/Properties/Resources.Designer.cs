@@ -118,6 +118,15 @@ namespace TMReportForm.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SDL Phase View.
+        /// </summary>
+        internal static string SDLPhaseView {
+            get {
+                return ResourceManager.GetString("SDLPhaseView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to STRIDE View.
         /// </summary>
         internal static string StrideView {
