@@ -11,17 +11,71 @@ namespace TMReportSource
 
 		private static XNamespace nsKB = "http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase";
 
+		private static XNamespace nsM = "http://schemas.datacontract.org/2004/07/ThreatModeling.Model";
 
-		public static List<Threat> GetReport(string fileName)
+		public static Model GetReport(string fileName)
 		{
-			return LoadThreatInstances(fileName);
+			XDocument xdoc = XDocument.Load(fileName);
+
+			var model = new Model
+			{
+				Threats = getThreats(xdoc),
+				Notes = getNotes(xdoc),
+				MetaInformation = getMetaInformation(xdoc)
+			};
+
+			return model;
 		}
 
-		private static List<Threat> LoadThreatInstances(string fileName)
+		private static List<MetaInformation> getMetaInformation(XDocument xdoc)
 		{
-			List<Threat> list = new List<Threat>();
+			var list = new List<MetaInformation>();
 
-			XDocument xdoc = XDocument.Load(fileName);
+			var xMI = xdoc.Document.Descendants(nsM + "MetaInformation").FirstOrDefault();
+
+			var mi = new MetaInformation
+			{
+				Assumptions = xMI.Element(nsM + "Assumptions").Value,
+				Contributors = xMI.Element(nsM + "Contributors").Value,
+				ExternalDependencies = xMI.Element(nsM + "ExternalDependencies").Value,
+				HighLevelSystemDescription = xMI.Element(nsM + "HighLevelSystemDescription").Value,
+				Owner = xMI.Element(nsM + "Owner").Value,
+				Reviewer = xMI.Element(nsM + "Reviewer").Value,
+				ThreatModelName = xMI.Element(nsM + "ThreatModelName").Value
+			};
+			
+			list.Add(mi);
+
+			return list;
+		}
+
+		private static List<Note> getNotes(XDocument xdoc) {
+
+			var list = new List<Note>();
+
+			var xNotes = xdoc.Document.Descendants(nsM + "Note").ToList();
+
+			foreach (XElement xNote in xNotes)
+			{
+				var note = new Note
+				{
+					Id = int.Parse(xNote.Element(nsM + "Id").Value),
+
+					AddedBy = xNote.Element(nsM + "AddedBy").Value,
+
+					Date = DateTime.Parse(xNote.Element(nsM + "Date").Value),
+
+					Message = xNote.Element(nsM + "Message").Value
+				};
+
+				list.Add(note);
+			}
+			return list;
+		}
+
+		private static List<Threat> getThreats(XDocument xdoc)
+		{
+			var list = new List<Threat>();
 
 			var xThreats = xdoc.Document.Descendants(nsA + "KeyValueOfstringThreatpc_P0_PhOB").ToList();
 
@@ -31,7 +85,7 @@ namespace TMReportSource
 
 				var value = xThreat.Element(nsA + "Value");
 
-				Threat threat = new Threat
+				var threat = new Threat
 				{
 					Id = int.Parse(value.Element(nsKB + "Id").Value),
 

@@ -61,7 +61,17 @@ namespace TMReportForm.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Actors View.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap actors {
+            get {
+                object obj = ResourceManager.GetObject("actors", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Actors.
         /// </summary>
         internal static string ActorsView {
             get {
@@ -70,7 +80,17 @@ namespace TMReportForm.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Data Assets View.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap data {
+            get {
+                object obj = ResourceManager.GetObject("data", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data Assets.
         /// </summary>
         internal static string DataAssetsView {
             get {
@@ -99,11 +119,31 @@ namespace TMReportForm.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Interactions View.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap interaction {
+            get {
+                object obj = ResourceManager.GetObject("interaction", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Interactions.
         /// </summary>
         internal static string InteractionsView {
             get {
                 return ResourceManager.GetString("InteractionsView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap issues {
+            get {
+                object obj = ResourceManager.GetObject("issues", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -118,7 +158,17 @@ namespace TMReportForm.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SDL Phase View.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sdl_phase {
+            get {
+                object obj = ResourceManager.GetObject("sdl_phase", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SDL Phases.
         /// </summary>
         internal static string SDLPhaseView {
             get {
@@ -127,7 +177,17 @@ namespace TMReportForm.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to STRIDE View.
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stride {
+            get {
+                object obj = ResourceManager.GetObject("stride", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to STRIDE.
         /// </summary>
         internal static string StrideView {
             get {
@@ -136,7 +196,7 @@ namespace TMReportForm.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Threats View.
+        ///   Looks up a localized string similar to Threats List.
         /// </summary>
         internal static string ThreatsView {
             get {

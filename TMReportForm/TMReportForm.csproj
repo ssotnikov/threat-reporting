@@ -54,6 +54,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,32 +72,29 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="Reports\ActorsView.rdlc">
+    <EmbeddedResource Include="Reports\Actors.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\DataAssetsView.rdlc">
+    <EmbeddedResource Include="Reports\Data Assets.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\InteractionsView.rdlc">
+    <EmbeddedResource Include="Reports\Interactions.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\SdlPhaseView.rdlc">
+    <EmbeddedResource Include="Reports\SDL Phases.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\StrideView.rdlc">
+    <EmbeddedResource Include="Reports\STRIDE.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\ThreatsView.rdlc">
+    <EmbeddedResource Include="Reports\Threats List.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\TMReportSource.MetaInformation.datasource" />
+    <None Include="Properties\DataSources\TMReportSource.Model.datasource" />
     <None Include="Properties\DataSources\TMReportSource.Threat.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -122,6 +124,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\generate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\actors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\interaction.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\issues.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sdl_phase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stride.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

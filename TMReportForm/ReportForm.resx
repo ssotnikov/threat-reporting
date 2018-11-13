@@ -127,22 +127,12 @@
   <data name="mnuOpenModel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE2SURBVDhPpZNNK0ZBFMeP5K2ws6IoykewUiixsBJ52VD0
+        YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAE2SURBVDhPpZNNK0ZBFMeP5K2ws6IoykewUiixsBJ52VD0
         qDtznsuCDWWhlNdsROxZ+RS+iZ083TnXB3D9Z+5RlB6T+6vbnHPuOf+ZOTND0SSv3WTdHrGc4Dslm43r
         n0jYbaNwuHSKFrJyRmtFZ+nH4Gf9TpqPQWRJvT/gjw4kP9Ni0aoRgr9FiYyo1wSWWeLsloyswr4j4yYw
         GggcaAbYfesJiiyX2OtCiCXZIOxrxFeC7+H3PqrLMqVuSCOKlfuwnFrRhqJNCD2h48fEjV7NaIJ1U2Ty
         OfVK2D2oFQG7yWoCHt+kNB8N3a5LDat6hMhR3BY8Oy9dKFpHLy4wzpexRj96cfWjif4YjcxAeEAjERiZ
         xmpuILwBwfNwjFYS2PuaEcFh0Y6if16kLypdZU/lx/Trcyb6BDuml02jh1oGAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="mnuGenerateReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD9SURBVDhPpZM9EgFREIQnJxEJlaplUYj3AhIXcANiiVuI
-        yQUSh1HK723098xbtgrBble92unpnvc7a79ws978bt0tg9jTv3G2QV3m2cX6LTiFQRBijIYHbxAiSNws
-        3V+tl8lw0HcivnZZu0nX5FzL8BYmkbBCID7auPawzvRkw2YQBWJyaHBfaBVEINJm9mj4Bzx4qfHUC2yR
-        VZxq1VFDpiWD2NOGB6/T921zzrhtCq6W7nTOhEEcJ8GDVzWb8DoUI3yCVSl0yiUn5JzmCLWVJ6h8hIjS
-        lwhkqvaMInkjact05SIeBxD/bSQvKt/KgIQM5X6mb4ivwyjcdgFmT3tKs8WtnpnZAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

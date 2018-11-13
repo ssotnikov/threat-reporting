@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TMReportForm.Properties;
 using TMReportSource;
 
 namespace TMReportForm
@@ -27,8 +28,17 @@ namespace TMReportForm
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
-			mnuReportName.Enabled = false;
-			mnuGenerateReport.Enabled = false;
+			EnableReportTypeButtons(false);
+		}
+
+		private void EnableReportTypeButtons(bool enable)
+		{
+			mnuActorsView.Enabled = enable;
+			mnuInteractionsView.Enabled = enable;
+			mnuSdlPhase.Enabled = enable;
+			mnuStrideView.Enabled = enable;
+			mnuThreatsView.Enabled = enable;
+			mnuDataAssetsView.Enabled = enable;
 		}
 
 		private void mnuOpenModel_Click(object sender, EventArgs e)
@@ -39,76 +49,77 @@ namespace TMReportForm
 				reportViewer1.Reset();
 				threatModelFilePath = openFileDialog1.FileName;
 				threatModelFileName = openFileDialog1.SafeFileName;
-				InitReportMenu();
+				Text = openFileDialog1.SafeFileName;
+				EnableReportTypeButtons(true);
 			}
 		}
 
-		private void InitReportMenu()
+		private void LoadReport(string reportType)
 		{
-			mnuReportName.DropDownItems.Clear();
-
-			ToolStripMenuItem itemActorsView = new ToolStripMenuItem(Properties.Resources.ActorsView);
-			itemActorsView.Name = "ActorsView";
-			mnuReportName.DropDownItems.Add(itemActorsView);
-			itemActorsView.Click += ItemView_Click;
-
-			ToolStripMenuItem itemDataAssetsView = new ToolStripMenuItem(Properties.Resources.DataAssetsView);
-			itemDataAssetsView.Name = "DataAssetsView";
-			mnuReportName.DropDownItems.Add(itemDataAssetsView);
-			itemDataAssetsView.Click += ItemView_Click;
-
-			ToolStripMenuItem itemInteractionsView = new ToolStripMenuItem(Properties.Resources.InteractionsView);
-			itemInteractionsView.Name = "InteractionsView";
-			mnuReportName.DropDownItems.Add(itemInteractionsView);
-			itemInteractionsView.Click += ItemView_Click;
-
-			ToolStripMenuItem itemThreatsView = new ToolStripMenuItem(Properties.Resources.ThreatsView);
-			itemThreatsView.Name = "ThreatsView";
-			mnuReportName.DropDownItems.Add(itemThreatsView);
-			itemThreatsView.Click += ItemView_Click;
-
-			ToolStripMenuItem itemStrideView = new ToolStripMenuItem(Properties.Resources.StrideView);
-			itemStrideView.Name = "StrideView";
-			mnuReportName.DropDownItems.Add(itemStrideView);
-			itemStrideView.Click += ItemView_Click;
-
-			ToolStripMenuItem itemSdlView = new ToolStripMenuItem(Properties.Resources.SDLPhaseView);
-			itemSdlView.Name = "SdlPhaseView";
-			mnuReportName.DropDownItems.Add(itemSdlView);
-			itemSdlView.Click += ItemView_Click;
-
-			mnuGenerateReport.Enabled = false;
-			mnuReportName.Enabled = true;
-		}
-
-		private void ItemView_Click(object sender, EventArgs e)
-		{
-			reportType = ((ToolStripMenuItem)sender).Name;
-			mnuGenerateReport.Enabled = true;
-			Text = string.Format("{0}: {1}", threatModelFileName, reportType);
-		}
-
-		private void LoadReport(string reportName)
-		{
-			reportViewer1.LocalReport.ReportPath = string.Format("Reports/{0}.rdlc", reportName);
+			base.Text = string.Format("{0}: {1}", threatModelFileName.Split('.')[0], reportType);
+			reportViewer1.LocalReport.ReportPath = string.Format("Reports/{0}.rdlc", reportType);
 			reportViewer1.LocalReport.DataSources.Clear();
 			ReportParameter p = new ReportParameter("ReportName", Text);
 			reportViewer1.LocalReport.SetParameters(p);
 
-			ReportDataSource rds = new ReportDataSource
+			var model = ReportProcessor.GetReport(threatModelFilePath);
+
+			ReportDataSource DataSet1 = new ReportDataSource
 			{
 				Name = "DataSet1",
-				Value = ReportProcessor.GetReport(threatModelFilePath)
+				Value = model.Threats
 			};
 
-			reportViewer1.LocalReport.DataSources.Add(rds);
+			reportViewer1.LocalReport.DataSources.Add(DataSet1);
+
+			ReportDataSource DataSet2 = new ReportDataSource
+			{
+				Name = "DataSet2",
+				Value = model.Notes
+			};
+
+			reportViewer1.LocalReport.DataSources.Add(DataSet2);
+
+			ReportDataSource DataSet3 = new ReportDataSource
+			{
+				Name = "DataSet3",
+				Value = model.MetaInformation
+			};
+
+			reportViewer1.LocalReport.DataSources.Add(DataSet3);
+
 
 			reportViewer1.RefreshReport();
 		}
 
-		private void mnuGenerateReport_Click(object sender, EventArgs e)
+		private void mnuActorsView_Click(object sender, EventArgs e)
 		{
-			LoadReport(reportType);
+			LoadReport(Resources.ActorsView);
+		}
+
+		private void nmuDataAssetsView_Click(object sender, EventArgs e)
+		{
+			LoadReport(Resources.DataAssetsView);
+		}
+
+		private void mnuInteractionsView_Click(object sender, EventArgs e)
+		{
+			LoadReport(Resources.InteractionsView);
+		}
+
+		private void mnuStrideView_Click(object sender, EventArgs e)
+		{
+			LoadReport(Resources.StrideView);
+		}
+
+		private void mnuSdlPhase_Click(object sender, EventArgs e)
+		{
+			LoadReport(Resources.SDLPhaseView);
+		}
+
+		private void mnuThreatsView_Click(object sender, EventArgs e)
+		{
+			LoadReport(Resources.ThreatsView);
 		}
 	}
 }

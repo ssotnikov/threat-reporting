@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ActorsView" xml:space="preserve">
-    <value>Actors View</value>
+    <value>Actors</value>
   </data>
   <data name="DataAssetsView" xml:space="preserve">
-    <value>Data Assets View</value>
+    <value>Data Assets</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="diagram" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -131,18 +131,36 @@
     <value>..\Resources\generate.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="InteractionsView" xml:space="preserve">
-    <value>Interactions View</value>
+    <value>Interactions</value>
   </data>
   <data name="reports" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\reports.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SDLPhaseView" xml:space="preserve">
-    <value>SDL Phase View</value>
+    <value>SDL Phases</value>
   </data>
   <data name="StrideView" xml:space="preserve">
-    <value>STRIDE View</value>
+    <value>STRIDE</value>
   </data>
   <data name="ThreatsView" xml:space="preserve">
-    <value>Threats View</value>
+    <value>Threats List</value>
+  </data>
+  <data name="actors" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\actors.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="data" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\data.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="interaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\interaction.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="issues" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\issues.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sdl_phase" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sdl_phase.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stride" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stride.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
