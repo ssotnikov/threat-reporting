@@ -204,7 +204,7 @@
                                   <Value>=Fields!Title.Value &amp; " [Severity: " &amp; Fields!Priority.Value &amp; "]" &amp; " [Status: " &amp; Fields!State.Value &amp; "]"</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <TextDecoration>Underline</TextDecoration>
+                                    <TextDecoration>None</TextDecoration>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>

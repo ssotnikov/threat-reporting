@@ -128,7 +128,7 @@
                                   <Value>=Fields!Id.Value &amp; "."</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>MidnightBlue</Color>
+                                    <Color>Brown</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -162,8 +162,8 @@
                                   <Value>=Fields!Title.Value &amp; " [Severity: " &amp; Fields!Priority.Value &amp; "]" &amp; " [Status: " &amp; Fields!State.Value &amp; "]"</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <TextDecoration>Underline</TextDecoration>
-                                    <Color>MidnightBlue</Color>
+                                    <TextDecoration>None</TextDecoration>
+                                    <Color>Brown</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
