@@ -7,7 +7,6 @@ namespace TMReportSource
 {
 	public class ReportProcessor
 	{
-		private static XNamespace nsA = "http://schemas.microsoft.com/2003/10/Serialization/Arrays";
 
 		private static XNamespace nsKB = "http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase";
 
@@ -43,13 +42,14 @@ namespace TMReportSource
 				Reviewer = xMI.Element(nsM + "Reviewer").Value,
 				ThreatModelName = xMI.Element(nsM + "ThreatModelName").Value
 			};
-			
+
 			list.Add(mi);
 
 			return list;
 		}
 
-		private static List<Note> getNotes(XDocument xdoc) {
+		private static List<Note> getNotes(XDocument xdoc)
+		{
 
 			var list = new List<Note>();
 
@@ -75,6 +75,9 @@ namespace TMReportSource
 
 		private static List<Threat> getThreats(XDocument xdoc)
 		{
+
+			XNamespace nsA = "http://schemas.microsoft.com/2003/10/Serialization/Arrays";
+
 			var list = new List<Threat>();
 
 			var xThreats = xdoc.Document.Descendants(nsA + "KeyValueOfstringThreatpc_P0_PhOB").ToList();
@@ -140,29 +143,38 @@ namespace TMReportSource
 
 						var customPropName = getCustomPropertyName(xdoc, key1.ToString());
 
-						if (customPropName == "Data Asset") {
+						if (customPropName == "Data Asset")
+						{
+
 							threat.DataAsset = xProperty.Element(nsA + "Value").Value;
+
 						}
 
 						if (customPropName == "Actors")
 						{
+
 							threat.Actor = xProperty.Element(nsA + "Value").Value;
+
 						}
 
-						if (customPropName == "Issue references") {
+						if (customPropName == "Issue references")
+						{
+
 							threat.IssueReferences = xProperty.Element(nsA + "Value").Value;
+
 						}
 					}
 				}
+
 				list.Add(threat);
+
 			}
 
-			return list.OrderBy(i=>i.Id).ToList();
+			return list.OrderBy(i => i.Id).ToList();
 		}
 
 		private static string getCustomPropertyName(XDocument xdoc, string guid)
 		{
-			XNamespace nsM = "http://schemas.datacontract.org/2004/07/ThreatModeling.Model";
 			var name = xdoc.Document.Descendants(nsM + "ThreatMetaDatum")
 				.Where(e => e.Element(nsM + "Id").Value == guid)
 				.Select(e => e.Element(nsM + "Label").Value)

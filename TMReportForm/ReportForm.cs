@@ -1,12 +1,5 @@
 ﻿using Microsoft.Reporting.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TMReportForm.Properties;
 using TMReportSource;
@@ -56,12 +49,13 @@ namespace TMReportForm
 
 		private void LoadReport(string reportType)
 		{
-			base.Text = string.Format("{0}: {1}", threatModelFileName.Split('.')[0], reportType);
-			reportViewer1.LocalReport.ReportPath = string.Format("Reports/{0}.rdlc", reportType);
-			reportViewer1.LocalReport.DataSources.Clear();
-			ReportParameter p = new ReportParameter("ReportName", Text);
-			reportViewer1.LocalReport.SetParameters(p);
 
+			base.Text = string.Format("{0}: {1}", threatModelFileName.Split('.')[0], reportType);
+
+			reportViewer1.LocalReport.ReportPath = string.Format("Reports/{0}.rdlc", reportType);
+
+			reportViewer1.LocalReport.DataSources.Clear();
+			
 			var model = ReportProcessor.GetReport(threatModelFilePath);
 
 			ReportDataSource DataSet1 = new ReportDataSource
@@ -87,7 +81,6 @@ namespace TMReportForm
 			};
 
 			reportViewer1.LocalReport.DataSources.Add(DataSet3);
-
 
 			reportViewer1.RefreshReport();
 		}
