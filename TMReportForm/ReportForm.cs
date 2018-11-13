@@ -15,6 +15,8 @@ namespace TMReportForm
 		public ReportForm()
 		{
 			InitializeComponent();
+			//reportViewer1.LocalReport.EnableExternalImages = true;
+			//reportViewer1.ProcessingMode = ProcessingMode.Local;
 		}
 
 
