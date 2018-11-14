@@ -1,5 +1,6 @@
 ﻿using Microsoft.Reporting.WinForms;
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 using TMReportForm.Properties;
 using TMReportSource;
@@ -49,6 +50,7 @@ namespace TMReportForm
 
 		private void LoadReport(string reportType)
 		{
+			EnableReportTypeButtons(false);
 
 			base.Text = string.Format("{0}: {1}", threatModelFileName.Split('.')[0], reportType);
 
@@ -57,6 +59,8 @@ namespace TMReportForm
 			reportViewer1.LocalReport.DataSources.Clear();
 			
 			var model = ReportProcessor.GetReport(threatModelFilePath);
+
+			EnableReportTypeButtons(true);
 
 			if (ModelValidator.ModelIsValid(model))
 			{
@@ -71,6 +75,7 @@ namespace TMReportForm
 		private void MnuActorsView_Click(object sender, EventArgs e)
 		{
 			LoadReport(Resources.ActorsView);
+
 		}
 
 		private void NmuDataAssetsView_Click(object sender, EventArgs e)
