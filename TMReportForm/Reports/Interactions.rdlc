@@ -233,30 +233,6 @@
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Image Name="Image2">
-                          <Source>Database</Source>
-                          <Value>=Fields!InteractionImage.Value</Value>
-                          <MIMEType>image/png</MIMEType>
-                          <Sizing>FitProportional</Sizing>
-                          <Style>
-                            <Border>
-                              <Style>None</Style>
-                            </Border>
-                          </Style>
-                        </Image>
-                        <ColSpan>4</ColSpan>
-                      </CellContents>
-                    </TablixCell>
-                    <TablixCell />
-                    <TablixCell />
-                    <TablixCell />
-                  </TablixCells>
-                </TablixRow>
-                <TablixRow>
-                  <Height>0.6cm</Height>
-                  <TablixCells>
-                    <TablixCell>
-                      <CellContents>
                         <Textbox Name="Id2">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -375,7 +351,6 @@
                                 <TextRun>
                                   <Value>Category:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -396,6 +371,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -483,7 +459,6 @@
                                 <TextRun>
                                   <Value>Short Description:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -504,6 +479,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -591,7 +567,6 @@
                                 <TextRun>
                                   <Value>Description:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -612,6 +587,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -699,7 +675,6 @@
                                 <TextRun>
                                   <Value>Justification:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -720,6 +695,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -807,7 +783,6 @@
                                 <TextRun>
                                   <Value>Possible Mitigations:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -828,6 +803,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -916,7 +892,6 @@
                                 <TextRun>
                                   <Value>SDL Phase:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -937,6 +912,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1024,7 +1000,6 @@
                                 <TextRun>
                                   <Value>Actors:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -1045,6 +1020,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1132,7 +1108,6 @@
                                 <TextRun>
                                   <Value>Data Assets:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -1153,6 +1128,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1240,7 +1216,6 @@
                                 <TextRun>
                                   <Value>Modified:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -1261,6 +1236,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1349,7 +1325,6 @@
                                 <TextRun>
                                   <Value>Author:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -1370,6 +1345,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1457,7 +1433,6 @@
                                 <TextRun>
                                   <Value>Issue References:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -1478,6 +1453,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1546,9 +1522,6 @@
                       <KeepWithGroup>After</KeepWithGroup>
                     </TablixMember>
                     <TablixMember>
-                      <KeepWithGroup>After</KeepWithGroup>
-                    </TablixMember>
-                    <TablixMember>
                       <Group Name="Details">
                         <GroupExpressions>
                           <GroupExpression>=Fields!Id.Value</GroupExpression>
@@ -1574,7 +1547,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>DataSet1</DataSetName>
-            <Height>8.4cm</Height>
+            <Height>7.8cm</Height>
             <Width>19cm</Width>
             <Style>
               <Border>
@@ -1583,7 +1556,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>3.30709in</Height>
+        <Height>3.07087in</Height>
         <Style />
       </Body>
       <Width>19cm</Width>

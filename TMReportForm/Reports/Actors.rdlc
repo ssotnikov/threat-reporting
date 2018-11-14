@@ -202,7 +202,7 @@
                                   <Value>=IIf(Fields!Actor.Value = "", "Not Defined", UCase(Fields!Actor.Value)) &amp; ": " &amp; CountDistinct(Fields!Id.Value, "ActorGroup")</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
-                                    <Color>Brown</Color>
+                                    <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -351,7 +351,6 @@
                                 <TextRun>
                                   <Value>Category:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -459,7 +458,6 @@
                                 <TextRun>
                                   <Value>Short Description:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -567,7 +565,6 @@
                                 <TextRun>
                                   <Value>Description:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -675,7 +672,6 @@
                                 <TextRun>
                                   <Value>Justification:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -783,7 +779,6 @@
                                 <TextRun>
                                   <Value>Possible Mitigations:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -892,7 +887,6 @@
                                 <TextRun>
                                   <Value>SDL Phase:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -1000,7 +994,6 @@
                                 <TextRun>
                                   <Value>Data Assets:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -1108,7 +1101,6 @@
                                 <TextRun>
                                   <Value>Interaction:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -1216,7 +1208,6 @@
                                 <TextRun>
                                   <Value>Modified:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -1325,7 +1316,6 @@
                                 <TextRun>
                                   <Value>Author:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
@@ -1433,7 +1423,6 @@
                                 <TextRun>
                                   <Value>Issue References:</Value>
                                   <Style>
-                                    <FontWeight>Bold</FontWeight>
                                     <Color>MidnightBlue</Color>
                                   </Style>
                                 </TextRun>
