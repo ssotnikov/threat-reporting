@@ -1239,7 +1239,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!ModifiedAt.Value</Value>
+                                  <Value>=IIf(Year(Fields!ModifiedAt.Value) &gt; 1700, Fields!ModifiedAt.Value, "")</Value>
                                   <Style>
                                     <Format>dd.MM.yyyy H:mm</Format>
                                     <TextDecoration>None</TextDecoration>

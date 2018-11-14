@@ -89,7 +89,7 @@
 			this.mnuOpenModel.Name = "mnuOpenModel";
 			this.mnuOpenModel.Size = new System.Drawing.Size(23, 22);
 			this.mnuOpenModel.Text = "Open Model";
-			this.mnuOpenModel.Click += new System.EventHandler(this.mnuOpenModel_Click);
+			this.mnuOpenModel.Click += new System.EventHandler(this.MnuOpenModel_Click);
 			// 
 			// toolStripSeparator1
 			// 
@@ -104,7 +104,7 @@
 			this.mnuThreatsView.Name = "mnuThreatsView";
 			this.mnuThreatsView.Size = new System.Drawing.Size(23, 22);
 			this.mnuThreatsView.ToolTipText = "Threats Ordered List";
-			this.mnuThreatsView.Click += new System.EventHandler(this.mnuThreatsView_Click);
+			this.mnuThreatsView.Click += new System.EventHandler(this.MnuThreatsView_Click);
 			// 
 			// mnuActorsView
 			// 
@@ -114,7 +114,7 @@
 			this.mnuActorsView.Name = "mnuActorsView";
 			this.mnuActorsView.Size = new System.Drawing.Size(23, 22);
 			this.mnuActorsView.ToolTipText = "Threats Grouped by Actor";
-			this.mnuActorsView.Click += new System.EventHandler(this.mnuActorsView_Click);
+			this.mnuActorsView.Click += new System.EventHandler(this.MnuActorsView_Click);
 			// 
 			// mnuDataAssetsView
 			// 
@@ -124,7 +124,7 @@
 			this.mnuDataAssetsView.Name = "mnuDataAssetsView";
 			this.mnuDataAssetsView.Size = new System.Drawing.Size(23, 22);
 			this.mnuDataAssetsView.ToolTipText = "Threats Grouped by Data Asset";
-			this.mnuDataAssetsView.Click += new System.EventHandler(this.nmuDataAssetsView_Click);
+			this.mnuDataAssetsView.Click += new System.EventHandler(this.NmuDataAssetsView_Click);
 			// 
 			// mnuInteractionsView
 			// 
@@ -134,7 +134,7 @@
 			this.mnuInteractionsView.Name = "mnuInteractionsView";
 			this.mnuInteractionsView.Size = new System.Drawing.Size(23, 22);
 			this.mnuInteractionsView.ToolTipText = "Threats Grouped by Interaction";
-			this.mnuInteractionsView.Click += new System.EventHandler(this.mnuInteractionsView_Click);
+			this.mnuInteractionsView.Click += new System.EventHandler(this.MnuInteractionsView_Click);
 			// 
 			// mnuSdlPhase
 			// 
@@ -144,7 +144,7 @@
 			this.mnuSdlPhase.Name = "mnuSdlPhase";
 			this.mnuSdlPhase.Size = new System.Drawing.Size(23, 22);
 			this.mnuSdlPhase.ToolTipText = "Threats Grouped by SDL Phase";
-			this.mnuSdlPhase.Click += new System.EventHandler(this.mnuSdlPhase_Click);
+			this.mnuSdlPhase.Click += new System.EventHandler(this.MnuSdlPhase_Click);
 			// 
 			// mnuStrideView
 			// 
@@ -154,7 +154,7 @@
 			this.mnuStrideView.Name = "mnuStrideView";
 			this.mnuStrideView.Size = new System.Drawing.Size(23, 22);
 			this.mnuStrideView.ToolTipText = "Threats Grouped by STRIDE";
-			this.mnuStrideView.Click += new System.EventHandler(this.mnuStrideView_Click);
+			this.mnuStrideView.Click += new System.EventHandler(this.MnuStrideView_Click);
 			// 
 			// ReportForm
 			// 

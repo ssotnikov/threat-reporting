@@ -15,8 +15,6 @@ namespace TMReportForm
 		public ReportForm()
 		{
 			InitializeComponent();
-			//reportViewer1.LocalReport.EnableExternalImages = true;
-			//reportViewer1.ProcessingMode = ProcessingMode.Local;
 		}
 
 
@@ -36,7 +34,7 @@ namespace TMReportForm
 			mnuDataAssetsView.Enabled = enable;
 		}
 
-		private void mnuOpenModel_Click(object sender, EventArgs e)
+		private void MnuOpenModel_Click(object sender, EventArgs e)
 		{
 			if (openFileDialog1.ShowDialog() == DialogResult.OK)
 			{
@@ -60,61 +58,59 @@ namespace TMReportForm
 			
 			var model = ReportProcessor.GetReport(threatModelFilePath);
 
-			ReportDataSource DataSet1 = new ReportDataSource
+			if (ModelValidator.ModelIsValid(model))
 			{
-				Name = "DataSet1",
-				Value = model.Threats
-			};
+				CreateReportDataSource(model);
 
-			reportViewer1.LocalReport.DataSources.Add(DataSet1);
+				reportViewer1.RefreshReport();
 
-			ReportDataSource DataSet2 = new ReportDataSource
-			{
-				Name = "DataSet2",
-				Value = model.Notes
-			};
+			}
 
-			reportViewer1.LocalReport.DataSources.Add(DataSet2);
-
-			ReportDataSource DataSet3 = new ReportDataSource
-			{
-				Name = "DataSet3",
-				Value = model.MetaInformation
-			};
-
-			reportViewer1.LocalReport.DataSources.Add(DataSet3);
-
-			reportViewer1.RefreshReport();
 		}
 
-		private void mnuActorsView_Click(object sender, EventArgs e)
+		private void MnuActorsView_Click(object sender, EventArgs e)
 		{
 			LoadReport(Resources.ActorsView);
 		}
 
-		private void nmuDataAssetsView_Click(object sender, EventArgs e)
+		private void NmuDataAssetsView_Click(object sender, EventArgs e)
 		{
 			LoadReport(Resources.DataAssetsView);
 		}
 
-		private void mnuInteractionsView_Click(object sender, EventArgs e)
+		private void MnuInteractionsView_Click(object sender, EventArgs e)
 		{
 			LoadReport(Resources.InteractionsView);
 		}
 
-		private void mnuStrideView_Click(object sender, EventArgs e)
+		private void MnuStrideView_Click(object sender, EventArgs e)
 		{
 			LoadReport(Resources.StrideView);
 		}
 
-		private void mnuSdlPhase_Click(object sender, EventArgs e)
+		private void MnuSdlPhase_Click(object sender, EventArgs e)
 		{
 			LoadReport(Resources.SDLPhaseView);
 		}
 
-		private void mnuThreatsView_Click(object sender, EventArgs e)
+		private void MnuThreatsView_Click(object sender, EventArgs e)
 		{
 			LoadReport(Resources.ThreatsView);
+		}
+
+		private void CreateReportDataSource(Model model)
+		{
+			ReportDataSource DataSet1 = new ReportDataSource { Name = "DataSet1", Value = model.Threats };
+
+			reportViewer1.LocalReport.DataSources.Add(DataSet1);
+
+			ReportDataSource DataSet2 = new ReportDataSource { Name = "DataSet2", Value = model.Notes };
+
+			reportViewer1.LocalReport.DataSources.Add(DataSet2);
+
+			ReportDataSource DataSet3 = new ReportDataSource { Name = "DataSet3", Value = model.MetaInformation };
+
+			reportViewer1.LocalReport.DataSources.Add(DataSet3);
 		}
 	}
 }
