@@ -8,6 +8,10 @@ namespace TMReportSource
 {
 	public class ReportProcessor
 	{
+		private string _fileName = string.Empty;
+
+		private static XDocument xdoc;
+
 		private static XNamespace nsArrays = "http://schemas.microsoft.com/2003/10/Serialization/Arrays";
 
 		private static XNamespace nsKnowledgeBase = "http://schemas.datacontract.org/2004/07/ThreatModeling.KnowledgeBase";
@@ -22,29 +26,61 @@ namespace TMReportSource
 
 		private Dictionaries _dictionaries;
 
-		public ReportProcessor() {
-			_dictionaries = new Dictionaries();
-		}
-
-		public Model GetReport(string fileName)
+		public ReportProcessor(string fileName)
 		{
-			XDocument xdoc = XDocument.Load(fileName);
+			xdoc = XDocument.Load(fileName);
 
-			_components = getComponents(xdoc);
+			_components = getComponents();
 
 			_componentProperties = _components.SelectMany(c => c.Properties).ToList();
 
-			var model = new Model
+			_dictionaries = new Dictionaries();
+
+		}
+
+		public ThreatModel GetThreatReport()
+		{
+
+			var model = new ThreatModel
 			{
-				Threats = getThreats(xdoc),
-				Notes = getNotes(xdoc),
-				MetaInformation = getMetaInformation(xdoc)
+				Threats = getThreats(),
+				Notes = getNotes(),
+				MetaInformation = getMetaInformation()
 			};
 
 			return model;
 		}
 
-		private List<MetaInformation> getMetaInformation(XDocument xdoc)
+		public StatisticsModel GetStatisticsReport()
+		{
+			var threats = getThreats();
+
+			var stats = new Statistics
+			{
+				ThreatStatusNotStarted = threats.Count(th => th.State == "Not Started"),
+				ThreatStatusMitigated = threats.Count(th => th.State == "Mitigated"),
+				ThreatStatusNeedsInvestigation = threats.Count(th => th.State == "NeedsInvestigation"),
+				ThreatStatusNotApplicable = threats.Count(th => th.State == "NotApplicable"),
+				SDLPhaseDesign = threats.Count(th => th.SDLPhase == "Design"),
+				SDLPhaseImplementation = threats.Count(th => th.SDLPhase == "Implementation"),
+				PriorityHigh = threats.Count(th => th.Priority == "High"),
+				PriorityMedium = threats.Count(th => th.Priority == "Medium"),
+				PriorityLow = threats.Count(th => th.Priority == "Low")
+			};
+
+			var model = new StatisticsModel
+			{
+				MetaInformation = getMetaInformation(),
+				Statistics = new List<Statistics>(),
+				Threats = getThreats()
+			};
+
+			model.Statistics.Add(stats);
+
+			return model;
+		}
+
+		private List<MetaInformation> getMetaInformation()
 		{
 			var list = new List<MetaInformation>();
 
@@ -66,7 +102,7 @@ namespace TMReportSource
 			return list;
 		}
 
-		private List<Note> getNotes(XDocument xdoc)
+		private List<Note> getNotes()
 		{
 
 			var list = new List<Note>();
@@ -91,7 +127,7 @@ namespace TMReportSource
 			return list;
 		}
 
-		private List<Component> getComponents(XDocument xdoc)
+		private List<Component> getComponents()
 		{
 			var list = new List<Component>();
 			var xComponents = xdoc.Document.Descendants(nsArrays + "KeyValueOfguidanyType").ToList();
@@ -136,7 +172,7 @@ namespace TMReportSource
 			return list;
 		}
 
-		private List<Threat> getThreats(XDocument xdoc)
+		private List<Threat> getThreats()
 		{
 
 			var list = new List<Threat>();
@@ -268,7 +304,8 @@ namespace TMReportSource
 			return list.OrderBy(i => i.Id).ToList();
 		}
 
-		private string getMitigationStrategy(string category) {
+		private string getMitigationStrategy(string category)
+		{
 			var strideKey = new string(category.Take(1).ToArray());
 			return _dictionaries.MitigationStartegies.Where(i => i.Key == strideKey).FirstOrDefault().Value;
 		}

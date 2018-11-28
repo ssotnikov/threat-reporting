@@ -16,7 +16,6 @@ namespace TMReportForm
 		public ReportForm()
 		{
 			InitializeComponent();
-			_reportProcessor = new ReportProcessor();
 		}
 
 
@@ -48,11 +47,13 @@ namespace TMReportForm
 				threatModelFileName = openFileDialog1.SafeFileName;
 				Text = openFileDialog1.SafeFileName;
 				EnableReportTypeButtons(true);
+				_reportProcessor = new ReportProcessor(threatModelFilePath);
 			}
 		}
 
-		private void LoadReport(string reportType)
-		{
+
+		private void LoadReport(string reportType) {
+
 			EnableReportTypeButtons(false);
 
 			base.Text = string.Format("{0}: {1}", threatModelFileName.Split('.')[0], reportType);
@@ -60,14 +61,19 @@ namespace TMReportForm
 			reportViewer1.LocalReport.ReportPath = string.Format("Reports/{0}.rdlc", reportType);
 
 			reportViewer1.LocalReport.DataSources.Clear();
+		}
+
+		private void LoadThreatReport(string reportType)
+		{
+			LoadReport(reportType);
 			
-			var model = _reportProcessor.GetReport(threatModelFilePath);
+			var model = _reportProcessor.GetThreatReport();
 
 			EnableReportTypeButtons(true);
 
 			if (ModelValidator.ModelIsValid(model))
 			{
-				CreateReportDataSource(model);
+				CreateThreatReportDataSource(model);
 
 				reportViewer1.RefreshReport();
 
@@ -75,48 +81,67 @@ namespace TMReportForm
 
 		}
 
+		private void LoadStatisticsReport(string reportType) {
+
+			LoadReport(reportType);
+
+			var model = _reportProcessor.GetStatisticsReport();
+
+			EnableReportTypeButtons(true);
+
+			if (ModelValidator.ModelIsValid(model))
+			{
+				CreateStatisticsReportDataSource(model);
+
+				reportViewer1.RefreshReport();
+
+			}
+
+
+		}
+
 		private void MnuActorsView_Click(object sender, EventArgs e)
 		{
-			LoadReport(Resources.ActorsView);
+			LoadThreatReport(Resources.ActorsView);
 
 		}
 
 		private void NmuDataAssetsView_Click(object sender, EventArgs e)
 		{
-			LoadReport(Resources.DataAssetsView);
+			LoadThreatReport(Resources.DataAssetsView);
 		}
 
 		private void MnuInteractionsView_Click(object sender, EventArgs e)
 		{
-			LoadReport(Resources.InteractionsView);
+			LoadThreatReport(Resources.InteractionsView);
 		}
 
 		private void MnuStrideView_Click(object sender, EventArgs e)
 		{
-			LoadReport(Resources.StrideView);
+			LoadThreatReport(Resources.StrideView);
 		}
 
 		private void MnuSdlPhase_Click(object sender, EventArgs e)
 		{
-			LoadReport(Resources.SDLPhaseView);
+			LoadThreatReport(Resources.SDLPhaseView);
 		}
 
 		private void MnuThreatsView_Click(object sender, EventArgs e)
 		{
-			LoadReport(Resources.ThreatsView);
+			LoadThreatReport(Resources.ThreatsView);
 		}
 
 		private void mnuComponentView_Click(object sender, EventArgs e)
 		{
-			LoadReport(Resources.ComponentView);
+			LoadThreatReport(Resources.ComponentView);
 		}
 
 		private void mnuStatisticsView_Click(object sender, EventArgs e)
 		{
-			LoadReport(Resources.StatisticsView);
+			LoadStatisticsReport(Resources.StatisticsView);
 		}
 
-		private void CreateReportDataSource(Model model)
+		private void CreateThreatReportDataSource(ThreatModel model)
 		{
 			ReportDataSource DataSet1 = new ReportDataSource { Name = "DataSet1", Value = model.Threats };
 
@@ -132,6 +157,22 @@ namespace TMReportForm
 
 		}
 
-		
+		private void CreateStatisticsReportDataSource(StatisticsModel model) {
+
+			ReportDataSource DataSet1 = new ReportDataSource { Name = "DataSet1", Value = model.MetaInformation };
+
+			reportViewer1.LocalReport.DataSources.Add(DataSet1);
+
+			ReportDataSource DataSet2 = new ReportDataSource { Name = "DataSet2", Value = model.Statistics };
+
+			reportViewer1.LocalReport.DataSources.Add(DataSet2);
+
+			ReportDataSource DataSet3 = new ReportDataSource { Name = "DataSet3", Value = model.Threats };
+
+			reportViewer1.LocalReport.DataSources.Add(DataSet3);
+
+		}
+
+
 	}
 }

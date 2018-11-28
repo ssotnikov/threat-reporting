@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using TMReportSource;
 
 namespace TMReportForm
 {
 	internal static class ModelValidator
 	{
-		internal static bool ModelIsValid(Model model) {
+		internal static bool ModelIsValid(IReportModel model) {
 
 			if (string.IsNullOrEmpty(model.MetaInformation[0].ThreatModelName))
 			{
