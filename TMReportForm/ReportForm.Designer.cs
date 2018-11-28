@@ -41,6 +41,8 @@
 			this.mnuInteractionsView = new System.Windows.Forms.ToolStripButton();
 			this.mnuSdlPhase = new System.Windows.Forms.ToolStripButton();
 			this.mnuStrideView = new System.Windows.Forms.ToolStripButton();
+			this.mnuComponentView = new System.Windows.Forms.ToolStripButton();
+			this.mnuStatisticsView = new System.Windows.Forms.ToolStripButton();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
@@ -75,7 +77,9 @@
             this.mnuDataAssetsView,
             this.mnuInteractionsView,
             this.mnuSdlPhase,
-            this.mnuStrideView});
+            this.mnuStrideView,
+            this.mnuComponentView,
+            this.mnuStatisticsView});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
@@ -159,6 +163,26 @@
 			this.mnuStrideView.ToolTipText = "Threats Grouped by STRIDE";
 			this.mnuStrideView.Click += new System.EventHandler(this.MnuStrideView_Click);
 			// 
+			// mnuComponentView
+			// 
+			this.mnuComponentView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.mnuComponentView.Image = global::TMReportForm.Properties.Resources.component;
+			this.mnuComponentView.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.mnuComponentView.Name = "mnuComponentView";
+			this.mnuComponentView.Size = new System.Drawing.Size(28, 28);
+			this.mnuComponentView.Text = "Threats Grouped by Component";
+			this.mnuComponentView.Click += new System.EventHandler(this.mnuComponentView_Click);
+			// 
+			// mnuStatisticsView
+			// 
+			this.mnuStatisticsView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.mnuStatisticsView.Image = global::TMReportForm.Properties.Resources.pie_chart;
+			this.mnuStatisticsView.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.mnuStatisticsView.Name = "mnuStatisticsView";
+			this.mnuStatisticsView.Size = new System.Drawing.Size(28, 28);
+			this.mnuStatisticsView.Text = "Statistics";
+			this.mnuStatisticsView.Click += new System.EventHandler(this.mnuStatisticsView_Click);
+			// 
 			// statusStrip1
 			// 
 			this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -199,6 +223,8 @@
 		private System.Windows.Forms.ToolStripButton mnuSdlPhase;
 		private System.Windows.Forms.ToolStripButton mnuStrideView;
 		private System.Windows.Forms.StatusStrip statusStrip1;
+		private System.Windows.Forms.ToolStripButton mnuComponentView;
+		private System.Windows.Forms.ToolStripButton mnuStatisticsView;
 	}
 }
 

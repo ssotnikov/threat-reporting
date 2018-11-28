@@ -12,10 +12,11 @@ namespace TMReportForm
 		private string threatModelFilePath = string.Empty;
 		private string threatModelFileName = string.Empty;
 		private string reportType = string.Empty;
-
+		private ReportProcessor _reportProcessor;
 		public ReportForm()
 		{
 			InitializeComponent();
+			_reportProcessor = new ReportProcessor();
 		}
 
 
@@ -33,6 +34,8 @@ namespace TMReportForm
 			mnuStrideView.Enabled = enable;
 			mnuThreatsView.Enabled = enable;
 			mnuDataAssetsView.Enabled = enable;
+			mnuComponentView.Enabled = enable;
+			mnuStatisticsView.Enabled = enable;
 		}
 
 		private void MnuOpenModel_Click(object sender, EventArgs e)
@@ -58,7 +61,7 @@ namespace TMReportForm
 
 			reportViewer1.LocalReport.DataSources.Clear();
 			
-			var model = ReportProcessor.GetReport(threatModelFilePath);
+			var model = _reportProcessor.GetReport(threatModelFilePath);
 
 			EnableReportTypeButtons(true);
 
@@ -103,6 +106,16 @@ namespace TMReportForm
 			LoadReport(Resources.ThreatsView);
 		}
 
+		private void mnuComponentView_Click(object sender, EventArgs e)
+		{
+			LoadReport(Resources.ComponentView);
+		}
+
+		private void mnuStatisticsView_Click(object sender, EventArgs e)
+		{
+			LoadReport(Resources.StatisticsView);
+		}
+
 		private void CreateReportDataSource(Model model)
 		{
 			ReportDataSource DataSet1 = new ReportDataSource { Name = "DataSet1", Value = model.Threats };
@@ -116,6 +129,9 @@ namespace TMReportForm
 			ReportDataSource DataSet3 = new ReportDataSource { Name = "DataSet3", Value = model.MetaInformation };
 
 			reportViewer1.LocalReport.DataSources.Add(DataSet3);
+
 		}
+
+		
 	}
 }

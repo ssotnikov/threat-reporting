@@ -1,6 +1,15 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TMReportSource.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Name" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Name</Value>
+    </Setting>
+    <Setting Name="OutOfScope" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Out Of Scope</Value>
+    </Setting>
+    <Setting Name="OutOfScopeReason" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Reason For Out Of Scope</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>

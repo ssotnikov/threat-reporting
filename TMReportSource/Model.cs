@@ -11,5 +11,6 @@ namespace TMReportSource
 		public List<MetaInformation> MetaInformation { get; set; }
 		public List<Note> Notes { get; set; }
 		public List<Threat> Threats { get; set; }
+
 	}
 }
