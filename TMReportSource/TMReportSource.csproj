@@ -46,7 +46,6 @@
     <Compile Include="Dictionaries.cs" />
     <Compile Include="IReportModel.cs" />
     <Compile Include="MetaInformation.cs" />
-    <Compile Include="Statistics.cs" />
     <Compile Include="ThreatModel.cs" />
     <Compile Include="Note.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -61,7 +60,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="ReportProcessor.cs" />
-    <Compile Include="StatisticsModel.cs" />
     <Compile Include="Threat.cs" />
   </ItemGroup>
   <ItemGroup>

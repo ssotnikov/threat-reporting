@@ -110,6 +110,7 @@
 			this.mnuThreatsView.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mnuThreatsView.Name = "mnuThreatsView";
 			this.mnuThreatsView.Size = new System.Drawing.Size(28, 28);
+			this.mnuThreatsView.Tag = global::TMReportForm.Properties.Settings.Default.ThreatsView;
 			this.mnuThreatsView.ToolTipText = "Threats Ordered List";
 			this.mnuThreatsView.Click += new System.EventHandler(this.MnuThreatsView_Click);
 			// 
@@ -120,6 +121,7 @@
 			this.mnuActorsView.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mnuActorsView.Name = "mnuActorsView";
 			this.mnuActorsView.Size = new System.Drawing.Size(28, 28);
+			this.mnuActorsView.Tag = global::TMReportForm.Properties.Settings.Default.ActorsView;
 			this.mnuActorsView.ToolTipText = "Threats Grouped by Actor";
 			this.mnuActorsView.Click += new System.EventHandler(this.MnuActorsView_Click);
 			// 
@@ -130,6 +132,7 @@
 			this.mnuDataAssetsView.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mnuDataAssetsView.Name = "mnuDataAssetsView";
 			this.mnuDataAssetsView.Size = new System.Drawing.Size(28, 28);
+			this.mnuDataAssetsView.Tag = global::TMReportForm.Properties.Settings.Default.DataAssetsView;
 			this.mnuDataAssetsView.ToolTipText = "Threats Grouped by Data Asset";
 			this.mnuDataAssetsView.Click += new System.EventHandler(this.NmuDataAssetsView_Click);
 			// 
@@ -140,6 +143,7 @@
 			this.mnuInteractionsView.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mnuInteractionsView.Name = "mnuInteractionsView";
 			this.mnuInteractionsView.Size = new System.Drawing.Size(28, 28);
+			this.mnuInteractionsView.Tag = global::TMReportForm.Properties.Settings.Default.InteractionsView;
 			this.mnuInteractionsView.ToolTipText = "Threats Grouped by Interaction";
 			this.mnuInteractionsView.Click += new System.EventHandler(this.MnuInteractionsView_Click);
 			// 
@@ -150,6 +154,7 @@
 			this.mnuSdlPhase.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mnuSdlPhase.Name = "mnuSdlPhase";
 			this.mnuSdlPhase.Size = new System.Drawing.Size(28, 28);
+			this.mnuSdlPhase.Tag = global::TMReportForm.Properties.Settings.Default.SDLPhaseView;
 			this.mnuSdlPhase.ToolTipText = "Threats Grouped by SDL Phase";
 			this.mnuSdlPhase.Click += new System.EventHandler(this.MnuSdlPhase_Click);
 			// 
@@ -160,6 +165,7 @@
 			this.mnuStrideView.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mnuStrideView.Name = "mnuStrideView";
 			this.mnuStrideView.Size = new System.Drawing.Size(28, 28);
+			this.mnuStrideView.Tag = global::TMReportForm.Properties.Settings.Default.StrideView;
 			this.mnuStrideView.ToolTipText = "Threats Grouped by STRIDE";
 			this.mnuStrideView.Click += new System.EventHandler(this.MnuStrideView_Click);
 			// 
@@ -170,6 +176,7 @@
 			this.mnuComponentView.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mnuComponentView.Name = "mnuComponentView";
 			this.mnuComponentView.Size = new System.Drawing.Size(28, 28);
+			this.mnuComponentView.Tag = global::TMReportForm.Properties.Settings.Default.ComponentView;
 			this.mnuComponentView.Text = "Threats Grouped by Component";
 			this.mnuComponentView.Click += new System.EventHandler(this.mnuComponentView_Click);
 			// 
@@ -180,6 +187,7 @@
 			this.mnuStatisticsView.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.mnuStatisticsView.Name = "mnuStatisticsView";
 			this.mnuStatisticsView.Size = new System.Drawing.Size(28, 28);
+			this.mnuStatisticsView.Tag = global::TMReportForm.Properties.Settings.Default.StatisticsView;
 			this.mnuStatisticsView.Text = "Statistics";
 			this.mnuStatisticsView.Click += new System.EventHandler(this.mnuStatisticsView_Click);
 			// 

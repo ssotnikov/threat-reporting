@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMReportSource", "TMReportS
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TModels", "TModels", "{54873107-7938-4C73-AC33-1D93D791C5E8}"
 	ProjectSection(SolutionItems) = preProject
+		TModels\Azure Security and Compliance Blueprint - NIST SP 800-171 PaaS WebApp Threat Model.tm7 = TModels\Azure Security and Compliance Blueprint - NIST SP 800-171 PaaS WebApp Threat Model.tm7
 		TModels\Test Threat Model.tm7 = TModels\Test Threat Model.tm7
 		TModels\Test Threat Model1.tm7 = TModels\Test Threat Model1.tm7
 	EndProjectSection

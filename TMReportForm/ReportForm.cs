@@ -81,25 +81,6 @@ namespace TMReportForm
 
 		}
 
-		private void LoadStatisticsReport(string reportType) {
-
-			LoadReport(reportType);
-
-			var model = _reportProcessor.GetStatisticsReport();
-
-			EnableReportTypeButtons(true);
-
-			if (ModelValidator.ModelIsValid(model))
-			{
-				CreateStatisticsReportDataSource(model);
-
-				reportViewer1.RefreshReport();
-
-			}
-
-
-		}
-
 		private void MnuActorsView_Click(object sender, EventArgs e)
 		{
 			LoadThreatReport(Resources.ActorsView);
@@ -138,7 +119,7 @@ namespace TMReportForm
 
 		private void mnuStatisticsView_Click(object sender, EventArgs e)
 		{
-			LoadStatisticsReport(Resources.StatisticsView);
+			LoadThreatReport(Resources.StatisticsView);
 		}
 
 		private void CreateThreatReportDataSource(ThreatModel model)
@@ -156,23 +137,6 @@ namespace TMReportForm
 			reportViewer1.LocalReport.DataSources.Add(DataSet3);
 
 		}
-
-		private void CreateStatisticsReportDataSource(StatisticsModel model) {
-
-			ReportDataSource DataSet1 = new ReportDataSource { Name = "DataSet1", Value = model.MetaInformation };
-
-			reportViewer1.LocalReport.DataSources.Add(DataSet1);
-
-			ReportDataSource DataSet2 = new ReportDataSource { Name = "DataSet2", Value = model.Statistics };
-
-			reportViewer1.LocalReport.DataSources.Add(DataSet2);
-
-			ReportDataSource DataSet3 = new ReportDataSource { Name = "DataSet3", Value = model.Threats };
-
-			reportViewer1.LocalReport.DataSources.Add(DataSet3);
-
-		}
-
 
 	}
 }

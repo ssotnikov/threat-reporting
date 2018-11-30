@@ -51,35 +51,6 @@ namespace TMReportSource
 			return model;
 		}
 
-		public StatisticsModel GetStatisticsReport()
-		{
-			var threats = getThreats();
-
-			var stats = new Statistics
-			{
-				ThreatStatusNotStarted = threats.Count(th => th.State == "Not Started"),
-				ThreatStatusMitigated = threats.Count(th => th.State == "Mitigated"),
-				ThreatStatusNeedsInvestigation = threats.Count(th => th.State == "NeedsInvestigation"),
-				ThreatStatusNotApplicable = threats.Count(th => th.State == "NotApplicable"),
-				SDLPhaseDesign = threats.Count(th => th.SDLPhase == "Design"),
-				SDLPhaseImplementation = threats.Count(th => th.SDLPhase == "Implementation"),
-				PriorityHigh = threats.Count(th => th.Priority == "High"),
-				PriorityMedium = threats.Count(th => th.Priority == "Medium"),
-				PriorityLow = threats.Count(th => th.Priority == "Low")
-			};
-
-			var model = new StatisticsModel
-			{
-				MetaInformation = getMetaInformation(),
-				Statistics = new List<Statistics>(),
-				Threats = getThreats()
-			};
-
-			model.Statistics.Add(stats);
-
-			return model;
-		}
-
 		private List<MetaInformation> getMetaInformation()
 		{
 			var list = new List<MetaInformation>();

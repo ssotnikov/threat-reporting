@@ -12,7 +12,7 @@ namespace TMReportForm.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.7.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.8.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -20,6 +20,94 @@ namespace TMReportForm.Properties {
         public static Settings Default {
             get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public object StatisticsView {
+            get {
+                return ((object)(this["StatisticsView"]));
+            }
+            set {
+                this["StatisticsView"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public object ComponentView {
+            get {
+                return ((object)(this["ComponentView"]));
+            }
+            set {
+                this["ComponentView"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public object ThreatsView {
+            get {
+                return ((object)(this["ThreatsView"]));
+            }
+            set {
+                this["ThreatsView"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public object SDLPhaseView {
+            get {
+                return ((object)(this["SDLPhaseView"]));
+            }
+            set {
+                this["SDLPhaseView"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public object StrideView {
+            get {
+                return ((object)(this["StrideView"]));
+            }
+            set {
+                this["StrideView"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public object InteractionsView {
+            get {
+                return ((object)(this["InteractionsView"]));
+            }
+            set {
+                this["InteractionsView"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public object DataAssetsView {
+            get {
+                return ((object)(this["DataAssetsView"]));
+            }
+            set {
+                this["DataAssetsView"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public object ActorsView {
+            get {
+                return ((object)(this["ActorsView"]));
+            }
+            set {
+                this["ActorsView"] = value;
             }
         }
     }
