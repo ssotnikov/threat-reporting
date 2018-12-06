@@ -10,9 +10,12 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TModels", "TModels", "{54873107-7938-4C73-AC33-1D93D791C5E8}"
 	ProjectSection(SolutionItems) = preProject
 		TModels\Azure Security and Compliance Blueprint - NIST SP 800-171 PaaS WebApp Threat Model.tm7 = TModels\Azure Security and Compliance Blueprint - NIST SP 800-171 PaaS WebApp Threat Model.tm7
+		TModels\dependency-check-report.json = TModels\dependency-check-report.json
 		TModels\Test Threat Model.tm7 = TModels\Test Threat Model.tm7
 		TModels\Test Threat Model1.tm7 = TModels\Test Threat Model1.tm7
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMReportFactory", "TMReportFactory\TMReportFactory.csproj", "{D3BD9493-F174-4162-91B2-160D419AF384}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,6 +31,10 @@ Global
 		{94E03329-B50D-4E59-8EF6-A5E26EB7CA0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{94E03329-B50D-4E59-8EF6-A5E26EB7CA0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94E03329-B50D-4E59-8EF6-A5E26EB7CA0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3BD9493-F174-4162-91B2-160D419AF384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3BD9493-F174-4162-91B2-160D419AF384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3BD9493-F174-4162-91B2-160D419AF384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3BD9493-F174-4162-91B2-160D419AF384}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
