@@ -73,7 +73,6 @@ namespace TMReportForm
 
 			reportViewer1.LocalReport.ReportPath = string.Format("Reports/{0}.rdlc", reportType);
 
-			reportViewer1.LocalReport.DataSources.Clear();
 		}
 
 		private void LoadThreatReport(string reportType)
@@ -103,6 +102,8 @@ namespace TMReportForm
 
 		private void MnuActorsView_Click(object sender, EventArgs e)
 		{
+			reportViewer1.LocalReport.DataSources.Clear();
+
 			LoadThreatReport(Resources.ActorsView);
 
 			reportViewer1.RefreshReport();
@@ -111,6 +112,8 @@ namespace TMReportForm
 
 		private void NmuDataAssetsView_Click(object sender, EventArgs e)
 		{
+			reportViewer1.LocalReport.DataSources.Clear();
+
 			LoadThreatReport(Resources.DataAssetsView);
 
 			reportViewer1.RefreshReport();
@@ -118,6 +121,8 @@ namespace TMReportForm
 
 		private void MnuInteractionsView_Click(object sender, EventArgs e)
 		{
+			reportViewer1.LocalReport.DataSources.Clear();
+
 			LoadThreatReport(Resources.InteractionsView);
 
 			reportViewer1.RefreshReport();
@@ -125,6 +130,8 @@ namespace TMReportForm
 
 		private void MnuStrideView_Click(object sender, EventArgs e)
 		{
+			reportViewer1.LocalReport.DataSources.Clear();
+
 			LoadThreatReport(Resources.StrideView);
 
 			reportViewer1.RefreshReport();
@@ -132,6 +139,8 @@ namespace TMReportForm
 
 		private void MnuSdlPhase_Click(object sender, EventArgs e)
 		{
+			reportViewer1.LocalReport.DataSources.Clear();
+
 			LoadThreatReport(Resources.SDLPhaseView);
 
 			reportViewer1.RefreshReport();
@@ -139,6 +148,8 @@ namespace TMReportForm
 
 		private void MnuThreatsView_Click(object sender, EventArgs e)
 		{
+			reportViewer1.LocalReport.DataSources.Clear();
+
 			LoadThreatReport(Resources.ThreatsView);
 
 			reportViewer1.RefreshReport();
@@ -146,6 +157,8 @@ namespace TMReportForm
 
 		private void mnuComponentView_Click(object sender, EventArgs e)
 		{
+			reportViewer1.LocalReport.DataSources.Clear();
+
 			openFileDialog1.Title = "Attach static scan results";
 
 			openFileDialog1.FileName = "*.json";
