@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TMReportSource
 {
-	public class ThreatModel: IReportModel
+	public class ThreatModel
 	{
 		public List<MetaInformation> MetaInformation { get; set; }
 		public List<Note> Notes { get; set; }

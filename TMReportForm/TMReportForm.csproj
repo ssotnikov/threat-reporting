@@ -115,6 +115,7 @@
     <None Include="Properties\DataSources\TMReportSource.MetaInformation.datasource" />
     <None Include="Properties\DataSources\TMReportSource.Model.datasource" />
     <None Include="Properties\DataSources\TMReportSource.Note.datasource" />
+    <None Include="Properties\DataSources\TMReportSource.Objects.VulnReport.Vuln.datasource" />
     <None Include="Properties\DataSources\TMReportSource.ReportProcessor.datasource" />
     <None Include="Properties\DataSources\TMReportSource.StatisticsModel.datasource" />
     <None Include="Properties\DataSources\TMReportSource.Threat.datasource" />

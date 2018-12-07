@@ -11,7 +11,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet1">
+    <DataSet Name="Threats">
       <Query>
         <DataSourceName>TMReportSource</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -93,7 +93,7 @@
         <rd:ObjectDataSourceType>TMReportSource.Model, TMReportSource, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="DataSet2">
+    <DataSet Name="Notes">
       <Query>
         <DataSourceName>TMReportSource</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -123,7 +123,7 @@
         <rd:ObjectDataSourceType>TMReportSource.Model, TMReportSource, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="DataSet3">
+    <DataSet Name="Meta">
       <Query>
         <DataSourceName>TMReportSource</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -2256,7 +2256,7 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSet1</DataSetName>
+            <DataSetName>Threats</DataSetName>
             <Height>7.8cm</Height>
             <Width>19cm</Width>
             <Style>
@@ -2283,7 +2283,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!ThreatModelName.Value, "DataSet3") &amp; ": Actors"</Value>
+                      <Value>=First(Fields!ThreatModelName.Value, "Meta") &amp; ": Actors"</Value>
                       <Style>
                         <FontSize>24pt</FontSize>
                       </Style>

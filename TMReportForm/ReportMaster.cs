@@ -15,7 +15,7 @@ namespace TMReportForm
 	public partial class ReportMaster : Form
 	{
 		private ReportViewer _reportViewer;
-		private ReportProcessor _reportProcessor;
+		private ThreatReportProcessor _reportProcessor;
 
 		public ReportMaster(ReportViewer reportViewer, string reportType)
 		{

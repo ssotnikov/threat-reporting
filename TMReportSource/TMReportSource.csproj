@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,13 +44,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Component.cs" />
-    <Compile Include="ComponentProperty.cs" />
-    <Compile Include="Dictionaries.cs" />
-    <Compile Include="IReportModel.cs" />
-    <Compile Include="MetaInformation.cs" />
-    <Compile Include="ThreatModel.cs" />
-    <Compile Include="Note.cs" />
+    <Compile Include="Objects\ThreatReport\Component.cs" />
+    <Compile Include="Objects\ThreatReport\ComponentProperty.cs" />
+    <Compile Include="Objects\Common\Dictionaries.cs" />
+    <Compile Include="Objects\ThreatReport\MetaInformation.cs" />
+    <Compile Include="Objects\ThreatReport\ThreatModel.cs" />
+    <Compile Include="Objects\ThreatReport\Note.cs" />
+    <Compile Include="Objects\VulnReport\Vuln.cs" />
+    <Compile Include="Objects\VulnReport\VulnModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -59,11 +63,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ReportProcessor.cs" />
-    <Compile Include="Threat.cs" />
+    <Compile Include="ThreatReportProcessor.cs" />
+    <Compile Include="Objects\ThreatReport\Threat.cs" />
+    <Compile Include="VulnReportProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,5 +81,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

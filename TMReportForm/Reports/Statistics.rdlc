@@ -11,7 +11,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSet3">
+    <DataSet Name="Meta">
       <Query>
         <DataSourceName>TMReportSource</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -52,7 +52,7 @@
         <rd:ObjectDataSourceType>TMReportSource.MetaInformation, TMReportSource, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="DataSet1">
+    <DataSet Name="Threats">
       <Query>
         <DataSourceName>TMReportSource</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -186,7 +186,7 @@
         <rd:ObjectDataSourceType>TMReportSource.StatisticsModel, TMReportSource, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="DataSet2">
+    <DataSet Name="Notes">
       <Query>
         <DataSourceName>TMReportSource</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -576,7 +576,7 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DataSet1</DataSetName>
+            <DataSetName>Threats</DataSetName>
             <Top>0.06944in</Top>
             <Height>7cm</Height>
             <Width>7.48031in</Width>
@@ -945,7 +945,7 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DataSet1</DataSetName>
+            <DataSetName>Threats</DataSetName>
             <Top>2.93333in</Top>
             <Height>7cm</Height>
             <Width>7.48031in</Width>
@@ -977,7 +977,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!ThreatModelName.Value, "DataSet3") &amp; ": Statistics"</Value>
+                      <Value>=First(Fields!ThreatModelName.Value, "Meta") &amp; ": Statistics"</Value>
                       <Style>
                         <FontSize>24pt</FontSize>
                       </Style>

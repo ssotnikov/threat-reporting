@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TMReportSource
+namespace TMReportSource.Objects.VulnReport
 {
-	public interface IReportModel
+	public class VulnModel
 	{
-		List<MetaInformation> MetaInformation { get; set; }
+		public List<Vuln> Vulns { get; set; }
 	}
 }

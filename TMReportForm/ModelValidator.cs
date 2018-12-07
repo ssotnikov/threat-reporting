@@ -5,7 +5,7 @@ namespace TMReportForm
 {
 	internal static class ModelValidator
 	{
-		internal static bool ModelIsValid(IReportModel model) {
+		internal static bool ThreatModelIsValid(ThreatModel model) {
 
 			if (string.IsNullOrEmpty(model.MetaInformation[0].ThreatModelName))
 			{

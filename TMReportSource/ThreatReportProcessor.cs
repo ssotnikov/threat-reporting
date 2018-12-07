@@ -6,7 +6,7 @@ using TMReportSource.Properties;
 
 namespace TMReportSource
 {
-	public class ReportProcessor
+	public class ThreatReportProcessor
 	{
 		private string _fileName = string.Empty;
 
@@ -26,7 +26,7 @@ namespace TMReportSource
 
 		private Dictionaries _dictionaries;
 
-		public ReportProcessor(string fileName)
+		public ThreatReportProcessor(string fileName)
 		{
 			xdoc = XDocument.Load(fileName);
 
@@ -38,7 +38,7 @@ namespace TMReportSource
 
 		}
 
-		public ThreatModel GetThreatReport()
+		public ThreatModel GetReport()
 		{
 
 			var model = new ThreatModel

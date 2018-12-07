@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using TMReportForm.Properties;
 using TMReportSource;
+using TMReportSource.Objects.VulnReport;
 
 namespace TMReportForm
 {
@@ -12,7 +13,8 @@ namespace TMReportForm
 		private string threatModelFilePath = string.Empty;
 		private string threatModelFileName = string.Empty;
 		private string reportType = string.Empty;
-		private ReportProcessor _reportProcessor;
+		private ThreatReportProcessor _reportProcessor;
+		private VulnReportProcessor _vulnReportProcessor;
 		public ReportForm()
 		{
 			InitializeComponent();
@@ -39,15 +41,26 @@ namespace TMReportForm
 
 		private void MnuOpenModel_Click(object sender, EventArgs e)
 		{
+			openFileDialog1.Title = "Open Threat Model";
+
+			openFileDialog1.FileName = "*.tm7";
+
 			if (openFileDialog1.ShowDialog() == DialogResult.OK)
 			{
 				Text = string.Empty;
+
 				reportViewer1.Reset();
+
 				threatModelFilePath = openFileDialog1.FileName;
+
 				threatModelFileName = openFileDialog1.SafeFileName;
+
 				Text = openFileDialog1.SafeFileName;
+
 				EnableReportTypeButtons(true);
-				_reportProcessor = new ReportProcessor(threatModelFilePath);
+
+				_reportProcessor = new ThreatReportProcessor(threatModelFilePath);
+
 			}
 		}
 
@@ -67,17 +80,24 @@ namespace TMReportForm
 		{
 			LoadReport(reportType);
 			
-			var model = _reportProcessor.GetThreatReport();
+			var model = _reportProcessor.GetReport();
 
 			EnableReportTypeButtons(true);
 
-			if (ModelValidator.ModelIsValid(model))
+			if (ModelValidator.ThreatModelIsValid(model))
 			{
+
 				CreateThreatReportDataSource(model);
 
-				reportViewer1.RefreshReport();
-
 			}
+
+		}
+
+		private void LoadVulnReport() {
+
+			var model = _vulnReportProcessor.GetReport();
+
+			CreateVulnReportDataSource(model);
 
 		}
 
@@ -85,57 +105,94 @@ namespace TMReportForm
 		{
 			LoadThreatReport(Resources.ActorsView);
 
+			reportViewer1.RefreshReport();
+
 		}
 
 		private void NmuDataAssetsView_Click(object sender, EventArgs e)
 		{
 			LoadThreatReport(Resources.DataAssetsView);
+
+			reportViewer1.RefreshReport();
 		}
 
 		private void MnuInteractionsView_Click(object sender, EventArgs e)
 		{
 			LoadThreatReport(Resources.InteractionsView);
+
+			reportViewer1.RefreshReport();
 		}
 
 		private void MnuStrideView_Click(object sender, EventArgs e)
 		{
 			LoadThreatReport(Resources.StrideView);
+
+			reportViewer1.RefreshReport();
 		}
 
 		private void MnuSdlPhase_Click(object sender, EventArgs e)
 		{
 			LoadThreatReport(Resources.SDLPhaseView);
+
+			reportViewer1.RefreshReport();
 		}
 
 		private void MnuThreatsView_Click(object sender, EventArgs e)
 		{
 			LoadThreatReport(Resources.ThreatsView);
+
+			reportViewer1.RefreshReport();
 		}
 
 		private void mnuComponentView_Click(object sender, EventArgs e)
 		{
+			openFileDialog1.Title = "Attach static scan results";
+
+			openFileDialog1.FileName = "*.json";
+
+			openFileDialog1.Multiselect = true;
+
+			if (openFileDialog1.ShowDialog() == DialogResult.OK)
+			{
+				_vulnReportProcessor = new VulnReportProcessor(openFileDialog1.FileName);
+
+				LoadVulnReport();
+
+			}
+
 			LoadThreatReport(Resources.ComponentView);
+
+			reportViewer1.RefreshReport();
 		}
 
 		private void mnuStatisticsView_Click(object sender, EventArgs e)
 		{
 			LoadThreatReport(Resources.StatisticsView);
+
+			reportViewer1.RefreshReport();
 		}
 
 		private void CreateThreatReportDataSource(ThreatModel model)
 		{
-			ReportDataSource DataSet1 = new ReportDataSource { Name = "DataSet1", Value = model.Threats };
+			ReportDataSource DataSet1 = new ReportDataSource { Name = "Threats", Value = model.Threats };
 
 			reportViewer1.LocalReport.DataSources.Add(DataSet1);
 
-			ReportDataSource DataSet2 = new ReportDataSource { Name = "DataSet2", Value = model.Notes };
+			ReportDataSource DataSet2 = new ReportDataSource { Name = "Notes", Value = model.Notes };
 
 			reportViewer1.LocalReport.DataSources.Add(DataSet2);
 
-			ReportDataSource DataSet3 = new ReportDataSource { Name = "DataSet3", Value = model.MetaInformation };
+			ReportDataSource DataSet3 = new ReportDataSource { Name = "Meta", Value = model.MetaInformation };
 
 			reportViewer1.LocalReport.DataSources.Add(DataSet3);
 
+		}
+
+		private void CreateVulnReportDataSource(VulnModel model) {
+
+			ReportDataSource ds = new ReportDataSource { Name = "Vulns", Value = model.Vulns };
+
+			reportViewer1.LocalReport.DataSources.Add(ds);
 		}
 
 	}
