@@ -165,13 +165,15 @@ namespace TMReportForm
 
 			openFileDialog1.Multiselect = true;
 
+			_vulnReportProcessor = new VulnReportProcessor();
+
 			if (openFileDialog1.ShowDialog() == DialogResult.OK)
 			{
-				_vulnReportProcessor = new VulnReportProcessor(openFileDialog1.FileName);
-
-				LoadVulnReport();
+				_vulnReportProcessor.FileName = openFileDialog1.FileName;
 
 			}
+
+			LoadVulnReport();
 
 			LoadThreatReport(Resources.ComponentView);
 
