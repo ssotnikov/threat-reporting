@@ -20,7 +20,7 @@ namespace TMReportSource
 
 		private static XNamespace nsAbstracts = "http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts";
 
-		private static List<Component> _components;
+		public static List<Component> _components;
 
 		private static List<ComponentProperty> _componentProperties;
 
@@ -38,20 +38,13 @@ namespace TMReportSource
 
 		}
 
-		public ThreatModel GetReport()
-		{
+		public List<Component> GetComponentsByType(string type) {
 
-			var model = new ThreatModel
-			{
-				Threats = getThreats(),
-				Notes = getNotes(),
-				MetaInformation = getMetaInformation()
-			};
+			return _components.Where(c => c.GenericTypeId == type).ToList();
 
-			return model;
 		}
 
-		private List<MetaInformation> getMetaInformation()
+		public List<MetaInformation> GetMetaInformation()
 		{
 			var list = new List<MetaInformation>();
 
@@ -73,7 +66,7 @@ namespace TMReportSource
 			return list;
 		}
 
-		private List<Note> getNotes()
+		public List<Note> GetNotes()
 		{
 
 			var list = new List<Note>();
@@ -134,6 +127,12 @@ namespace TMReportSource
 						Value = xProperty.Element(nsKnowledgeBase + "Value").Value
 					};
 
+					if (prop.DisplayName == "Name") {
+
+						component.Name = prop.Value;
+
+					}
+
 					component.Properties.Add(prop);
 
 				}
@@ -143,7 +142,7 @@ namespace TMReportSource
 			return list;
 		}
 
-		private List<Threat> getThreats()
+		public List<Threat> GetThreats()
 		{
 
 			var list = new List<Threat>();

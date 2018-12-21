@@ -78,27 +78,20 @@ namespace TMReportForm
 		private void LoadThreatReport(string reportType)
 		{
 			LoadReport(reportType);
-			
-			var model = _reportProcessor.GetReport();
 
 			EnableReportTypeButtons(true);
 
-			if (ModelValidator.ThreatModelIsValid(model))
-			{
-
-				CreateThreatReportDataSource(model);
-
-			}
+			CreateThreatReportDataSource(reportType);
 
 		}
 
-		private void LoadVulnReport() {
+		//private void LoadVulnReport() {
 
-			var model = _vulnReportProcessor.GetReport();
+		//	var model = _vulnReportProcessor.GetReport();
 
-			CreateVulnReportDataSource(model);
+		//	CreateVulnReportDataSource(model);
 
-		}
+		//}
 
 		private void MnuActorsView_Click(object sender, EventArgs e)
 		{
@@ -159,21 +152,21 @@ namespace TMReportForm
 		{
 			reportViewer1.LocalReport.DataSources.Clear();
 
-			openFileDialog1.Title = "Attach static scan results";
+			//openFileDialog1.Title = "Attach static scan results";
 
-			openFileDialog1.FileName = "*.json";
+			//openFileDialog1.FileName = "*.json";
 
-			openFileDialog1.Multiselect = true;
+			//openFileDialog1.Multiselect = true;
 
-			_vulnReportProcessor = new VulnReportProcessor();
+			//_vulnReportProcessor = new VulnReportProcessor();
 
-			if (openFileDialog1.ShowDialog() == DialogResult.OK)
-			{
-				_vulnReportProcessor.FileName = openFileDialog1.FileName;
+			//if (openFileDialog1.ShowDialog() == DialogResult.OK)
+			//{
+			//	_vulnReportProcessor.FileName = openFileDialog1.FileName;
 
-			}
+			//}
 
-			LoadVulnReport();
+			//LoadVulnReport();
 
 			LoadThreatReport(Resources.ComponentView);
 
@@ -187,28 +180,35 @@ namespace TMReportForm
 			reportViewer1.RefreshReport();
 		}
 
-		private void CreateThreatReportDataSource(ThreatModel model)
+		private void CreateThreatReportDataSource(string reportType)
 		{
-			ReportDataSource DataSet1 = new ReportDataSource { Name = "Threats", Value = model.Threats };
+			ReportDataSource DataSet1 = new ReportDataSource { Name = "Threats", Value = _reportProcessor.GetThreats() };
 
 			reportViewer1.LocalReport.DataSources.Add(DataSet1);
 
-			ReportDataSource DataSet2 = new ReportDataSource { Name = "Notes", Value = model.Notes };
+			ReportDataSource DataSet2 = new ReportDataSource { Name = "Notes", Value = _reportProcessor.GetNotes() };
 
 			reportViewer1.LocalReport.DataSources.Add(DataSet2);
 
-			ReportDataSource DataSet3 = new ReportDataSource { Name = "Meta", Value = model.MetaInformation };
+			ReportDataSource DataSet3 = new ReportDataSource { Name = "Meta", Value = _reportProcessor.GetMetaInformation() };
 
 			reportViewer1.LocalReport.DataSources.Add(DataSet3);
 
+			if (reportType == Resources.ComponentView) {
+
+				ReportDataSource DataSet4 = new ReportDataSource { Name = "Components", Value = _reportProcessor.GetComponentsByType("GE.P") };
+
+				reportViewer1.LocalReport.DataSources.Add(DataSet4);
+			}
+
 		}
 
-		private void CreateVulnReportDataSource(VulnModel model) {
+		//private void CreateVulnReportDataSource(VulnModel model) {
 
-			ReportDataSource ds = new ReportDataSource { Name = "Vulns", Value = model.Vulns };
+		//	ReportDataSource ds = new ReportDataSource { Name = "Vulns", Value = model.Vulns };
 
-			reportViewer1.LocalReport.DataSources.Add(ds);
-		}
+		//	reportViewer1.LocalReport.DataSources.Add(ds);
+		//}
 
 	}
 }
