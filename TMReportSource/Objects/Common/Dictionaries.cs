@@ -6,6 +6,8 @@ namespace TMReportSource
 	{
 		public Dictionary<string, string> MitigationStartegies;
 
+		public Dictionary<string, int> SeverityWeight;
+
 		public Dictionaries() {
 
 			MitigationStartegies = new Dictionary<string, string>
@@ -16,6 +18,13 @@ namespace TMReportSource
 				{ "I", "Confidentiality" },
 				{ "D", "Availability" },
 				{ "E", "Authorization" }
+			};
+
+			SeverityWeight = new Dictionary<string, int>
+			{
+				{ "High", 0},
+				{ "Medium", 1},
+				{ "Low", 2}
 			};
 		}
 	}

@@ -1,0 +1,10 @@
+{
+	"ReportTypes": {
+		"InteractionsCompressedView": {
+			"Title": "Interactions Compressed"
+		},
+		"StatisticsView": {
+			"Title": "Statistics"
+		}
+	}
+}

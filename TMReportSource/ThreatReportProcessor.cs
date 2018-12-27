@@ -167,6 +167,8 @@ namespace TMReportSource
 
 					Priority = value.Element(nsKnowledgeBase + "Priority").Value,
 
+					PriorityWeight = _dictionaries.SeverityWeight.FirstOrDefault(i=>i.Key == value.Element(nsKnowledgeBase + "Priority").Value).Value,
+
 					ChangedBy = value.Element(nsKnowledgeBase + "ChangedBy").Value,
 
 					ModifiedAt = DateTime.Parse(value.Element(nsKnowledgeBase + "ModifiedAt").Value),
@@ -211,7 +213,7 @@ namespace TMReportSource
 					}
 					else if (xProperty.Element(nsArrays + "Key").Value == "UserThreatDescription")
 					{
-						threat.Description = xProperty.Element(nsArrays + "Value").Value;
+						threat.Description = getNormalizedString(xProperty.Element(nsArrays + "Value").Value);
 					}
 					else if (xProperty.Element(nsArrays + "Key").Value == "UserThreatShortDescription")
 					{
@@ -229,7 +231,7 @@ namespace TMReportSource
 					}
 					else if (xProperty.Element(nsArrays + "Key").Value == "StateInformation")
 					{
-						threat.Justification = xProperty.Element(nsArrays + "Value").Value;
+						threat.Justification = getNormalizedString(xProperty.Element(nsArrays + "Value").Value);
 					}
 					else if (xProperty.Element(nsArrays + "Key").Value == "SDLPhase")
 					{
@@ -244,26 +246,62 @@ namespace TMReportSource
 
 						var customPropName = getCustomPropertyName(xdoc, key1.ToString());
 
-						if (customPropName == "Data Asset")
+						if (customPropName == "Assets")
 						{
 
-							threat.DataAsset = xProperty.Element(nsArrays + "Value").Value;
+							threat.Assets = xProperty.Element(nsArrays + "Value").Value;
+
+						}
+
+						if (customPropName == "Impact")
+						{
+
+							threat.Impact = xProperty.Element(nsArrays + "Value").Value;
+
+						}
+
+						if (customPropName == "Attack Vectors")
+						{
+
+							threat.AttackVectors = xProperty.Element(nsArrays + "Value").Value;
+
+						}
+
+						if (customPropName == "Likelihood")
+						{
+
+							threat.Likelihood = xProperty.Element(nsArrays + "Value").Value;
 
 						}
 
 						if (customPropName == "Actors")
 						{
 
-							threat.Actor = xProperty.Element(nsArrays + "Value").Value;
+							threat.Actors = xProperty.Element(nsArrays + "Value").Value;
 
 						}
 
-						if (customPropName == "Issue references")
+						if (customPropName == "Actions")
 						{
 
-							threat.IssueReferences = xProperty.Element(nsArrays + "Value").Value;
+							threat.Actions = xProperty.Element(nsArrays + "Value").Value;
 
 						}
+
+						if (customPropName == "Issue Reference")
+						{
+
+							threat.IssueReference = xProperty.Element(nsArrays + "Value").Value;
+
+						}
+
+						if (customPropName == "Issue Status")
+						{
+
+							threat.IssueStatus = xProperty.Element(nsArrays + "Value").Value;
+
+						}
+
 					}
 				}
 
@@ -278,6 +316,10 @@ namespace TMReportSource
 		{
 			var strideKey = new string(category.Take(1).ToArray());
 			return _dictionaries.MitigationStartegies.Where(i => i.Key == strideKey).FirstOrDefault().Value;
+		}
+
+		private string getNormalizedString(string input) {
+			return input.Replace("\n              ", "\n").TrimStart().TrimEnd();
 		}
 
 		private static string getComponentPropertyValue(string guid, string PropertyName)
