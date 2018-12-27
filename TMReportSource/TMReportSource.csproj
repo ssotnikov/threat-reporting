@@ -48,7 +48,6 @@
     <Compile Include="Objects\ThreatReport\ComponentProperty.cs" />
     <Compile Include="Objects\Common\Dictionaries.cs" />
     <Compile Include="Objects\ThreatReport\MetaInformation.cs" />
-    <Compile Include="Objects\ThreatReport\ThreatModel.cs" />
     <Compile Include="Objects\ThreatReport\Note.cs" />
     <Compile Include="Objects\VulnReport\Vuln.cs" />
     <Compile Include="Objects\VulnReport\VulnModel.cs" />

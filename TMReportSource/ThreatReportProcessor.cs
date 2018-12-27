@@ -309,7 +309,7 @@ namespace TMReportSource
 
 			}
 
-			return list.OrderBy(i => i.Id).ToList();
+			return list.Where(i=>i.State != "NotApplicable").OrderBy(i => i.Id).ToList();
 		}
 
 		private string getMitigationStrategy(string category)

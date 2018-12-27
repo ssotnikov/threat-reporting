@@ -151,14 +151,6 @@ namespace TMReportForm
 
 			reportViewer1.LocalReport.DataSources.Add(DataSet3);
 
-			if (reportType == Resources.ComponentView)
-			{
-
-				ReportDataSource DataSet4 = new ReportDataSource { Name = "Components", Value = _reportProcessor.GetComponentsByType("GE.P") };
-
-				reportViewer1.LocalReport.DataSources.Add(DataSet4);
-			}
-
 		}
 	}
 }

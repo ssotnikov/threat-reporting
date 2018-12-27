@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
+			Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportForm));
 			this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -46,9 +46,9 @@
 			// reportViewer1
 			// 
 			this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-			reportDataSource4.Name = "DataSet1";
-			reportDataSource4.Value = null;
-			this.reportViewer1.LocalReport.DataSources.Add(reportDataSource4);
+			reportDataSource2.Name = "DataSet1";
+			reportDataSource2.Value = null;
+			this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
 			this.reportViewer1.LocalReport.EnableExternalImages = true;
 			this.reportViewer1.LocalReport.ReportEmbeddedResource = "";
 			this.reportViewer1.Location = new System.Drawing.Point(0, 31);
