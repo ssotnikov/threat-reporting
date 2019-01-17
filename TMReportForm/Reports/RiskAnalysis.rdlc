@@ -1119,7 +1119,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Actions:</Value>
+                                                <Value>Affected:</Value>
                                                 <Style>
                                                   <Color>MidnightBlue</Color>
                                                 </Style>

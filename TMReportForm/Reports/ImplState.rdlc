@@ -1117,7 +1117,7 @@
                                           <Paragraph>
                                             <TextRuns>
                                               <TextRun>
-                                                <Value>Actions:</Value>
+                                                <Value>Affected:</Value>
                                                 <Style>
                                                   <Color>MidnightBlue</Color>
                                                 </Style>
@@ -2025,7 +2025,6 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>0.39509in</Top>
-              <Left>0in</Left>
               <Height>1cm</Height>
               <Width>19cm</Width>
               <ZIndex>1</ZIndex>

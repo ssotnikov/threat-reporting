@@ -48,6 +48,14 @@
 		"Divider2": {
 			"Type": "Divider"
 		},
+		"IS_Draft": {
+			"Type": "MenuItem",
+			"ReportFileName": "ImplState",
+			"ReportParams": {
+				"IssueStatus": "Draft"
+			},
+			"Title": "IS: Draft"
+		},
 		"IS_Open": {
 			"Type": "MenuItem",
 			"ReportFileName": "ImplState",
@@ -72,13 +80,13 @@
 			},
 			"Title": "IS: Done"
 		},
-			"IS_NotDefined": {
-				"Type": "MenuItem",
-				"ReportFileName": "ImplState",
-				"ReportParams": {
-					"IssueStatus": "Not Defined"
-				},
-				"Title": "IS: Not Defined"
-			}
+		"IS_NotDefined": {
+			"Type": "MenuItem",
+			"ReportFileName": "ImplState",
+			"ReportParams": {
+				"IssueStatus": "Not Defined"
+			},
+			"Title": "IS: Not Defined"
+		}
 	}
 }

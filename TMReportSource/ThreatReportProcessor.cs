@@ -281,7 +281,7 @@ namespace TMReportSource
 
 						}
 
-						if (customPropName == "Actions")
+						if (customPropName == "Affected (CIA)")
 						{
 
 							threat.Actions = xProperty.Element(nsArrays + "Value").Value;
