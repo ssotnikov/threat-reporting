@@ -7,7 +7,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>ac177b83-44a9-464e-9817-c82d366f1c82</rd:DataSourceID>
+      <rd:DataSourceID>cd8365f2-3a05-4f6f-920e-023df10c6bce</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -193,9 +193,8 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>TMReportSource</rd:DataSetName>
-        <rd:TableName>Model</rd:TableName>
-        <rd:ObjectDataSourceSelectMethod>Notes</rd:ObjectDataSourceSelectMethod>
-        <rd:ObjectDataSourceType>TMReportSource.Model, TMReportSource, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>Note</rd:TableName>
+        <rd:ObjectDataSourceType>TMReportSource.Note, TMReportSource, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
     <DataSet Name="Meta">
@@ -235,9 +234,8 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>TMReportSource</rd:DataSetName>
-        <rd:TableName>Model</rd:TableName>
-        <rd:ObjectDataSourceSelectMethod>MetaInformation</rd:ObjectDataSourceSelectMethod>
-        <rd:ObjectDataSourceType>TMReportSource.Model, TMReportSource, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>MetaInformation</rd:TableName>
+        <rd:ObjectDataSourceType>TMReportSource.MetaInformation, TMReportSource, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -380,7 +378,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -496,7 +493,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -664,7 +660,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -832,7 +827,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1622,7 +1616,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1786,7 +1779,6 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
-                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
@@ -1953,6 +1945,16 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>Threats</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!IssueStatus.Value</FilterExpression>
+                <Operator>Equal</Operator>
+                <FilterValues>
+                  <FilterValue>=Parameters!IssueStatus.Value</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <Top>0in</Top>
             <Height>7.18097cm</Height>
             <Width>19cm</Width>
             <Style>
@@ -1965,10 +1967,10 @@
         <Height>2.82715in</Height>
         <Style />
       </Body>
-      <Width>19cm</Width>
+      <Width>7.48031in</Width>
       <Page>
         <PageHeader>
-          <Height>2cm</Height>
+          <Height>0.78879in</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1979,9 +1981,9 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>=First(Fields!ThreatModelName.Value, "Meta") &amp; ": Interactions"</Value>
+                      <Value>=First(Fields!ThreatModelName.Value, "Meta")</Value>
                       <Style>
-                        <FontSize>24pt</FontSize>
+                        <FontSize>22pt</FontSize>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -1991,8 +1993,42 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Height>2cm</Height>
+              <Height>1cm</Height>
               <Width>19cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>="Implementation: " &amp; Parameters!IssueStatus.Value</Value>
+                      <Style>
+                        <FontSize>20pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.39509in</Top>
+              <Left>0in</Left>
+              <Height>1cm</Height>
+              <Width>19cm</Width>
+              <ZIndex>1</ZIndex>
               <Style>
                 <Border>
                   <Style>None</Style>
@@ -2032,7 +2068,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox75</rd:DefaultName>
-              <Top>0.69998cm</Top>
+              <Top>0.69999cm</Top>
               <Left>7.66791cm</Left>
               <Height>0.6cm</Height>
               <Width>3.66417cm</Width>
@@ -2053,23 +2089,33 @@
             </Border>
           </Style>
         </PageFooter>
-        <PageHeight>29.7cm</PageHeight>
-        <PageWidth>21cm</PageWidth>
-        <LeftMargin>1cm</LeftMargin>
-        <RightMargin>1cm</RightMargin>
-        <TopMargin>1cm</TopMargin>
-        <BottomMargin>1cm</BottomMargin>
-        <ColumnSpacing>0.13cm</ColumnSpacing>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
         <Style />
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="IssueStatus">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>IssueStatus</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
-  <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>01ce6a19-916f-42ef-b3c5-af6d88ebe883</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>b7d689b6-0925-43b8-92c0-dd1098262809</rd:ReportID>
 </Report>

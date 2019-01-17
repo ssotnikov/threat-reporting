@@ -8,7 +8,7 @@ namespace TMReportSource
 {
 	public class ThreatReportProcessor
 	{
-		private string _fileName = string.Empty;
+		private string fileName = string.Empty;
 
 		private static XDocument xdoc;
 
@@ -20,27 +20,27 @@ namespace TMReportSource
 
 		private static XNamespace nsAbstracts = "http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts";
 
-		public static List<Component> _components;
+		public static List<Component> components;
 
-		private static List<ComponentProperty> _componentProperties;
+		private static List<ComponentProperty> componentProperties;
 
-		private Dictionaries _dictionaries;
+		private Dictionaries dictionaries;
 
 		public ThreatReportProcessor(string fileName)
 		{
 			xdoc = XDocument.Load(fileName);
 
-			_components = getComponents();
+			components = getComponents();
 
-			_componentProperties = _components.SelectMany(c => c.Properties).ToList();
+			componentProperties = components.SelectMany(c => c.Properties).ToList();
 
-			_dictionaries = new Dictionaries();
+			dictionaries = new Dictionaries();
 
 		}
 
 		public List<Component> GetComponentsByType(string type) {
 
-			return _components.Where(c => c.GenericTypeId == type).ToList();
+			return components.Where(c => c.GenericTypeId == type).ToList();
 
 		}
 
@@ -167,7 +167,7 @@ namespace TMReportSource
 
 					Priority = value.Element(nsKnowledgeBase + "Priority").Value,
 
-					PriorityWeight = _dictionaries.SeverityWeight.FirstOrDefault(i=>i.Key == value.Element(nsKnowledgeBase + "Priority").Value).Value,
+					PriorityWeight = dictionaries.SeverityWeight.FirstOrDefault(i=>i.Key == value.Element(nsKnowledgeBase + "Priority").Value).Value,
 
 					ChangedBy = value.Element(nsKnowledgeBase + "ChangedBy").Value,
 
@@ -309,13 +309,15 @@ namespace TMReportSource
 
 			}
 
-			return list.Where(i=>i.State != "NotApplicable").OrderBy(i => i.Id).ToList();
+			//list.Where(i=>i.State != "NotApplicable").OrderBy(i => i.Id).ToList();
+
+			return list.OrderBy(i => i.Id).ToList();
 		}
 
 		private string getMitigationStrategy(string category)
 		{
 			var strideKey = new string(category.Take(1).ToArray());
-			return _dictionaries.MitigationStartegies.Where(i => i.Key == strideKey).FirstOrDefault().Value;
+			return dictionaries.MitigationStartegies.Where(i => i.Key == strideKey).FirstOrDefault().Value;
 		}
 
 		private string getNormalizedString(string input) {
@@ -326,16 +328,21 @@ namespace TMReportSource
 		{
 			var val = string.Empty;
 
-			var nameProperty = _componentProperties.Where(p => p.ComponentId == guid && p.DisplayName == PropertyName).FirstOrDefault();
+			var nameProperty = componentProperties.Where(p => p.ComponentId == guid && p.DisplayName == PropertyName).FirstOrDefault();
 
-			val = nameProperty.Value;
+			if (nameProperty != null) {
 
-			if (string.IsNullOrEmpty(val))
-			{
-				val = _componentProperties[0].Value;
+				val = nameProperty.Value;
+
+				if (string.IsNullOrEmpty(val))
+				{
+					val = componentProperties[0].Value;
+				}
+
+				val = val.Trim().Replace("\r", "").Replace("\n", "").Replace(" ", "");
 			}
 
-			return val.Trim().Replace("\r", "").Replace("\n", "").Replace(" ", "");
+			return val;
 		}
 
 		private static string getCustomPropertyName(XDocument xdoc, string guid)

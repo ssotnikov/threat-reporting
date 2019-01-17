@@ -1,10 +1,84 @@
 {
 	"ReportTypes": {
-		"InteractionsCompressedView": {
+		"Interactions": {
+			"Type": "MenuItem",
+			"ReportFileName": "RiskAnalysis",
 			"Title": "Risk Analysis"
 		},
-		"StatisticsView": {
+		"Statistics": {
+			"Type": "MenuItem",
+			"ReportFileName": "Statistics",
 			"Title": "Statistics"
-		}
+		},
+		"Divider1": {
+			"Type": "Divider"
+		},
+		"AS_NeedsInvestigation": {
+			"Type": "MenuItem",
+			"ReportFileName": "AnalysisState",
+			"ReportParams": {
+				"State": "NeedsInvestigation"
+			},
+			"Title": "AS: Needs Investigation"
+		},
+		"AS_NotStarted": {
+			"Type": "MenuItem",
+			"ReportFileName": "AnalysisState",
+			"ReportParams": {
+				"State": "Not Started"
+			},
+			"Title": "AS: Not Started"
+		},
+		"AS_NotApplicable": {
+			"Type": "MenuItem",
+			"ReportFileName": "AnalysisState",
+			"ReportParams": {
+				"State": "NotApplicable"
+			},
+			"Title": "AS: Not Applicable"
+		},
+		"AS_Mitigated": {
+			"Type": "MenuItem",
+			"ReportFileName": "AnalysisState",
+			"ReportParams": {
+				"State": "Mitigated"
+			},
+			"Title": "AS: Mitigated"
+		},
+		"Divider2": {
+			"Type": "Divider"
+		},
+		"IS_Open": {
+			"Type": "MenuItem",
+			"ReportFileName": "ImplState",
+			"ReportParams": {
+				"IssueStatus": "Open"
+			},
+			"Title": "IS: Open"
+		},
+		"IS_InProgress": {
+			"Type": "MenuItem",
+			"ReportFileName": "ImplState",
+			"ReportParams": {
+				"IssueStatus": "In Progress"
+			},
+			"Title": "IS: In Progress"
+		},
+		"IS_Done": {
+			"Type": "MenuItem",
+			"ReportFileName": "ImplState",
+			"ReportParams": {
+				"IssueStatus": "Done"
+			},
+			"Title": "IS: Done"
+		},
+			"IS_NotDefined": {
+				"Type": "MenuItem",
+				"ReportFileName": "ImplState",
+				"ReportParams": {
+					"IssueStatus": "Not Defined"
+				},
+				"Title": "IS: Not Defined"
+			}
 	}
 }
