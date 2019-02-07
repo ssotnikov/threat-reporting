@@ -20,7 +20,7 @@ namespace TMReportSource
 
 		private static XNamespace nsAbstracts = "http://schemas.datacontract.org/2004/07/ThreatModeling.Model.Abstracts";
 
-		public static List<Component> components;
+		private static List<Component> components;
 
 		private static List<ComponentProperty> componentProperties;
 
@@ -38,7 +38,8 @@ namespace TMReportSource
 
 		}
 
-		public List<Component> GetComponentsByType(string type) {
+		public List<Component> GetComponentsByType(string type)
+		{
 
 			return components.Where(c => c.GenericTypeId == type).ToList();
 
@@ -127,7 +128,8 @@ namespace TMReportSource
 						Value = xProperty.Element(nsKnowledgeBase + "Value").Value
 					};
 
-					if (prop.DisplayName == "Name") {
+					if (prop.DisplayName == "Name")
+					{
 
 						component.Name = prop.Value;
 
@@ -167,7 +169,7 @@ namespace TMReportSource
 
 					Priority = value.Element(nsKnowledgeBase + "Priority").Value,
 
-					PriorityWeight = dictionaries.SeverityWeight.FirstOrDefault(i=>i.Key == value.Element(nsKnowledgeBase + "Priority").Value).Value,
+					PriorityWeight = dictionaries.SeverityWeight.FirstOrDefault(i => i.Key == value.Element(nsKnowledgeBase + "Priority").Value).Value,
 
 					ChangedBy = value.Element(nsKnowledgeBase + "ChangedBy").Value,
 
@@ -302,6 +304,13 @@ namespace TMReportSource
 
 						}
 
+						if (customPropName == "Mitigated Components")
+						{
+
+							threat.MitigatedComponents = xProperty.Element(nsArrays + "Value").Value;
+
+						}
+
 					}
 				}
 
@@ -314,13 +323,37 @@ namespace TMReportSource
 			return list.OrderBy(i => i.Id).ToList();
 		}
 
+		public List<Threat> GetThreatsGroupedByMitigatedComponent()
+		{
+			var threats = GetThreats();
+			List<Threat> result = new List<Threat>();
+			foreach (Threat threat in threats)
+			{
+				if (threat.MitigatedComponents != null) {
+
+					string[] components = threat.MitigatedComponents.Split(';', ',', '|');
+
+					foreach (string component in components)
+					{
+						Threat th = (Threat)threat.Clone();
+						th.MitigatedComponents = getNormalizedString(component);
+						result.Add(th);
+					}
+
+				}
+			}
+			return result;
+		}
+
+
 		private string getMitigationStrategy(string category)
 		{
 			var strideKey = new string(category.Take(1).ToArray());
 			return dictionaries.MitigationStartegies.Where(i => i.Key == strideKey).FirstOrDefault().Value;
 		}
 
-		private string getNormalizedString(string input) {
+		private string getNormalizedString(string input)
+		{
 			return input.Replace("\n              ", "\n").TrimStart().TrimEnd();
 		}
 
@@ -330,7 +363,8 @@ namespace TMReportSource
 
 			var nameProperty = componentProperties.Where(p => p.ComponentId == guid && p.DisplayName == PropertyName).FirstOrDefault();
 
-			if (nameProperty != null) {
+			if (nameProperty != null)
+			{
 
 				val = nameProperty.Value;
 

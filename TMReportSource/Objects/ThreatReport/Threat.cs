@@ -2,7 +2,7 @@
 
 namespace TMReportSource
 {
-	public class Threat
+	public class Threat: ICloneable
 	{
 		public int Id { get; set; }
 		public string Title { get; set; }
@@ -40,5 +40,11 @@ namespace TMReportSource
 		public string Impact { get; set; }
 		public string AttackVectors { get; set; }
 		public string Likelihood { get; set; }
+		public string MitigatedComponents { get; set; }
+
+		public object Clone()
+		{
+			return MemberwiseClone();
+		}
 	}
 }

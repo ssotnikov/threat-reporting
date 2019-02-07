@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 using TMReportSource;
 
@@ -62,7 +63,8 @@ namespace TMReportForm
 							if (jProperty.Value["ReportParams"] != null)
 							{
 								var pList = jProperty.Value["ReportParams"].ToList();
-								foreach (JProperty p in pList) {
+								foreach (JProperty p in pList)
+								{
 									ps.Add(new ReportParameter(p.Name, p.Value.ToString()));
 								}
 							}
@@ -121,6 +123,7 @@ namespace TMReportForm
 
 		private void openToolStripButton_Click(object sender, EventArgs e)
 		{
+
 			openFileDialog1.Title = "Open Threat Model";
 
 			openFileDialog1.FileName = "*.tm7";
@@ -168,9 +171,20 @@ namespace TMReportForm
 
 		private void CreateThreatReportDataSource()
 		{
-			ReportDataSource DataSet1 = new ReportDataSource { Name = "Threats", Value = reportProcessor.GetThreats() };
+			if (reportType == "MitigatedComponents")
+			{
+				ReportDataSource DataSet1 = new ReportDataSource { Name = "Threats", Value = reportProcessor.GetThreatsGroupedByMitigatedComponent() };
 
-			reportViewer1.LocalReport.DataSources.Add(DataSet1);
+				reportViewer1.LocalReport.DataSources.Add(DataSet1);
+
+			}
+			else {
+
+				ReportDataSource DataSet1 = new ReportDataSource { Name = "Threats", Value = reportProcessor.GetThreats() };
+
+				reportViewer1.LocalReport.DataSources.Add(DataSet1);
+
+			}
 
 			ReportDataSource DataSet2 = new ReportDataSource { Name = "Notes", Value = reportProcessor.GetNotes() };
 
@@ -182,7 +196,8 @@ namespace TMReportForm
 
 			var ps = reportParams.FirstOrDefault(i => i.Key == reportTitle).Value;
 
-			if (ps != null) {
+			if (ps.Count > 0)
+			{
 
 				reportViewer1.LocalReport.SetParameters(ps);
 

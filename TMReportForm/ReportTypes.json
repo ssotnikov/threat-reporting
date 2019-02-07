@@ -5,6 +5,11 @@
 			"ReportFileName": "RiskAnalysis",
 			"Title": "Risk Analysis"
 		},
+		"MitigatedComponents": {
+			"Type": "MenuItem",
+			"ReportFileName": "MitigatedComponents",
+			"Title": "Mitigated Components"
+		},
 		"Statistics": {
 			"Type": "MenuItem",
 			"ReportFileName": "Statistics",

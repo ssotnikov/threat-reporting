@@ -2,10 +2,12 @@
 {
     partial class ReportForm
     {
+#pragma warning disable CS0649 // Field 'ReportForm.components' is never assigned to, and will always have its default value null
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components;
+#pragma warning restore CS0649 // Field 'ReportForm.components' is never assigned to, and will always have its default value null
 
         /// <summary>
         /// Clean up any resources being used.
