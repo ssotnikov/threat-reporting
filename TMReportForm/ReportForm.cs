@@ -100,7 +100,7 @@ namespace TMReportForm
 
 			reportType = ((ToolStripMenuItem)sender).Tag.ToString();
 
-			reportTitle = ((ToolStripMenuItem)sender).Text.ToString();
+			reportTitle = ((ToolStripMenuItem)sender).Text;
 
 			btnGenerateReport.Enabled = true;
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Xml.Linq;
 using TMReportSource.Properties;
 
@@ -28,14 +29,19 @@ namespace TMReportSource
 
 		public ThreatReportProcessor(string fileName)
 		{
-			xdoc = XDocument.Load(fileName);
+			try {
+				xdoc = XDocument.Load(fileName);
 
-			components = getComponents();
+				components = getComponents();
 
-			componentProperties = components.SelectMany(c => c.Properties).ToList();
+				componentProperties = components.SelectMany(c => c.Properties).ToList();
 
-			dictionaries = new Dictionaries();
-
+				dictionaries = new Dictionaries();
+			}
+			catch (Exception e) {
+				MD5.Create();
+			}
+			
 		}
 
 		public List<Component> GetComponentsByType(string type)
@@ -215,7 +221,7 @@ namespace TMReportSource
 					}
 					else if (xProperty.Element(nsArrays + "Key").Value == "UserThreatDescription")
 					{
-						threat.Description = getNormalizedString(xProperty.Element(nsArrays + "Value").Value);
+						threat.Description = GetNormalizedString(xProperty.Element(nsArrays + "Value").Value);
 					}
 					else if (xProperty.Element(nsArrays + "Key").Value == "UserThreatShortDescription")
 					{
@@ -233,7 +239,7 @@ namespace TMReportSource
 					}
 					else if (xProperty.Element(nsArrays + "Key").Value == "StateInformation")
 					{
-						threat.Justification = getNormalizedString(xProperty.Element(nsArrays + "Value").Value);
+						threat.Justification = GetNormalizedString(xProperty.Element(nsArrays + "Value").Value);
 					}
 					else if (xProperty.Element(nsArrays + "Key").Value == "SDLPhase")
 					{
@@ -318,8 +324,6 @@ namespace TMReportSource
 
 			}
 
-			//list.Where(i=>i.State != "NotApplicable").OrderBy(i => i.Id).ToList();
-
 			return list.OrderBy(i => i.Id).ToList();
 		}
 
@@ -336,7 +340,7 @@ namespace TMReportSource
 					foreach (string component in components)
 					{
 						Threat th = (Threat)threat.Clone();
-						th.MitigatedComponents = getNormalizedString(component);
+						th.MitigatedComponents = GetNormalizedString(component);
 						result.Add(th);
 					}
 
@@ -352,7 +356,7 @@ namespace TMReportSource
 			return dictionaries.MitigationStartegies.Where(i => i.Key == strideKey).FirstOrDefault().Value;
 		}
 
-		private string getNormalizedString(string input)
+		private static string GetNormalizedString(string input)
 		{
 			return input.Replace("\n              ", "\n").TrimStart().TrimEnd();
 		}
