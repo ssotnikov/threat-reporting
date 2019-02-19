@@ -1,10 +1,10 @@
 ﻿using Microsoft.Reporting.WinForms;
 using Newtonsoft.Json.Linq;
+using SASTReportSource;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Windows.Forms;
 using TMReportSource;
 
@@ -203,6 +203,36 @@ namespace TMReportForm
 
 			}
 
+		}
+
+		private async void btnGetSASTReport_ClickAsync(object sender, EventArgs e)
+		{
+
+			SastParamsForm sf = new SastParamsForm();
+
+			sf.ShowDialog();
+
+			if (sf.DialogResult == DialogResult.OK) {
+
+				reportViewer1.Reset();
+
+				SonarSource ss = new SonarSource();
+
+				SASTReportSource.Objects.IssuesReport issuesReport = await ss.GetIssuesReportAsync(sf.ReportName, "VULNERABILITY").ConfigureAwait(true);
+
+				reportViewer1.LocalReport.ReportPath = "Reports/SonarIssueReport.rdlc";
+
+				if (issuesReport != null)
+				{
+
+					ReportDataSource DataSet1 = new ReportDataSource { Name = "Issues", Value = issuesReport.issues };
+
+					reportViewer1.LocalReport.DataSources.Add(DataSet1);
+
+					reportViewer1.RefreshReport();
+
+				}
+			}
 		}
 	}
 }

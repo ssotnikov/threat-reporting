@@ -105,6 +105,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SastParamsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SastParamsForm.Designer.cs">
+      <DependentUpon>SastParamsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
@@ -126,9 +132,17 @@
     <EmbeddedResource Include="Reports\RiskAnalysis.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SonarIssueReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\Statistics.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="SastParamsForm.resx">
+      <DependentUpon>SastParamsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\SASTReportSource.Objects.Component.datasource" />
+    <None Include="Properties\DataSources\SASTReportSource.Objects.Issue.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -145,6 +159,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SASTReportSource\SASTReportSource.csproj">
+      <Project>{c890259d-993a-4e3d-936a-fb4c1fd1645b}</Project>
+      <Name>SASTReportSource</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TMReportSource\TMReportSource.csproj">
       <Project>{94e03329-b50d-4e59-8ef6-a5e26eb7ca0f}</Project>
       <Name>TMReportSource</Name>

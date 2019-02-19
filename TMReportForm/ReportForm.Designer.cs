@@ -30,7 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+			Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportForm));
 			this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -41,16 +41,18 @@
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.btnGenerateReport = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+			this.btnGetSASTReport = new System.Windows.Forms.ToolStripButton();
 			this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// reportViewer1
 			// 
 			this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-			reportDataSource2.Name = "DataSet1";
-			reportDataSource2.Value = null;
-			this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+			reportDataSource3.Name = "DataSet1";
+			reportDataSource3.Value = null;
+			this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
 			this.reportViewer1.LocalReport.EnableExternalImages = true;
 			this.reportViewer1.LocalReport.ReportEmbeddedResource = "";
 			this.reportViewer1.Location = new System.Drawing.Point(0, 31);
@@ -68,6 +70,8 @@
 			// toolStrip1
 			// 
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnGetSASTReport,
+            this.toolStripSeparator5,
             this.openToolStripButton,
             this.toolStripSeparator1,
             this.mnuSelectReportType,
@@ -128,6 +132,16 @@
 			this.toolStripSeparator3.Name = "toolStripSeparator3";
 			this.toolStripSeparator3.Size = new System.Drawing.Size(6, 31);
 			// 
+			// btnGetSASTReport
+			// 
+			this.btnGetSASTReport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.btnGetSASTReport.Image = ((System.Drawing.Image)(resources.GetObject("btnGetSASTReport.Image")));
+			this.btnGetSASTReport.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.btnGetSASTReport.Name = "btnGetSASTReport";
+			this.btnGetSASTReport.Size = new System.Drawing.Size(28, 28);
+			this.btnGetSASTReport.Text = "SAST Report";
+			this.btnGetSASTReport.Click += new System.EventHandler(this.btnGetSASTReport_ClickAsync);
+			// 
 			// statusStrip1
 			// 
 			this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
@@ -136,6 +150,11 @@
 			this.statusStrip1.Size = new System.Drawing.Size(1125, 22);
 			this.statusStrip1.TabIndex = 2;
 			this.statusStrip1.Text = "statusStrip1";
+			// 
+			// toolStripSeparator5
+			// 
+			this.toolStripSeparator5.Name = "toolStripSeparator5";
+			this.toolStripSeparator5.Size = new System.Drawing.Size(6, 31);
 			// 
 			// ReportForm
 			// 
@@ -166,6 +185,8 @@
 		private System.Windows.Forms.ToolStripButton btnGenerateReport;
 		private System.Windows.Forms.ToolStripDropDownButton mnuSelectReportType;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+		private System.Windows.Forms.ToolStripButton btnGetSASTReport;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
 	}
 }
 
