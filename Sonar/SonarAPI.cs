@@ -1,6 +1,7 @@
 ﻿using Sonar.Objects;
 using Sonar.Objects.Common;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -64,6 +65,20 @@ namespace Sonar
 			return report;
 		}
 
+		public async Task<List<Rule>> GetRulesDescAsync(IssuesReport issuesReport) {
 
+			var selectedRules = issuesReport.rules;
+
+			List<Rule> result = new List<Rule>();
+
+			foreach (var rule in selectedRules) {
+
+				var report = await GetRuleDescAsync(rule.key);
+
+				result.Add(report.Rule);
+			}
+
+			return result;
+		}
 	}
 }

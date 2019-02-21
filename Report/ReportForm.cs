@@ -225,14 +225,7 @@ namespace Report
 				if (issuesReport != null)
 				{
 
-					List<Rule> rules = new List<Rule>();
-
-					foreach (var issue in issuesReport.issues) {
-
-						RuleReport ruleReport = await sonarSource.SonarAPI.GetRuleDescAsync(issue.rule).ConfigureAwait(true);
-
-						rules.Add(ruleReport.Rule);
-					}
+					List<Rule> rules = await sonarSource.SonarAPI.GetRulesDescAsync(issuesReport).ConfigureAwait(true);
 
 					ReportDataSource DataSet1 = new ReportDataSource { Name = "Issues", Value = issuesReport.issues };
 
