@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SonarQubeAnalysisProperties xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.sonarsource.com/msbuild/integration/2015/1">
     <Property Name="sonar.cs.fxcop.fxCopCmdPath">C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\Team Tools\Static Analysis Tools\FxCop\FxCopCmd.exe</Property>
-    <Property Name="sonar.cs.fxcop.directory">C:\Projects\Security\Dev\threat-reporting\TMReportForm\bin\Debug\</Property>
-    <Property Name="sonar.cs.fxcop.assembly">C:\Projects\Security\Dev\threat-reporting\TMReportForm\bin\Debug\TMReportForm.exe</Property>
+    <Property Name="sonar.cs.fxcop.directory">C:\Projects\Security\Dev\threat-reporting\Report\bin\Debug\</Property>
+    <Property Name="sonar.cs.fxcop.assembly">C:\Projects\Security\Dev\threat-reporting\Report\bin\Debug\ReportForm.exe</Property>
 </SonarQubeAnalysisProperties>

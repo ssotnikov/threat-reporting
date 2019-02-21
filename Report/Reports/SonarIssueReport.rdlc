@@ -438,7 +438,7 @@
         </TablixRowHierarchy>
         <DataSetName>Issues</DataSetName>
         <Height>0.5in</Height>
-        <Width>10.10531in</Width>
+        <Width>10.10532in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -449,7 +449,7 @@
     <Height>0.5in</Height>
     <Style />
   </Body>
-  <Width>10.10531in</Width>
+  <Width>10.10532in</Width>
   <Page>
     <PageHeader>
       <Height>2.008cm</Height>
@@ -545,18 +545,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="SASTReportSourceObjects">
+    <DataSource Name="SonarObjects">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>3af64bb2-3b07-4d58-be72-690701d75544</rd:DataSourceID>
+      <rd:DataSourceID>4e2e59b3-8bf3-43d4-bccd-d311753962ed</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="Issues">
       <Query>
-        <DataSourceName>SASTReportSourceObjects</DataSourceName>
+        <DataSourceName>SonarObjects</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -594,9 +594,126 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>SASTReportSource.Objects</rd:DataSetName>
+        <rd:DataSetName>Sonar.Objects</rd:DataSetName>
         <rd:TableName>Issue</rd:TableName>
-        <rd:ObjectDataSourceType>SASTReportSource.Objects.Issue, SASTReportSource, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b5a1279c3237b65d</rd:ObjectDataSourceType>
+        <rd:ObjectDataSourceType>Sonar.Objects.Issue, Sonar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b5a1279c3237b65d</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="Rules">
+      <Query>
+        <DataSourceName>SonarObjects</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="createdAt">
+          <DataField>createdAt</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="debtOverloaded">
+          <DataField>debtOverloaded</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="debtRemFnOffset">
+          <DataField>debtRemFnOffset</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="debtRemFnType">
+          <DataField>debtRemFnType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="defaultDebtRemFnOffset">
+          <DataField>defaultDebtRemFnOffset</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="defaultRemFnBaseEffort">
+          <DataField>defaultRemFnBaseEffort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="defaultRemFnType">
+          <DataField>defaultRemFnType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="htmlDesc">
+          <DataField>htmlDesc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="isTemplate">
+          <DataField>isTemplate</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="key">
+          <DataField>key</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="lang">
+          <DataField>lang</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="langName">
+          <DataField>langName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="mdDesc">
+          <DataField>mdDesc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="name">
+          <DataField>name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="remFnBaseEffort">
+          <DataField>remFnBaseEffort</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="remFnOverloaded">
+          <DataField>remFnOverloaded</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="remFnType">
+          <DataField>remFnType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="repo">
+          <DataField>repo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="scope">
+          <DataField>scope</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="severity">
+          <DataField>severity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="sExternal">
+          <DataField>sExternal</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="status">
+          <DataField>status</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="stringdefaultDebtRemFnType">
+          <DataField>stringdefaultDebtRemFnType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="sysTags">
+          <DataField>sysTags</DataField>
+          <rd:TypeName>System.String[]</rd:TypeName>
+        </Field>
+        <Field Name="tags">
+          <DataField>tags</DataField>
+          <rd:TypeName>System.String[]</rd:TypeName>
+        </Field>
+        <Field Name="type">
+          <DataField>type</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>Sonar.Objects</rd:DataSetName>
+        <rd:TableName>Rule</rd:TableName>
+        <rd:ObjectDataSourceType>Sonar.Objects.Rule, Sonar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b5a1279c3237b65d</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

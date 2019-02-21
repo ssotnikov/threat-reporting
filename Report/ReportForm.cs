@@ -1,6 +1,7 @@
 ﻿using Microsoft.Reporting.WinForms;
 using Newtonsoft.Json.Linq;
 using Sonar;
+using Sonar.Objects;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -217,16 +218,29 @@ namespace Report
 
 				reportViewer1.Reset();
 
-				Sonar.Objects.IssuesReport issuesReport = await sonarSource.SonarAPI.GetIssuesReportAsync(query).ConfigureAwait(true);
+				IssuesReport issuesReport = await sonarSource.SonarAPI.GetIssuesReportAsync(query).ConfigureAwait(true);
 
 				reportViewer1.LocalReport.ReportPath = "Reports/SonarIssueReport.rdlc";
 
 				if (issuesReport != null)
 				{
 
+					List<Rule> rules = new List<Rule>();
+
+					foreach (var issue in issuesReport.issues) {
+
+						RuleReport ruleReport = await sonarSource.SonarAPI.GetRuleDescAsync(issue.rule).ConfigureAwait(true);
+
+						rules.Add(ruleReport.Rule);
+					}
+
 					ReportDataSource DataSet1 = new ReportDataSource { Name = "Issues", Value = issuesReport.issues };
 
 					reportViewer1.LocalReport.DataSources.Add(DataSet1);
+
+					ReportDataSource DataSet2 = new ReportDataSource { Name = "Rules", Value = rules };
+
+					reportViewer1.LocalReport.DataSources.Add(DataSet2);
 
 					reportViewer1.RefreshReport();
 

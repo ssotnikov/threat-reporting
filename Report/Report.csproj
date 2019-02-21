@@ -143,10 +143,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\SonarIssueReport.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Statistics.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\Sonar.Objects.Issue.datasource" />
+    <None Include="Properties\DataSources\Sonar.Objects.Rule.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -163,11 +166,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SASTReportSource\Sonar.csproj">
+    <ProjectReference Include="..\Sonar\Sonar.csproj">
       <Project>{c890259d-993a-4e3d-936a-fb4c1fd1645b}</Project>
       <Name>Sonar</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TMReportSource\ThreatModeller.csproj">
+    <ProjectReference Include="..\ThreatModeller\ThreatModeller.csproj">
       <Project>{94e03329-b50d-4e59-8ef6-a5e26eb7ca0f}</Project>
       <Name>ThreatModeller</Name>
     </ProjectReference>

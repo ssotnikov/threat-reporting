@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json;
-using Sonar.Objects;
 
-namespace SASTReportSource.Objects
+namespace Sonar.Objects
 {
 	public class RuleReport
 	{
