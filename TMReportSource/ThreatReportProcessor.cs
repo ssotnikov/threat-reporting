@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Xml.Linq;
-using TMReportSource.Properties;
+using ThreatModeller.Properties;
 
-namespace TMReportSource
+namespace ThreatModeller
 {
 	public class ThreatReportProcessor
 	{
@@ -39,7 +39,9 @@ namespace TMReportSource
 				dictionaries = new Dictionaries();
 			}
 			catch (Exception e) {
-				MD5.Create();
+
+				throw e;
+
 			}
 			
 		}

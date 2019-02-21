@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using TMReportSource.Objects.VulnReport;
+using ThreatModeller.Objects.VulnReport;
 
-namespace TMReportSource
+namespace ThreatModeller
 {
 	public class VulnReportProcessor
 	{

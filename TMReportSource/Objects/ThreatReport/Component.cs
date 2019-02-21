@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace TMReportSource
+namespace ThreatModeller
 {
 	public class Component
 	{

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TMReportSource
+namespace ThreatModeller
 {
 	public class Note
 	{

@@ -1,14 +1,14 @@
 ﻿using Microsoft.Reporting.WinForms;
 using Newtonsoft.Json.Linq;
-using SASTReportSource;
+using Sonar;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using TMReportSource;
+using ThreatModeller;
 
-namespace TMReportForm
+namespace Report
 {
 	public partial class ReportForm : Form
 	{
@@ -19,6 +19,7 @@ namespace TMReportForm
 		private Dictionary<string, List<ReportParameter>> reportParams = new Dictionary<string, List<ReportParameter>>();
 		private ThreatReportProcessor reportProcessor;
 		private JObject reportTypes;
+		private SonarSource sonarSource = new SonarSource();
 		public ReportForm()
 		{
 			InitializeComponent();
@@ -208,17 +209,15 @@ namespace TMReportForm
 		private async void btnGetSASTReport_ClickAsync(object sender, EventArgs e)
 		{
 
-			SastParamsForm sf = new SastParamsForm();
+			sonarSource.ParamsBuilder.ShowDialog();
 
-			sf.ShowDialog();
+			if (sonarSource.ParamsBuilder.DialogResult == DialogResult.OK) {
 
-			if (sf.DialogResult == DialogResult.OK) {
+				string query = sonarSource.ParamsBuilder.Query;
 
 				reportViewer1.Reset();
 
-				SonarSource ss = new SonarSource();
-
-				SASTReportSource.Objects.IssuesReport issuesReport = await ss.GetIssuesReportAsync(sf.ReportName, "VULNERABILITY").ConfigureAwait(true);
+				Sonar.Objects.IssuesReport issuesReport = await sonarSource.SonarAPI.GetIssuesReportAsync(query).ConfigureAwait(true);
 
 				reportViewer1.LocalReport.ReportPath = "Reports/SonarIssueReport.rdlc";
 

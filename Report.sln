@@ -3,25 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMReportForm", "TMReportForm\TMReportForm.csproj", "{C2CBAF14-ED6E-4843-8254-58B4267B980A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Report", "TMReportForm\Report.csproj", "{C2CBAF14-ED6E-4843-8254-58B4267B980A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMReportSource", "TMReportSource\TMReportSource.csproj", "{94E03329-B50D-4E59-8EF6-A5E26EB7CA0F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TModels", "TModels", "{54873107-7938-4C73-AC33-1D93D791C5E8}"
-	ProjectSection(SolutionItems) = preProject
-		TModels\Azure Security and Compliance Blueprint - NIST SP 800-171 PaaS WebApp Threat Model.tm7 = TModels\Azure Security and Compliance Blueprint - NIST SP 800-171 PaaS WebApp Threat Model.tm7
-		TModels\dependency-check-report.json = TModels\dependency-check-report.json
-		TModels\dependency-check-report1.json = TModels\dependency-check-report1.json
-		TModels\Test Threat Model.tm7 = TModels\Test Threat Model.tm7
-		TModels\Test Threat Model1.tm7 = TModels\Test Threat Model1.tm7
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreatModeller", "TMReportSource\ThreatModeller.csproj", "{94E03329-B50D-4E59-8EF6-A5E26EB7CA0F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2EBE5AB3-BE6A-4E92-9FF7-CFF2817C577C}"
 	ProjectSection(SolutionItems) = preProject
 		sonar-project.properties = sonar-project.properties
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SASTReportSource", "SASTReportSource\SASTReportSource.csproj", "{C890259D-993A-4E3D-936A-FB4C1FD1645B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sonar", "SASTReportSource\Sonar.csproj", "{C890259D-993A-4E3D-936A-FB4C1FD1645B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReportSources", "ReportSources", "{4D7E232B-1C90-46AF-BD0A-79620D0904B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,11 +32,15 @@ Global
 		{94E03329-B50D-4E59-8EF6-A5E26EB7CA0F}.Release|Any CPU.Build.0 = Debug|Any CPU
 		{C890259D-993A-4E3D-936A-FB4C1FD1645B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C890259D-993A-4E3D-936A-FB4C1FD1645B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C890259D-993A-4E3D-936A-FB4C1FD1645B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C890259D-993A-4E3D-936A-FB4C1FD1645B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C890259D-993A-4E3D-936A-FB4C1FD1645B}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{C890259D-993A-4E3D-936A-FB4C1FD1645B}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{94E03329-B50D-4E59-8EF6-A5E26EB7CA0F} = {4D7E232B-1C90-46AF-BD0A-79620D0904B8}
+		{C890259D-993A-4E3D-936A-FB4C1FD1645B} = {4D7E232B-1C90-46AF-BD0A-79620D0904B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6418125E-C106-48D0-857A-3F7B00AEFF35}

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TMReportSource.Objects.VulnReport
+namespace ThreatModeller.Objects.VulnReport
 {
 	public class Vuln
 	{
