@@ -89,6 +89,14 @@
     <EmbeddedResource Include="ParamsBuilder.resx">
       <DependentUpon>ParamsBuilder.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Issues.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RuleDesc.rdlc" />
+    <EmbeddedResource Include="Reports\SonarIssueReport.rdlc">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
