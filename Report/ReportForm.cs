@@ -30,16 +30,17 @@ namespace Report
 		{
 			EnableReportTypeButtons(false);
 			btnGenerateReport.Enabled = false;
+			CreateMenu(mnuSelectSonarReportTypes, @"SonarReportTypes.json");
 		}
 
 		private void EnableReportTypeButtons(bool enable)
 		{
-			mnuSelectReportType.Enabled = enable;
+			mnuSelectThreatModelReportType.Enabled = enable;
 		}
 
-		private void CreateReportTypesMenu()
+		private void CreateMenu(ToolStripDropDownButton mnuParent, string configFilePath)
 		{
-			using (StreamReader r = new StreamReader(@"ReportTypes.json"))
+			using (StreamReader r = new StreamReader(configFilePath))
 			{
 				var jsSource = r.ReadToEnd();
 				this.reportTypes = JObject.Parse(jsSource);
@@ -47,7 +48,7 @@ namespace Report
 
 				if (reportTypes.Count > 0)
 				{
-					mnuSelectReportType.DropDownItems.Clear();
+					mnuParent.DropDownItems.Clear();
 					foreach (var type in reportTypes)
 					{
 						var reportTypeMenuItem = new ToolStripMenuItem();
@@ -59,8 +60,15 @@ namespace Report
 							reportTypeMenuItem.Checked = false;
 							reportTypeMenuItem.Text = jProperty.Value["Title"].ToString();
 							reportTypeMenuItem.Tag = jProperty.Value["ReportFileName"].ToString();
-							reportTypeMenuItem.Click += ReportTypeMenuItem_Click;
-							mnuSelectReportType.DropDownItems.Add(reportTypeMenuItem);
+							if (mnuParent.Tag.ToString() == "ThreatModel")
+							{
+								reportTypeMenuItem.Click += ThreatModelReportTypeMenuItem_Click;
+							}
+							if (mnuParent.Tag.ToString() == "Sonar")
+							{
+								reportTypeMenuItem.Click += SonarReportTypeMenuItem_Click;
+							}
+							mnuParent.DropDownItems.Add(reportTypeMenuItem);
 							List<ReportParameter> ps = new List<ReportParameter>();
 							if (jProperty.Value["ReportParams"] != null)
 							{
@@ -76,7 +84,7 @@ namespace Report
 						}
 						if (jProperty.Value["Type"].ToString() == "Divider")
 						{
-							mnuSelectReportType.DropDownItems.Add(new ToolStripSeparator());
+							mnuParent.DropDownItems.Add(new ToolStripSeparator());
 						}
 					}
 				}
@@ -84,13 +92,13 @@ namespace Report
 
 		}
 
-		private void ReportTypeMenuItem_Click(object sender, EventArgs e)
+		private void ThreatModelReportTypeMenuItem_Click(object sender, EventArgs e)
 		{
 			btnGenerateReport.Enabled = false;
 
 			reportViewer1.Reset();
 
-			foreach (object item in mnuSelectReportType.DropDownItems)
+			foreach (object item in mnuSelectThreatModelReportType.DropDownItems)
 			{
 				if (item is ToolStripMenuItem menuItem)
 				{
@@ -110,9 +118,43 @@ namespace Report
 
 		}
 
+		private async void SonarReportTypeMenuItem_Click(object sender, EventArgs e)
+		{
+			sonarSource.ParamsBuilder.ShowDialog();
+
+			if (sonarSource.ParamsBuilder.DialogResult == DialogResult.OK)
+			{
+
+				string query = sonarSource.ParamsBuilder.Query;
+
+				reportViewer1.Reset();
+
+				IssuesReport issuesReport = await sonarSource.SonarAPI.GetIssuesReportAsync(query).ConfigureAwait(true);
+
+				reportViewer1.LocalReport.ReportPath = string.Format("Reports/{0}.rdlc", ((ToolStripMenuItem)sender).Tag.ToString());
+
+				if (issuesReport != null)
+				{
+
+					List<Rule> rules = await sonarSource.SonarAPI.GetRulesDescAsync(issuesReport).ConfigureAwait(true);
+
+					ReportDataSource DataSet1 = new ReportDataSource { Name = "Issues", Value = issuesReport.issues };
+
+					reportViewer1.LocalReport.DataSources.Add(DataSet1);
+
+					ReportDataSource DataSet2 = new ReportDataSource { Name = "Rules", Value = rules };
+
+					reportViewer1.LocalReport.DataSources.Add(DataSet2);
+
+					reportViewer1.RefreshReport();
+
+				}
+			}
+		}
+
 		private void btnGenerateReport_Click(object sender, EventArgs e)
 		{
-			mnuSelectReportType.Enabled = false;
+			mnuSelectThreatModelReportType.Enabled = false;
 
 			reportViewer1.LocalReport.DataSources.Clear();
 
@@ -120,7 +162,7 @@ namespace Report
 
 			reportViewer1.RefreshReport();
 
-			mnuSelectReportType.Enabled = true;
+			mnuSelectThreatModelReportType.Enabled = true;
 		}
 
 		private void openToolStripButton_Click(object sender, EventArgs e)
@@ -142,7 +184,7 @@ namespace Report
 
 				threatModelFileName = openFileDialog1.SafeFileName;
 
-				CreateReportTypesMenu();
+				CreateMenu(mnuSelectThreatModelReportType, @"ThreatModellerReportTypes.json");
 
 				EnableReportTypeButtons(true);
 
@@ -165,13 +207,13 @@ namespace Report
 
 			LoadReport();
 
-			CreateThreatReportDataSource();
+			CreateThreatModelReportDataSource();
 
 			EnableReportTypeButtons(true);
 
 		}
 
-		private void CreateThreatReportDataSource()
+		private void CreateThreatModelReportDataSource()
 		{
 			if (reportType == "MitigatedComponents")
 			{
@@ -180,7 +222,8 @@ namespace Report
 				reportViewer1.LocalReport.DataSources.Add(DataSet1);
 
 			}
-			else {
+			else
+			{
 
 				ReportDataSource DataSet1 = new ReportDataSource { Name = "Threats", Value = reportProcessor.GetThreats() };
 
@@ -207,38 +250,5 @@ namespace Report
 
 		}
 
-		private async void btnGetSASTReport_ClickAsync(object sender, EventArgs e)
-		{
-
-			sonarSource.ParamsBuilder.ShowDialog();
-
-			if (sonarSource.ParamsBuilder.DialogResult == DialogResult.OK) {
-
-				string query = sonarSource.ParamsBuilder.Query;
-
-				reportViewer1.Reset();
-
-				IssuesReport issuesReport = await sonarSource.SonarAPI.GetIssuesReportAsync(query).ConfigureAwait(true);
-
-				reportViewer1.LocalReport.ReportPath = "Reports/SonarIssueReport.rdlc";
-
-				if (issuesReport != null)
-				{
-
-					List<Rule> rules = await sonarSource.SonarAPI.GetRulesDescAsync(issuesReport).ConfigureAwait(true);
-
-					ReportDataSource DataSet1 = new ReportDataSource { Name = "Issues", Value = issuesReport.issues };
-
-					reportViewer1.LocalReport.DataSources.Add(DataSet1);
-
-					ReportDataSource DataSet2 = new ReportDataSource { Name = "Rules", Value = rules };
-
-					reportViewer1.LocalReport.DataSources.Add(DataSet2);
-
-					reportViewer1.RefreshReport();
-
-				}
-			}
-		}
 	}
 }

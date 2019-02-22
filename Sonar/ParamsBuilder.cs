@@ -1,4 +1,5 @@
 ﻿using Sonar.Objects;
+using Sonar.Properties;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -21,20 +22,39 @@ namespace Sonar
 
 		private async void ParamsBuilder_LoadAsync(object sender, EventArgs e)
 		{
-
-			Enabled = false;
-
-			dictionariesReport = await sonarAPI.GetDictionariesAsync().ConfigureAwait(true);
-
-			if (dictionariesReport != null)
+			try
 			{
+				Enabled = false;
 
-				facetBindingSource.DataSource = dictionariesReport.facets;
+				dictionariesReport = await sonarAPI.GetDictionariesAsync().ConfigureAwait(true);
 
-				cmbParamTypes.SelectedItem = dictionariesReport.facets.Find(f => f.property == "projects");
+				if (dictionariesReport != null)
+				{
 
-				Enabled = true;
+					facetBindingSource.DataSource = dictionariesReport.facets;
 
+					cmbParamTypes.SelectedItem = dictionariesReport.facets.Find(f => f.property == "projects");
+
+					Enabled = true;
+
+				}
+			}
+			catch (Exception ex)
+			{
+				if (ex.InnerException.Message == "Unable to connect to the remote server") {
+
+					var dr = MessageBox.Show(string.Format("SonarQube is not running at {0}", Settings.Default.SonarBaseUrl));
+
+					if (dr == DialogResult.OK)
+					{
+
+						Enabled = true;
+
+						Close();
+
+					}
+
+				}
 			}
 
 		}

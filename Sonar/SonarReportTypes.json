@@ -1,0 +1,14 @@
+{
+	"ReportTypes": {
+		"Issues": {
+			"Type": "MenuItem",
+			"ReportFileName": "Issues",
+			"Title": "Issues List"
+		},
+		"Rules": {
+			"Type": "MenuItem",
+			"ReportFileName": "Rules",
+			"Title": "Rules List"
+		}
+	}
+}

@@ -328,7 +328,6 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
-/TModels/LGI Threat Model_CAS.tm7
 /C/Projects/Security/Dev/threat-reporting/.sonarqube/out/.sonar
 /.sonarqube
 /.scannerwork

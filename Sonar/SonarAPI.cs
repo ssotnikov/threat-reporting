@@ -1,5 +1,6 @@
 ﻿using Sonar.Objects;
 using Sonar.Objects.Common;
+using Sonar.Properties;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -15,7 +16,7 @@ namespace Sonar
 
 		public SonarAPI()
 		{
-			client.BaseAddress = new Uri("http://localhost:9000/api/");
+			client.BaseAddress = new Uri(Settings.Default.SonarBaseUrl);
 			client.DefaultRequestHeaders.Accept.Clear();
 			client.DefaultRequestHeaders.Accept.Add(
 				new MediaTypeWithQualityHeaderValue("application/json"));

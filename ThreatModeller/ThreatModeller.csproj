@@ -88,7 +88,6 @@
     </Compile>
     <Compile Include="ThreatReportProcessor.cs" />
     <Compile Include="Objects\ThreatReport\Threat.cs" />
-    <Compile Include="VulnReportProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -97,6 +96,10 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Templates\CloudTemplateExtended.tb7" />
+    <None Include="ThreatModellerReportTypes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="tmtreport.snk" />
   </ItemGroup>

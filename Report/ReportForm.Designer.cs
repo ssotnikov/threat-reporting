@@ -35,11 +35,11 @@
 			this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-			this.btnGetSASTReport = new System.Windows.Forms.ToolStripButton();
+			this.mnuSelectSonarReportTypes = new System.Windows.Forms.ToolStripDropDownButton();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-			this.mnuSelectReportType = new System.Windows.Forms.ToolStripDropDownButton();
+			this.mnuSelectThreatModelReportType = new System.Windows.Forms.ToolStripDropDownButton();
 			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
 			this.btnGenerateReport = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
@@ -71,11 +71,11 @@
 			// 
 			this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnGetSASTReport,
+            this.mnuSelectSonarReportTypes,
             this.toolStripSeparator5,
             this.openToolStripButton,
             this.toolStripSeparator1,
-            this.mnuSelectReportType,
+            this.mnuSelectThreatModelReportType,
             this.toolStripSeparator2,
             this.btnGenerateReport,
             this.toolStripSeparator3});
@@ -87,15 +87,15 @@
 			this.toolStrip1.TabIndex = 1;
 			this.toolStrip1.Text = "toolStrip1";
 			// 
-			// btnGetSASTReport
+			// mnuSelectSonarReportTypes
 			// 
-			this.btnGetSASTReport.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.btnGetSASTReport.Image = ((System.Drawing.Image)(resources.GetObject("btnGetSASTReport.Image")));
-			this.btnGetSASTReport.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.btnGetSASTReport.Name = "btnGetSASTReport";
-			this.btnGetSASTReport.Size = new System.Drawing.Size(28, 28);
-			this.btnGetSASTReport.Text = "SAST Report";
-			this.btnGetSASTReport.Click += new System.EventHandler(this.btnGetSASTReport_ClickAsync);
+			this.mnuSelectSonarReportTypes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.mnuSelectSonarReportTypes.Image = ((System.Drawing.Image)(resources.GetObject("mnuSelectSonarReportTypes.Image")));
+			this.mnuSelectSonarReportTypes.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.mnuSelectSonarReportTypes.Name = "mnuSelectSonarReportTypes";
+			this.mnuSelectSonarReportTypes.Size = new System.Drawing.Size(42, 28);
+			this.mnuSelectSonarReportTypes.Tag = "Sonar";
+			this.mnuSelectSonarReportTypes.Text = "Sonar Reports";
 			// 
 			// toolStripSeparator5
 			// 
@@ -118,15 +118,16 @@
 			this.toolStripSeparator1.Name = "toolStripSeparator1";
 			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 31);
 			// 
-			// mnuSelectReportType
+			// mnuSelectThreatModelReportType
 			// 
-			this.mnuSelectReportType.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.mnuSelectReportType.Image = global::Report.Properties.Resources.reports;
-			this.mnuSelectReportType.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.mnuSelectReportType.Name = "mnuSelectReportType";
-			this.mnuSelectReportType.Size = new System.Drawing.Size(42, 28);
-			this.mnuSelectReportType.Text = "&New";
-			this.mnuSelectReportType.ToolTipText = "Report Types";
+			this.mnuSelectThreatModelReportType.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.mnuSelectThreatModelReportType.Image = global::Report.Properties.Resources.reports;
+			this.mnuSelectThreatModelReportType.ImageTransparentColor = System.Drawing.Color.Magenta;
+			this.mnuSelectThreatModelReportType.Name = "mnuSelectThreatModelReportType";
+			this.mnuSelectThreatModelReportType.Size = new System.Drawing.Size(42, 28);
+			this.mnuSelectThreatModelReportType.Tag = "ThreatModel";
+			this.mnuSelectThreatModelReportType.Text = "Threat Model Report Types";
+			this.mnuSelectThreatModelReportType.ToolTipText = "Threat Model Report Types";
 			// 
 			// toolStripSeparator2
 			// 
@@ -184,10 +185,10 @@
 		private System.Windows.Forms.ToolStripButton openToolStripButton;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 		private System.Windows.Forms.ToolStripButton btnGenerateReport;
-		private System.Windows.Forms.ToolStripDropDownButton mnuSelectReportType;
+		private System.Windows.Forms.ToolStripDropDownButton mnuSelectThreatModelReportType;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-		private System.Windows.Forms.ToolStripButton btnGetSASTReport;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+		private System.Windows.Forms.ToolStripDropDownButton mnuSelectSonarReportTypes;
 	}
 }
 

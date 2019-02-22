@@ -75,14 +75,30 @@
     <Compile Include="ParamsBuilder.Designer.cs">
       <DependentUpon>ParamsBuilder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="QueryBuilder.cs" />
     <Compile Include="SonarAPI.cs" />
     <Compile Include="SonarSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Sonar.Objects.Issue.datasource" />
+    <None Include="Properties\DataSources\Sonar.Objects.Rule.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SonarReportTypes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="tmtreport.snk" />
   </ItemGroup>
   <ItemGroup>
@@ -91,10 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Issues.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reports\RuleDesc.rdlc" />
-    <EmbeddedResource Include="Reports\SonarIssueReport.rdlc">
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Rules.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
