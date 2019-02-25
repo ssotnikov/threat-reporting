@@ -41,18 +41,28 @@ namespace Sonar
 			}
 			catch (Exception ex)
 			{
-				if (ex.InnerException.Message == "Unable to connect to the remote server") {
 
-					var dr = MessageBox.Show(string.Format("SonarQube is not running at {0}", Settings.Default.SonarBaseUrl));
+				DialogResult dr;
 
-					if (dr == DialogResult.OK)
-					{
+				if (ex.InnerException.Message == "Unable to connect to the remote server")
+				{
 
-						Enabled = true;
+					dr = MessageBox.Show(string.Format("SonarQube is not running at {0}", Settings.Default.SonarBaseUrl));
 
-						Close();
+				}
+				else
+				{
 
-					}
+					dr = MessageBox.Show(ex.InnerException.Message);
+
+				}
+
+				if (dr == DialogResult.OK)
+				{
+
+					Enabled = true;
+
+					Close();
 
 				}
 			}
