@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Xml.Linq;
 using ThreatModeller.Properties;
 
 namespace ThreatModeller
 {
-	public class ThreatReportProcessor
+	public class TMTReportProcessor
 	{
-		private string fileName = string.Empty;
 
 		private static XDocument xdoc;
 
@@ -27,7 +26,7 @@ namespace ThreatModeller
 
 		private Dictionaries dictionaries;
 
-		public ThreatReportProcessor(string fileName)
+		public TMTReportProcessor(string fileName)
 		{
 			try {
 				xdoc = XDocument.Load(fileName);
@@ -40,13 +39,13 @@ namespace ThreatModeller
 			}
 			catch (Exception e) {
 
-				throw e;
+				throw new Exception(e.InnerException.Message);
 
 			}
 			
 		}
 
-		public List<Component> GetComponentsByType(string type)
+		public static List<Component> GetComponentsByType(string type)
 		{
 
 			return components.Where(c => c.GenericTypeId == type).ToList();
@@ -86,11 +85,11 @@ namespace ThreatModeller
 			{
 				var note = new Note
 				{
-					Id = int.Parse(xNote.Element(nsModel + "Id").Value),
+					Id = int.Parse(xNote.Element(nsModel + "Id").Value, CultureInfo.InvariantCulture),
 
 					AddedBy = xNote.Element(nsModel + "AddedBy").Value,
 
-					Date = DateTime.Parse(xNote.Element(nsModel + "Date").Value),
+					Date = DateTime.Parse(xNote.Element(nsModel + "Date").Value, CultureInfo.InvariantCulture),
 
 					Message = xNote.Element(nsModel + "Message").Value
 				};
@@ -173,7 +172,7 @@ namespace ThreatModeller
 
 				var threat = new Threat
 				{
-					Id = int.Parse(value.Element(nsKnowledgeBase + "Id").Value),
+					Id = int.Parse(value.Element(nsKnowledgeBase + "Id").Value, CultureInfo.InvariantCulture),
 
 					Priority = value.Element(nsKnowledgeBase + "Priority").Value,
 
@@ -181,7 +180,7 @@ namespace ThreatModeller
 
 					ChangedBy = value.Element(nsKnowledgeBase + "ChangedBy").Value,
 
-					ModifiedAt = DateTime.Parse(value.Element(nsKnowledgeBase + "ModifiedAt").Value),
+					ModifiedAt = DateTime.Parse(value.Element(nsKnowledgeBase + "ModifiedAt").Value, CultureInfo.InvariantCulture),
 
 					FlowGuid = flowGuid,
 
@@ -342,7 +341,9 @@ namespace ThreatModeller
 					foreach (string component in components)
 					{
 						Threat th = (Threat)threat.Clone();
+
 						th.MitigatedComponents = GetNormalizedString(component);
+
 						result.Add(th);
 					}
 
@@ -398,7 +399,7 @@ namespace ThreatModeller
 		{
 			if (guidString == null)
 			{
-				throw new ArgumentNullException("guidString");
+				throw new ArgumentNullException(nameof(guidString));
 			}
 
 			try

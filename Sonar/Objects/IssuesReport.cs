@@ -1,20 +1,32 @@
-﻿using System;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sonar.Objects
 {
 	public class IssuesReport
 	{
-		public int total { get; set; } 
-		public Paging paging { get; set; }
-		public int effortTotal { get; set; }
-		public int debtTotal { get; set; }
-		public List<Issue> issues { get; set; }
-		public List<Rule> rules { get; set; }
-		public List<Component> components { get; set; }
-		public List<Language> languages { get; set; }
+		[JsonProperty("total")]
+		public int Total { get; set; }
+
+		[JsonProperty("paging")]
+		public Paging Paging { get; set; }
+
+		[JsonProperty("effortTotal")]
+		public int EffortTotal { get; set; }
+
+		[JsonProperty("debtTotal")]
+		public int DebtTotal { get; set; }
+
+		[JsonProperty("issues")]
+		public List<Issue> Issues { get; set; }
+
+		[JsonProperty("rules")]
+		public List<Rule> Rules { get; set; }
+
+		[JsonProperty("components")]
+		public List<Component> Components { get; set; }
+
+		[JsonProperty("languages")]
+		public List<Language> Languages { get; set; }
 	}
 }

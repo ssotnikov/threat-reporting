@@ -1,8 +1,13 @@
-﻿namespace Sonar.Objects
+﻿using Newtonsoft.Json;
+
+namespace Sonar.Objects
 {
 	public class Language
 	{
-		public string key { get; set; }
-		public string name { get; set; }
+		[JsonProperty("key")]
+		public string Key { get; set; }
+
+		[JsonProperty("name")]
+		public string Name { get; set; }
 	}
 }

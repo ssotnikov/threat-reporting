@@ -1,4 +1,5 @@
-﻿using Sonar.Objects;
+﻿using Sonar.Helpers;
+using Sonar.Objects;
 using Sonar.Properties;
 using System;
 using System.Collections.Generic;
@@ -12,9 +13,12 @@ namespace Sonar
 
 		private DictionariesReport dictionariesReport;
 
-		private List<Facet> selectedParams = new List<Facet>();
+		private List<Facet> selectedFacets = new List<Facet>();
 
-		public string Query { get; set; }
+		public string QueryString { get; set; }
+
+		public List<QueryParam> QueryParams { get; set; }
+
 		public ParamsBuilder()
 		{
 			InitializeComponent();
@@ -31,9 +35,9 @@ namespace Sonar
 				if (dictionariesReport != null)
 				{
 
-					facetBindingSource.DataSource = dictionariesReport.facets;
+					facetBindingSource.DataSource = dictionariesReport.Facets;
 
-					cmbParamTypes.SelectedItem = dictionariesReport.facets.Find(f => f.property == "projects");
+					cmbParamTypes.SelectedItem = dictionariesReport.Facets.Find(f => f.Property == "projects");
 
 					Enabled = true;
 
@@ -77,49 +81,51 @@ namespace Sonar
 			var item = (Value)lstParams.Items[e.Index];
 
 
-			var facet = selectedParams.Find(f => f.property == selectedFacet.property);
+			var facet = selectedFacets.Find(f => f.Property == selectedFacet.Property);
 
 			if (facet == null)
 			{
 
 				facet = new Facet
 				{
-					property = selectedFacet.property,
+					Property = selectedFacet.Property,
 
-					values = new List<Value>()
+					Values = new List<Value>()
 				};
 			}
 
-			if (e.NewValue == CheckState.Checked && !facet.values.Contains(item))
+			if (e.NewValue == CheckState.Checked && !facet.Values.Contains(item))
 			{
 
-				facet.values.Add(item);
+				facet.Values.Add(item);
 
-				if (selectedParams.Find(f => f.property == selectedFacet.property) == null)
+				if (selectedFacets.Find(f => f.Property == selectedFacet.Property) == null)
 				{
-					selectedParams.Add(facet);
+					selectedFacets.Add(facet);
 				}
 			}
 
-			if (e.NewValue == CheckState.Unchecked && facet.values.Find(i => i.val == item.val) != null)
+			if (e.NewValue == CheckState.Unchecked && facet.Values.Find(i => i.Val == item.Val) != null)
 			{
 
-				facet.values.RemoveAll(i => i.val == item.val);
+				facet.Values.RemoveAll(i => i.Val == item.Val);
 
-				if (facet.values.Count == 0)
+				if (facet.Values.Count == 0)
 				{
 
-					selectedParams.Remove(facet);
+					selectedFacets.Remove(facet);
 
 				}
 			}
 
-			txtQuery.Text = QueryBuilder.Build(selectedParams);
+			txtQuery.Text = QueryBuilder.Build(selectedFacets);
 		}
 
 		private void btnOk_Click(object sender, EventArgs e)
 		{
-			Query = txtQuery.Text;
+			QueryString = txtQuery.Text;
+
+			QueryParams = QueryBuilder.GetQueryParams(selectedFacets);
 		}
 
 		private void cmbParamTypes_SelectedValueChanged(object sender, EventArgs e)
@@ -132,11 +138,11 @@ namespace Sonar
 
 				var selectedFacet = (Facet)((ComboBox)sender).SelectedItem;
 
-				var facet = dictionariesReport.facets.Find(f => f.property == selectedFacet.property);
+				var facet = dictionariesReport.Facets.Find(f => f.Property == selectedFacet.Property);
 
 				lstParams.Items.Clear();
 
-				foreach (var item in facet.values)
+				foreach (var item in facet.Values)
 				{
 
 					lstParams.Items.Add(item);
@@ -144,17 +150,17 @@ namespace Sonar
 				}
 
 
-				var selectedParam = selectedParams.Find(f => f.property == selectedFacet.property);
+				var selectedParam = selectedFacets.Find(f => f.Property == selectedFacet.Property);
 
 				if (selectedParam != null)
 				{
 
-					var sValues = selectedParam.values;
+					var sValues = selectedParam.Values;
 
 					foreach (var value in sValues)
 					{
 
-						var inx = facet.values.FindIndex(i => i.val == value.val);
+						var inx = facet.Values.FindIndex(i => i.Val == value.Val);
 
 						if (inx > -1)
 						{

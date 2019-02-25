@@ -1,9 +1,11 @@
 ﻿using Microsoft.Reporting.WinForms;
 using Newtonsoft.Json.Linq;
 using Sonar;
+using Sonar.Helpers;
 using Sonar.Objects;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -18,9 +20,9 @@ namespace Report
 		private string reportType = string.Empty;
 		private string reportTitle = string.Empty;
 		private Dictionary<string, List<ReportParameter>> reportParams = new Dictionary<string, List<ReportParameter>>();
-		private ThreatReportProcessor reportProcessor;
+		private TMTReportProcessor tmtReportProcessor;
 		private JObject reportTypes;
-		private SonarSource sonarSource = new SonarSource();
+		private SonarReportProcessor sonarReportProcessor = new SonarReportProcessor();
 		public ReportForm()
 		{
 			InitializeComponent();
@@ -114,42 +116,61 @@ namespace Report
 
 			btnGenerateReport.Enabled = true;
 
-			Text = string.Format("{0}: {1}", threatModelFileName.Split('.')[0], reportType);
+			Text = string.Format(CultureInfo.InvariantCulture, "{0}: {1}", threatModelFileName.Split('.')[0], reportType);
 
 		}
 
 		private async void SonarReportTypeMenuItem_Click(object sender, EventArgs e)
 		{
-			sonarSource.ParamsBuilder.ShowDialog();
+			sonarReportProcessor.ParamsBuilder.ShowDialog();
 
-			if (sonarSource.ParamsBuilder.DialogResult == DialogResult.OK)
+			if (sonarReportProcessor.ParamsBuilder.DialogResult == DialogResult.OK)
 			{
-
-				string query = sonarSource.ParamsBuilder.Query;
 
 				reportViewer1.Reset();
 
-				IssuesReport issuesReport = await sonarSource.SonarAPI.GetIssuesReportAsync(query).ConfigureAwait(true);
+				IssuesReport issuesReport = await sonarReportProcessor.SonarAPI.GetIssuesReportAsync(sonarReportProcessor.ParamsBuilder.QueryString).ConfigureAwait(true);
 
-				reportViewer1.LocalReport.ReportPath = string.Format("Reports/{0}.rdlc", ((ToolStripMenuItem)sender).Tag.ToString());
+				reportViewer1.LocalReport.ReportPath = string.Format(CultureInfo.InvariantCulture, "Reports/{0}.rdlc", ((ToolStripMenuItem)sender).Tag.ToString());
 
 				if (issuesReport != null)
 				{
 
-					List<Rule> rules = await sonarSource.SonarAPI.GetRulesDescAsync(issuesReport).ConfigureAwait(true);
+					reportViewer1.LocalReport.SubreportProcessing += new SubreportProcessingEventHandler(SetSubDataSource);
 
-					ReportDataSource DataSet1 = new ReportDataSource { Name = "Issues", Value = issuesReport.issues };
+					//ReportDataSource DataSet1 = new ReportDataSource { Name = "Issues", Value = issuesReport.Issues };
 
-					reportViewer1.LocalReport.DataSources.Add(DataSet1);
+					//reportViewer1.LocalReport.DataSources.Add(DataSet1);
+
+					List<Rule> rules = await sonarReportProcessor.SonarAPI.GetRulesDescAsync(issuesReport).ConfigureAwait(true);
 
 					ReportDataSource DataSet2 = new ReportDataSource { Name = "Rules", Value = rules };
 
 					reportViewer1.LocalReport.DataSources.Add(DataSet2);
 
+					ReportDataSource DataSet3 = new ReportDataSource { Name = "Params", Value = sonarReportProcessor.ParamsBuilder.QueryParams };
+
+					reportViewer1.LocalReport.DataSources.Add(DataSet3);
+
 					reportViewer1.RefreshReport();
 
 				}
 			}
+		}
+
+		private async void SetSubDataSource(object sender, SubreportProcessingEventArgs e)
+		{
+
+			string ruleKey = e.Parameters["ruleKey"].Values[0];
+			
+			string dataSourceName = e.DataSourceNames[0];
+
+			IssuesReport issuesReport = await sonarReportProcessor.SonarAPI.GetIssuesReportAsync(sonarReportProcessor.ParamsBuilder.QueryString).ConfigureAwait(true);
+
+			ReportDataSource DataSet1 = new ReportDataSource { Name = "Issues", Value = issuesReport.Issues };
+
+			e.DataSources.Add(DataSet1);
+
 		}
 
 		private void btnGenerateReport_Click(object sender, EventArgs e)
@@ -188,7 +209,7 @@ namespace Report
 
 				EnableReportTypeButtons(true);
 
-				reportProcessor = new ThreatReportProcessor(threatModelFilePath);
+				tmtReportProcessor = new ThreatModeller.TMTReportProcessor(threatModelFilePath);
 
 			}
 		}
@@ -198,7 +219,7 @@ namespace Report
 
 			EnableReportTypeButtons(false);
 
-			reportViewer1.LocalReport.ReportPath = string.Format("Reports/{0}.rdlc", reportType);
+			reportViewer1.LocalReport.ReportPath = string.Format(CultureInfo.InvariantCulture, "Reports/{0}.rdlc", reportType);
 
 		}
 
@@ -217,7 +238,7 @@ namespace Report
 		{
 			if (reportType == "MitigatedComponents")
 			{
-				ReportDataSource DataSet1 = new ReportDataSource { Name = "Threats", Value = reportProcessor.GetThreatsGroupedByMitigatedComponent() };
+				ReportDataSource DataSet1 = new ReportDataSource { Name = "Threats", Value = tmtReportProcessor.GetThreatsGroupedByMitigatedComponent() };
 
 				reportViewer1.LocalReport.DataSources.Add(DataSet1);
 
@@ -225,17 +246,17 @@ namespace Report
 			else
 			{
 
-				ReportDataSource DataSet1 = new ReportDataSource { Name = "Threats", Value = reportProcessor.GetThreats() };
+				ReportDataSource DataSet1 = new ReportDataSource { Name = "Threats", Value = tmtReportProcessor.GetThreats() };
 
 				reportViewer1.LocalReport.DataSources.Add(DataSet1);
 
 			}
 
-			ReportDataSource DataSet2 = new ReportDataSource { Name = "Notes", Value = reportProcessor.GetNotes() };
+			ReportDataSource DataSet2 = new ReportDataSource { Name = "Notes", Value = tmtReportProcessor.GetNotes() };
 
 			reportViewer1.LocalReport.DataSources.Add(DataSet2);
 
-			ReportDataSource DataSet3 = new ReportDataSource { Name = "Meta", Value = reportProcessor.GetMetaInformation() };
+			ReportDataSource DataSet3 = new ReportDataSource { Name = "Meta", Value = tmtReportProcessor.GetMetaInformation() };
 
 			reportViewer1.LocalReport.DataSources.Add(DataSet3);
 

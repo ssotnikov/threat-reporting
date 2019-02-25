@@ -1,18 +1,34 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace Sonar.Objects
 {
 	public class Issue
 	{
-		public string key { get; set; }
-		public string rule { get; set; }
-		public string severity { get; set; }
-		public string component { get; set; }
-		public string line { get; set; }
-		public string status { get; set; }
-		public string message { get; set; }
-		public string type { get; set; }
+		[JsonProperty("key")]
+		public string Key { get; set; }
+
+		[JsonProperty("rule")]
+		public string Rule { get; set; }
+
+		[JsonProperty("severity")]
+		public string Severity { get; set; }
+
+		[JsonProperty("component")]
+		public string Component { get; set; }
+
+		[JsonProperty("line")]
+		public string Line { get; set; }
+
+		[JsonProperty("status")]
+		public string Status { get; set; }
+
+		[JsonProperty("message")]
+		public string Message { get; set; }
+
+		[JsonProperty("type")]
+		public string Type { get; set; }
 
 	}
 }

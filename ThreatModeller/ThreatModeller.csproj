@@ -73,8 +73,6 @@
     <Compile Include="Objects\Common\Dictionaries.cs" />
     <Compile Include="Objects\ThreatReport\MetaInformation.cs" />
     <Compile Include="Objects\ThreatReport\Note.cs" />
-    <Compile Include="Objects\VulnReport\Vuln.cs" />
-    <Compile Include="Objects\VulnReport\VulnModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -86,7 +84,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="ThreatReportProcessor.cs" />
+    <Compile Include="TMTReportProcessor.cs" />
     <Compile Include="Objects\ThreatReport\Threat.cs" />
   </ItemGroup>
   <ItemGroup>

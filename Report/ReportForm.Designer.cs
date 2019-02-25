@@ -30,13 +30,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-			Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+			Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReportForm));
 			this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
 			this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.mnuSelectSonarReportTypes = new System.Windows.Forms.ToolStripDropDownButton();
-			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.mnuSelectThreatModelReportType = new System.Windows.Forms.ToolStripDropDownButton();
@@ -50,16 +49,16 @@
 			// reportViewer1
 			// 
 			this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-			reportDataSource1.Name = "DataSet1";
-			reportDataSource1.Value = null;
-			this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+			reportDataSource2.Name = "DataSet1";
+			reportDataSource2.Value = null;
+			this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
 			this.reportViewer1.LocalReport.EnableExternalImages = true;
 			this.reportViewer1.LocalReport.ReportEmbeddedResource = "";
 			this.reportViewer1.Location = new System.Drawing.Point(0, 31);
 			this.reportViewer1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.reportViewer1.Name = "reportViewer1";
 			this.reportViewer1.ServerReport.BearerToken = null;
-			this.reportViewer1.Size = new System.Drawing.Size(1501, 845);
+			this.reportViewer1.Size = new System.Drawing.Size(1494, 779);
 			this.reportViewer1.TabIndex = 0;
 			this.reportViewer1.WaitControlDisplayAfter = 1;
 			// 
@@ -71,19 +70,18 @@
 			// 
 			this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
 			this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuSelectSonarReportTypes,
-            this.toolStripSeparator5,
             this.openToolStripButton,
             this.toolStripSeparator1,
             this.mnuSelectThreatModelReportType,
             this.toolStripSeparator2,
             this.btnGenerateReport,
-            this.toolStripSeparator3});
+            this.toolStripSeparator3,
+            this.mnuSelectSonarReportTypes});
 			this.toolStrip1.Location = new System.Drawing.Point(0, 0);
 			this.toolStrip1.Name = "toolStrip1";
 			this.toolStrip1.Padding = new System.Windows.Forms.Padding(0, 0, 2, 0);
 			this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-			this.toolStrip1.Size = new System.Drawing.Size(1501, 31);
+			this.toolStrip1.Size = new System.Drawing.Size(1494, 31);
 			this.toolStrip1.TabIndex = 1;
 			this.toolStrip1.Text = "toolStrip1";
 			// 
@@ -96,11 +94,6 @@
 			this.mnuSelectSonarReportTypes.Size = new System.Drawing.Size(42, 28);
 			this.mnuSelectSonarReportTypes.Tag = "Sonar";
 			this.mnuSelectSonarReportTypes.Text = "Sonar Reports";
-			// 
-			// toolStripSeparator5
-			// 
-			this.toolStripSeparator5.Name = "toolStripSeparator5";
-			this.toolStripSeparator5.Size = new System.Drawing.Size(6, 31);
 			// 
 			// openToolStripButton
 			// 
@@ -126,8 +119,8 @@
 			this.mnuSelectThreatModelReportType.Name = "mnuSelectThreatModelReportType";
 			this.mnuSelectThreatModelReportType.Size = new System.Drawing.Size(42, 28);
 			this.mnuSelectThreatModelReportType.Tag = "ThreatModel";
-			this.mnuSelectThreatModelReportType.Text = "Threat Model Report Types";
-			this.mnuSelectThreatModelReportType.ToolTipText = "Threat Model Report Types";
+			this.mnuSelectThreatModelReportType.Text = "Threat Model Reports";
+			this.mnuSelectThreatModelReportType.ToolTipText = "Threat Model Reports";
 			// 
 			// toolStripSeparator2
 			// 
@@ -152,9 +145,9 @@
 			// statusStrip1
 			// 
 			this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-			this.statusStrip1.Location = new System.Drawing.Point(0, 876);
+			this.statusStrip1.Location = new System.Drawing.Point(0, 810);
 			this.statusStrip1.Name = "statusStrip1";
-			this.statusStrip1.Size = new System.Drawing.Size(1501, 22);
+			this.statusStrip1.Size = new System.Drawing.Size(1494, 22);
 			this.statusStrip1.TabIndex = 2;
 			this.statusStrip1.Text = "statusStrip1";
 			// 
@@ -162,12 +155,13 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1501, 898);
+			this.ClientSize = new System.Drawing.Size(1494, 832);
 			this.Controls.Add(this.reportViewer1);
 			this.Controls.Add(this.statusStrip1);
 			this.Controls.Add(this.toolStrip1);
 			this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
 			this.Name = "ReportForm";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.toolStrip1.ResumeLayout(false);
 			this.toolStrip1.PerformLayout();
@@ -187,7 +181,6 @@
 		private System.Windows.Forms.ToolStripButton btnGenerateReport;
 		private System.Windows.Forms.ToolStripDropDownButton mnuSelectThreatModelReportType;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
 		private System.Windows.Forms.ToolStripDropDownButton mnuSelectSonarReportTypes;
 	}
 }

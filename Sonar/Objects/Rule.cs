@@ -1,34 +1,86 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace Sonar.Objects
 {
 	public class Rule
 	{
-		public string key { get; set; }
-		public string name { get; set; }
-		public string repo { get; set; }
-		public DateTime createdAt { get; set; }
-		public string htmlDesc { get; set; }
-		public string mdDesc { get; set; }
-		public string lang { get; set; }
-		public string status { get; set; }
-		public string langName { get; set; }
-		public string severity { get; set; }
-		public bool isTemplate { get; set; }
-		public string[] tags { get; set; }
-		public string[] sysTags { get; set; }
-		public string stringdefaultDebtRemFnType { get; set; }
-		public string defaultDebtRemFnOffset { get; set; }
-		public bool debtOverloaded { get; set; }
-		public string debtRemFnType { get; set; }
-		public string debtRemFnOffset { get; set; }
-		public string defaultRemFnType { get; set; }
-		public string defaultRemFnBaseEffort { get; set; }
-		public string remFnType { get; set; }
-		public string remFnBaseEffort { get; set; }
-		public bool remFnOverloaded { get; set; }
-		public string scope { get; set; }
-		public bool sExternal { get; set; }
-		public string type { get; set; }
+		[JsonProperty("key")]
+		public string Key { get; set; }
+
+		[JsonProperty("name")]
+		public string Name { get; set; }
+
+		[JsonProperty("repo")]
+		public string Repo { get; set; }
+
+		[JsonProperty("createdAt")]
+		public DateTime CreatedAt { get; set; }
+
+		[JsonProperty("htmlDesc")]
+		public string HtmlDesc { get; set; }
+
+		[JsonProperty("mdDesc")]
+		public string MdDesc { get; set; }
+
+		[JsonProperty("lang")]
+		public string Lang { get; set; }
+
+		[JsonProperty("status")]
+		public string Status { get; set; }
+
+		[JsonProperty("langName")]
+		public string LangName { get; set; }
+
+		[JsonProperty("severity")]
+		public string Severity { get; set; }
+
+		[JsonProperty("isTemplate")]
+		public bool IsTemplate { get; set; }
+
+		[JsonProperty("tags")]
+		public string[] Tags { get; set; }
+
+		[JsonProperty("sysTags")]
+		public string[] SysTags { get; set; }
+
+		[JsonProperty("stringdefaultDebtRemFnType")]
+		public string StringDefaultDebtRemFnType { get; set; }
+
+		[JsonProperty("defaultDebtRemFnOffset")]
+		public string DefaultDebtRemFnOffset { get; set; }
+
+		[JsonProperty("debtOverloaded")]
+		public bool DebtOverloaded { get; set; }
+
+		[JsonProperty("debtRemFnType")]
+		public string DebtRemFnType { get; set; }
+
+		[JsonProperty("debtRemFnOffset")]
+		public string DebtRemFnOffset { get; set; }
+
+		[JsonProperty("defaultRemFnType")]
+		public string DefaultRemFnType { get; set; }
+
+		[JsonProperty("defaultRemFnBaseEffort")]
+		public string DefaultRemFnBaseEffort { get; set; }
+
+		[JsonProperty("remFnType")]
+		public string RemFnType { get; set; }
+
+		[JsonProperty("remFnBaseEffort")]
+		public string RemFnBaseEffort { get; set; }
+
+		[JsonProperty("remFnOverloaded")]
+		public bool RemFnOverloaded { get; set; }
+
+		[JsonProperty("scope")]
+		public string Scope { get; set; }
+
+		[JsonProperty("sExternal")]
+		public bool SExternal { get; set; }
+
+		[JsonProperty("type")]
+		public string Type { get; set; }
 	}
 }

@@ -1,11 +1,11 @@
 ﻿namespace Sonar
 {
-	public class SonarSource
+	public class SonarReportProcessor
 	{
 		public SonarAPI SonarAPI;
 
 		public ParamsBuilder ParamsBuilder;
-		public SonarSource()
+		public SonarReportProcessor()
 		{
 			SonarAPI = new SonarAPI();
 			ParamsBuilder = new ParamsBuilder();

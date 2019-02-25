@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Newtonsoft.Json;
+using System.Collections.Generic;
 
 namespace Sonar.Objects
 {
 	public class ProjectsReport
 	{
-		public List<Component> components { get; set; }
+		[JsonProperty("components")]
+		public List<Component> Components { get; set; }
 	}
 }

@@ -2,10 +2,30 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Sonar
+namespace Sonar.Helpers
 {
 	internal class QueryBuilder
 	{
+
+		internal static List<QueryParam> GetQueryParams(List<Facet> facets) {
+
+			List<QueryParam> result = new List<QueryParam>();
+
+			foreach (var facet in facets) {
+
+				result.Add(new QueryParam
+				{
+					Property = facet.Property,
+
+					Value = string.Join(", ", facet.Values)
+
+				});
+
+			}
+
+			return result;
+		}
+
 		internal static string Build(List<Facet> facets) {
 
 			var sb = new StringBuilder();
@@ -20,7 +40,7 @@ namespace Sonar
 			foreach (Facet facet in facets)
 			{
 
-				var property = facet.property;
+				var property = facet.Property;
 
 				if (property == "projects")
 				{
@@ -29,7 +49,7 @@ namespace Sonar
 
 				}
 
-				sb.AppendFormat("{0}={1}", property, string.Join(",", facet.values));
+				sb.AppendFormat("{0}={1}", property, string.Join(",", facet.Values));
 
 				if (facets.IndexOf(facet) < facets.Count - 1)
 				{

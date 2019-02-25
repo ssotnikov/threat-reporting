@@ -2,17 +2,14 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix1">
+      <Tablix Name="Tablix3">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.04556in</Width>
+              <Width>1.56327in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.55639in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>5.62194in</Width>
+              <Width>6.82341in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -21,21 +18,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox1">
+                    <Textbox Name="Textbox4">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>key</Value>
+                              <Value>Param</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox1</rd:DefaultName>
+                      <rd:DefaultName>Textbox4</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -51,51 +48,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox3">
+                    <Textbox Name="Textbox6">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>html Desc</Value>
+                              <Value>Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox3</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox5">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>md Desc</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -116,21 +83,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="key">
+                    <Textbox Name="Property">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!key.Value</Value>
+                              <Value>=Fields!Property.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>key</rd:DefaultName>
+                      <rd:DefaultName>Property</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -146,52 +113,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="htmlDesc">
+                    <Textbox Name="Value">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!htmlDesc.Value</Value>
+                              <Value>=Fields!Value.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>htmlDesc</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="mdDesc">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!mdDesc.Value</Value>
-                              <MarkupType>HTML</MarkupType>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>mdDesc</rd:DefaultName>
+                      <rd:DefaultName>Value</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -213,7 +149,6 @@
           <TablixMembers>
             <TablixMember />
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -222,13 +157,130 @@
               <KeepWithGroup>After</KeepWithGroup>
             </TablixMember>
             <TablixMember>
-              <Group Name="Details" />
+              <Group Name="Details1" />
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>Params</DataSetName>
+        <Height>0.5in</Height>
+        <Width>8.38668in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Tablix Name="Tablix6">
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>2.27123in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.27123in</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.27123in</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.43056in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Name">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!Name.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Name</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                    <ColSpan>3</ColSpan>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell />
+                <TablixCell />
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember />
+            <TablixMember />
+            <TablixMember />
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <TablixHeader>
+                <Size>1.57297in</Size>
+                <CellContents>
+                  <Textbox Name="Key1">
+                    <CanGrow>true</CanGrow>
+                    <KeepTogether>true</KeepTogether>
+                    <Paragraphs>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value>=Fields!Key.Value</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                    </Paragraphs>
+                    <rd:DefaultName>Key1</rd:DefaultName>
+                    <Style>
+                      <Border>
+                        <Color>LightGrey</Color>
+                        <Style>Solid</Style>
+                      </Border>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <PaddingBottom>2pt</PaddingBottom>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Details" />
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixMember>
+              </TablixMembers>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>Rules</DataSetName>
-        <Height>0.5in</Height>
-        <Width>12.22389in</Width>
+        <Top>0.68972in</Top>
+        <Height>0.43056in</Height>
+        <Width>8.38668in</Width>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -236,11 +288,21 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.5in</Height>
+    <Height>1.12028in</Height>
     <Style />
   </Body>
-  <Width>12.22389in</Width>
+  <Width>8.38668in</Width>
   <Page>
+    <PageHeader>
+      <Height>1in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>
@@ -254,14 +316,28 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>bd47fa8a-868c-4a19-a8e9-d8e9db42e1e1</rd:DataSourceID>
+      <rd:DataSourceID>1d62920e-7b93-4a8c-b9a4-0687bc4ca638</rd:DataSourceID>
     </DataSource>
     <DataSource Name="SonarObjects1">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>e4632bd8-67cf-41fa-9a95-e15ee0d78e0a</rd:DataSourceID>
+      <rd:DataSourceID>56677645-5cec-4f17-9c0b-02fdab31ddd9</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="SonarHelpers">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>8c07a5fe-c6bc-480b-a214-b4ab6a3dcc6c</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="SonarObjects2">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>6b0f1218-0fd6-4c75-a04c-fe0c32e3e7e6</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -271,108 +347,108 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="createdAt">
-          <DataField>createdAt</DataField>
+        <Field Name="CreatedAt">
+          <DataField>CreatedAt</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="debtOverloaded">
-          <DataField>debtOverloaded</DataField>
+        <Field Name="DebtOverloaded">
+          <DataField>DebtOverloaded</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
-        <Field Name="debtRemFnOffset">
-          <DataField>debtRemFnOffset</DataField>
+        <Field Name="DebtRemFnOffset">
+          <DataField>DebtRemFnOffset</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="debtRemFnType">
-          <DataField>debtRemFnType</DataField>
+        <Field Name="DebtRemFnType">
+          <DataField>DebtRemFnType</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="defaultDebtRemFnOffset">
-          <DataField>defaultDebtRemFnOffset</DataField>
+        <Field Name="DefaultDebtRemFnOffset">
+          <DataField>DefaultDebtRemFnOffset</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="defaultRemFnBaseEffort">
-          <DataField>defaultRemFnBaseEffort</DataField>
+        <Field Name="DefaultRemFnBaseEffort">
+          <DataField>DefaultRemFnBaseEffort</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="defaultRemFnType">
-          <DataField>defaultRemFnType</DataField>
+        <Field Name="DefaultRemFnType">
+          <DataField>DefaultRemFnType</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="htmlDesc">
-          <DataField>htmlDesc</DataField>
+        <Field Name="HtmlDesc">
+          <DataField>HtmlDesc</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="isTemplate">
-          <DataField>isTemplate</DataField>
+        <Field Name="IsTemplate">
+          <DataField>IsTemplate</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
-        <Field Name="key">
-          <DataField>key</DataField>
+        <Field Name="Key">
+          <DataField>Key</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="lang">
-          <DataField>lang</DataField>
+        <Field Name="Lang">
+          <DataField>Lang</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="langName">
-          <DataField>langName</DataField>
+        <Field Name="LangName">
+          <DataField>LangName</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="mdDesc">
-          <DataField>mdDesc</DataField>
+        <Field Name="MdDesc">
+          <DataField>MdDesc</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="name">
-          <DataField>name</DataField>
+        <Field Name="Name">
+          <DataField>Name</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="remFnBaseEffort">
-          <DataField>remFnBaseEffort</DataField>
+        <Field Name="RemFnBaseEffort">
+          <DataField>RemFnBaseEffort</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="remFnOverloaded">
-          <DataField>remFnOverloaded</DataField>
+        <Field Name="RemFnOverloaded">
+          <DataField>RemFnOverloaded</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
-        <Field Name="remFnType">
-          <DataField>remFnType</DataField>
+        <Field Name="RemFnType">
+          <DataField>RemFnType</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="repo">
-          <DataField>repo</DataField>
+        <Field Name="Repo">
+          <DataField>Repo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="scope">
-          <DataField>scope</DataField>
+        <Field Name="Scope">
+          <DataField>Scope</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="severity">
-          <DataField>severity</DataField>
+        <Field Name="Severity">
+          <DataField>Severity</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="sExternal">
-          <DataField>sExternal</DataField>
+        <Field Name="SExternal">
+          <DataField>SExternal</DataField>
           <rd:TypeName>System.Boolean</rd:TypeName>
         </Field>
-        <Field Name="status">
-          <DataField>status</DataField>
+        <Field Name="Status">
+          <DataField>Status</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="stringdefaultDebtRemFnType">
-          <DataField>stringdefaultDebtRemFnType</DataField>
+        <Field Name="StringDefaultDebtRemFnType">
+          <DataField>StringDefaultDebtRemFnType</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="sysTags">
-          <DataField>sysTags</DataField>
+        <Field Name="SysTags">
+          <DataField>SysTags</DataField>
           <rd:TypeName>System.String[]</rd:TypeName>
         </Field>
-        <Field Name="tags">
-          <DataField>tags</DataField>
+        <Field Name="Tags">
+          <DataField>Tags</DataField>
           <rd:TypeName>System.String[]</rd:TypeName>
         </Field>
-        <Field Name="type">
-          <DataField>type</DataField>
+        <Field Name="Type">
+          <DataField>Type</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
@@ -382,49 +458,25 @@
         <rd:ObjectDataSourceType>Sonar.Objects.Rule, Sonar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b5a1279c3237b65d</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
-    <DataSet Name="Issues">
+    <DataSet Name="Params">
       <Query>
-        <DataSourceName>SonarObjects1</DataSourceName>
+        <DataSourceName>SonarHelpers</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="component">
-          <DataField>component</DataField>
+        <Field Name="Property">
+          <DataField>Property</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="key">
-          <DataField>key</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="line">
-          <DataField>line</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="message">
-          <DataField>message</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="rule">
-          <DataField>rule</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="severity">
-          <DataField>severity</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="status">
-          <DataField>status</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="type">
-          <DataField>type</DataField>
+        <Field Name="Value">
+          <DataField>Value</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>Sonar.Objects</rd:DataSetName>
-        <rd:TableName>Issue</rd:TableName>
-        <rd:ObjectDataSourceType>Sonar.Objects.Issue, Sonar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b5a1279c3237b65d</rd:ObjectDataSourceType>
+        <rd:DataSetName>Sonar.Helpers</rd:DataSetName>
+        <rd:TableName>QueryParam</rd:TableName>
+        <rd:ObjectDataSourceType>Sonar.Helpers.QueryParam, Sonar, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b5a1279c3237b65d</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

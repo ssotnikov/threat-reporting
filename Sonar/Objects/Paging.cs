@@ -1,9 +1,16 @@
-﻿namespace Sonar.Objects
+﻿using Newtonsoft.Json;
+
+namespace Sonar.Objects
 {
 	public class Paging
 	{
-		public int pageIndex { get; set; }
-		public int pageSize { get; set; }
-		public int total { get; set; }
+		[JsonProperty("pageIndex")]
+		public int PageIndex { get; set; }
+
+		[JsonProperty("pageSize")]
+		public int PageSize { get; set; }
+
+		[JsonProperty("total")]
+		public int Total { get; set; }
 	}
 }

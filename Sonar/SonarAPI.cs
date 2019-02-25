@@ -68,13 +68,13 @@ namespace Sonar
 
 		public async Task<List<Rule>> GetRulesDescAsync(IssuesReport issuesReport) {
 
-			var selectedRules = issuesReport.rules;
+			var selectedRules = issuesReport.Rules;
 
 			List<Rule> result = new List<Rule>();
 
 			foreach (var rule in selectedRules) {
 
-				var report = await GetRuleDescAsync(rule.key);
+				var report = await GetRuleDescAsync(rule.Key);
 
 				result.Add(report.Rule);
 			}
